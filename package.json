@@ -4,6 +4,9 @@
   "description": "Portfolio desenvolvido com React, Express e MongoDB",
   "main": "app.js",
   "private": true,
+  "engines": {
+    "node": "16.X"
+  },
   "scripts": {
     "start": "node app.js",
     "devStart": "nodemon app.js"
