@@ -25,8 +25,8 @@ export default function Home (){
         <MetaDados/>
         <main>
           <Apresentacao/>
-          <Sobre/>
           <TodosTrabalhos/>
+          <Sobre/>
           <Contato/>
         </main>
       </>
