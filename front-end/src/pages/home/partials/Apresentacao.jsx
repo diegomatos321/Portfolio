@@ -4,7 +4,7 @@ export default function Apresentacao() {
   return (
     <section id="home">
       <div className="container-apresentacao">
-        <h1>Desenvolvedor Web Full Stack</h1>
+        <h1>Desenvolvedor Full Stack</h1>
         <figure>
           <source src={fotoDePerfil.webp} type="image/webp" />
           <img src={fotoDePerfil.png} alt="Foto de Perfil" title="Foto de Perfil" />
@@ -33,7 +33,7 @@ export default function Apresentacao() {
               <li>
                 <i className="fas fa-check"></i>
                   WordPress
-                </li>
+              </li>
             </ul>
           </div>
           <div className="flex-item back-end">
@@ -42,15 +42,58 @@ export default function Apresentacao() {
               <li>
                 <i className="fas fa-check"> </i>
                   Node JS
-                </li>
+              </li>
               <li>
                 <i className="fas fa-check"></i>
-                  Express
-                </li>
+                  Java
+              </li>
               <li>
                 <i className="fas fa-check"></i>
-                  MongoDB
-                </li>
+                  PHP
+              </li>
+            </ul>
+          </div>
+          <div className="flex-item">
+            <h2>Análise / Gestão</h2>
+            <ul>
+              <li>
+                <i className="fas fa-check"></i>
+                SEO
+              </li>
+            </ul>
+          </div>
+          <div className="flex-item">
+            <h2>SGDB</h2>
+            <ul>
+              <li>
+                <i className="fas fa-check"></i>
+                MySQL
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                MongoDB
+              </li>
+            </ul>
+          </div>
+          <div className="flex-item">
+            <h2>Des. Games</h2>
+            <ul>
+              <li>
+                <i className="fas fa-check"></i>
+                Unity
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                Godot
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                Construct 2
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                Web
+              </li>
             </ul>
           </div>
           <div className="flex-item">
@@ -58,12 +101,32 @@ export default function Apresentacao() {
             <ul>
               <li>
                 <i className="fas fa-check"></i>
-                  C#
-                </li>
+                GIT
+              </li>
               <li>
                 <i className="fas fa-check"></i>
-                  MySQL
-                </li>
+                SQL
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                C
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                C++
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                C#
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                  Python
+              </li>
+              <li>
+                <i className="fas fa-check"></i>
+                GDScript
+              </li>
             </ul>
           </div>
         </div>
