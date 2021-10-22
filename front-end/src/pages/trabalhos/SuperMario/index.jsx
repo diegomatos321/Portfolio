@@ -9,12 +9,14 @@ export default function SuperMario() {
     LoadJS({
       src: "/assets/js/phaser.min.js",
       id: "phaser-framework",
-      callback: LoadJS({
-        src: "/assets/js/super-mario/index.js",
-        id: "jogo",
-        defer: true,
-        type: "module"
-      })
+      callback: function () {
+        LoadJS({
+          src: "/assets/js/super-mario/index.js",
+          id: "jogo",
+          defer: true,
+          type: "module"
+        })
+      }
     });
     
     return function removeGameJSAndReloadPage() {

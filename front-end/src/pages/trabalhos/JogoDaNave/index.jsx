@@ -9,12 +9,14 @@ export default function JogoDaNave() {
     LoadJS({
       src: "/assets/js/phaser.min.js",
       id: "phaser-framework",
-      callback: LoadJS({
-        src: "/assets/js/jogo-da-nave/index.js",
-        defer: true,
-        id: "jogo",
-        type: "module"
-      })
+      callback: function () {
+        LoadJS({
+          src: "/assets/js/jogo-da-nave/index.js",
+          defer: true,
+          id: "jogo",
+          type: "module"
+        })
+      }
     })
     
     return function removeGameJSAndReloadPage() {
