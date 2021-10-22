@@ -34,6 +34,10 @@ a:hover , li:hover a{
   color: var(--corDoLinkHover);
 }
 
+.site {
+  padding-bottom: 12vh;
+}
+
 .btn {
   background-color: white;
   color: black;
@@ -145,6 +149,10 @@ figcaption{
 @media only screen and (min-width: 768px) {
   .mansory-item {
     max-width: 300px;
+  }
+
+  .site {
+    padding-bottom: 0;
   }
 }
 .mansory-item:hover {
