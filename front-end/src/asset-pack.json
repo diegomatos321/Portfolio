@@ -35,6 +35,10 @@
         "png": "/assets/imagens/web-development-banner1.png",
         "webp": "/assets/imagens/web-development-banner1.webp"
     },
+    "liaNaFlorestaMagica": {
+      "png": "/assets/imagens/lia-na-floresta-magica.png",
+      "webp": "/assets/imagens/lia-na-floresta-magica.webp"
+    },
     "curriculo": "/assets/documentos/curriculo.pdf",
     "fotoDePerfil": {
         "png": "/assets/imagens/foto-perfil.png",

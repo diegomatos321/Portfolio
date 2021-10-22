@@ -2,20 +2,14 @@ import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Masonry from "../utils/mansory-custom";
 
-/* import flappyBirdImagem from "../uploads/imagens/flappybird.webp";
-import jogoDaNaveImagem from "../uploads/imagens/jogo-da-nave.webp";
-import superMarioImagem from "../uploads/imagens/super-mario.webp";
-import jogoAsteroidesImagem from "../uploads/imagens/asteroides.webp";
- */
-
-import { flappyBird, jogoDaNave, jogoAsteroides, superMario } from "../asset-pack.json"
+import { flappyBird, jogoDaNave, jogoAsteroides, superMario, liaNaFlorestaMagica } from "../asset-pack.json"
 
 export default class Trabalhos extends Component {
   constructor(props){
     super(props);
     this.state = {
       imagensCarregadas: 0,
-      totalDeImagens: 4,
+      totalDeImagens: 5,
     }
   }
 
@@ -32,8 +26,27 @@ export default class Trabalhos extends Component {
     if(imagensCarregadas === totalDeImagens){
       Masonry(document.getElementById("mansory-grid"))
     }
+    
     return (
       <div id="mansory-grid" className="mansory-grid">
+        <a href="https://gdpufrj.itch.io/laje-4" target="_blank" rel="noopener noreferrer" className="mansory-item">
+          <article>
+            <figure>
+              <source src={liaNaFlorestaMagica.webp} type="image/webp"/>
+              <img
+                className="img"
+                id="liaNaFlorestaMagica"
+                src={liaNaFlorestaMagica.png}
+                alt="Imagem do jogo Lia na Floresta Mágica"
+                title="Imagem do jogo Lia na floresta Mágica"
+                onLoad={this.imageHandler}
+              />
+              <figcaption>
+                Jogo feito durante o LAJE 2021 - (Laboratório de Aprendizado de Jogos Eletrônicos)
+              </figcaption>
+            </figure>
+          </article>
+        </a>
         <Link to= "/trabalhos/flappybird" className="mansory-item">
           <article>
             <figure>
@@ -52,7 +65,6 @@ export default class Trabalhos extends Component {
             </figure>
           </article>
         </Link>
-
         <Link to="/trabalhos/jogo-da-nave" className="mansory-item">
           <article>
             <figure>
