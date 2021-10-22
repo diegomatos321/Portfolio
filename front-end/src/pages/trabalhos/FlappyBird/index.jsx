@@ -67,7 +67,7 @@ export default function FlappyBird() {
             <h3>Veja o código desse jogo</h3>
             <div className="btn widget-item">
               <a
-                href="https://github.com/diegomatos321/Jogo-Flappy-Bird-COM-Banco-de-Dados"
+                href="https://github.com/diegomatos321/Projetos/tree/main/Node/Jogo-Flappy-Bird-COM-Banco-de-Dados"
                 rel="noopener noreferrer"
                 target="_blank"
               >

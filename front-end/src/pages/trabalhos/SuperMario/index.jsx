@@ -44,7 +44,7 @@ export default function SuperMario() {
             <h3>Veja o código desse jogo</h3>
             <div className="btn widget-item">
               <a
-                href="https://github.com/diegomatos321/Jogo-Super-Mario-Bros-Phaser"
+                href="https://github.com/diegomatos321/Projetos/tree/main/Phaser/Super-Mario-Bros"
                 rel="noopener noreferrer"
                 target="_blank"
               >

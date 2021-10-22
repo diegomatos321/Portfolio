@@ -38,7 +38,7 @@ export default function FlappyBird() {
             <h3>Veja o código desse jogo</h3>
             <div className="btn widget-item">
               <a
-                href="https://github.com/diegomatos321/Introduco-ao-Desenvolvimento-de-Jogos-JSVanilla"
+                href="https://github.com/diegomatos321/Projetos/tree/main/Javascript/Introducao-ao-Desenvolvimento-de-Jogos"
                 rel="noopener noreferrer"
                 target="_blank"
               >

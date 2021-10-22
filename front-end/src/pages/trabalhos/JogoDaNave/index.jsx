@@ -44,7 +44,7 @@ export default function JogoDaNave() {
             <h3>Veja o código desse jogo</h3>
             <div className="btn widget-item">
               <a
-                href="https://github.com/diegomatos321/Jogo-da-Nave-Phaser"
+                href="https://github.com/diegomatos321/Projetos/tree/main/Phaser/Jogo-Da-Nave-Phaser"
                 rel="noopener noreferrer"
                 target="_blank"
               >
