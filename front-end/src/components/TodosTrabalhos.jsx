@@ -31,8 +31,8 @@ export default class Trabalhos extends Component {
       <div id="mansory-grid" className="mansory-grid">
         <a href="https://gdpufrj.itch.io/laje-4" target="_blank" rel="noopener noreferrer" className="mansory-item">
           <article>
-            <figure>
-              <source src={liaNaFlorestaMagica.webp} type="image/webp"/>
+            <picture>
+              <source srcset={liaNaFlorestaMagica.webp} type="image/webp"/>
               <img
                 className="img"
                 id="liaNaFlorestaMagica"
@@ -41,16 +41,16 @@ export default class Trabalhos extends Component {
                 title="Imagem do jogo Lia na floresta Mágica"
                 onLoad={this.imageHandler}
               />
-              <figcaption>
-                Jogo feito durante o LAJE 2021 - (Laboratório de Aprendizado de Jogos Eletrônicos)
-              </figcaption>
-            </figure>
+              <p>
+                Lia na Floresta Mágica foi desenvolvido durante o LAJE 2021 - (Laboratório de Aprendizado de Jogos Eletrônicos)
+              </p>
+            </picture>
           </article>
         </a>
         <Link to= "/trabalhos/flappybird" className="mansory-item">
           <article>
-            <figure>
-              <source src={flappyBird.webp} type="image/webp"/>
+            <picture>
+              <source srcset={flappyBird.webp} type="image/webp"/>
               <img
                 className="img"
                 id="flappybird"
@@ -59,16 +59,16 @@ export default class Trabalhos extends Component {
                 title="Imagem do jogo FlappyBird"
                 onLoad={this.imageHandler}
               />
-              <figcaption>
+              <p>
                 <strong>Clone</strong> do <strong>FlappyBird</strong> com <strong>banco de dados</strong>, usando <strong>Node JS</strong> e <strong>MongoDB</strong> no BackEnd.
-              </figcaption>
-            </figure>
+              </p>
+            </picture>
           </article>
         </Link>
         <Link to="/trabalhos/jogo-da-nave" className="mansory-item">
           <article>
-            <figure>
-              <source src={jogoDaNave.webp} type="image/webp"/>
+            <picture>
+              <source srcset={jogoDaNave.webp} type="image/webp"/>
               <img
                 className="img"
                 id="jogoDaNave"
@@ -77,34 +77,34 @@ export default class Trabalhos extends Component {
                 title="Imagem do jogo da Nave"
                 onLoad={this.imageHandler}
               />
-              <figcaption>
+              <p>
                 <strong>Jogo da Nave</strong> usando o framework <strong>Phaser</strong>.
-              </figcaption>
-            </figure>
+              </p>
+            </picture>
           </article>
         </Link>
         <Link to="/trabalhos/super-mario" className="mansory-item">
           <article>
-            <figure>
-              <source src={superMario.webp} type="image/webp"/>
+            <picture>
+              <source srcset={superMario.webp} type="image/webp"/>
               <img
                 className="img"
                 id="superMario"
-                src={superMario.png}
+                srcset={superMario.png}
                 alt="Imagem do jogo do Super Mario Bros"
                 title="Imagem do jogo do Super Mario Bros"
                 onLoad={this.imageHandler}
               />
-              <figcaption>
+              <p>
                 <strong>Clone</strong> do <strong>Super Mario Bros</strong> desenvolvido usando o framework <strong>Phaser</strong>.
-              </figcaption>
-            </figure>
+              </p>
+            </picture>
           </article>
         </Link>
         <Link to="/trabalhos/jogo-asteroides" className="mansory-item">
           <article>
-            <figure>
-              <source src={jogoAsteroides.webp} type="image/webp"/>
+            <picture>
+              <source srcset={jogoAsteroides.webp} type="image/webp"/>
               <img
                 className="img"
                 id="jogoAsteroides"
@@ -113,10 +113,10 @@ export default class Trabalhos extends Component {
                 title="Imagem do jogo asteroides"
                 onLoad={this.imageHandler}
               />
-              <figcaption>
+              <p>
                 <strong>Jogo Asteroides</strong> desenvolvido em JavaScript Puro.
-              </figcaption>
-            </figure>
+              </p>
+            </picture>
           </article>
         </Link>
       </div>

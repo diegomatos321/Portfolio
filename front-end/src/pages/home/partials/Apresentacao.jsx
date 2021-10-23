@@ -5,11 +5,11 @@ export default function Apresentacao() {
     <section id="home">
       <div className="container-apresentacao">
         <h1>Desenvolvedor Full Stack</h1>
-        <figure>
-          <source src={fotoDePerfil.webp} type="image/webp" />
+        <picture>
+          <source srcset={fotoDePerfil.webp} type="image/webp" />
           <img src={fotoDePerfil.png} alt="Foto de Perfil" title="Foto de Perfil" />
-          <figcaption>Desenvolvedor Diego Matos</figcaption>
-        </figure>
+          <p>Desenvolvedor Diego Matos</p>
+        </picture>
         <div className="flex-container areas-trabalho">
           <div className="flex-item front-end">
             <h2>Front End</h2>

@@ -142,8 +142,9 @@ hr {
   text-decoration: none;
 }
 
-figcaption{
-  border-left: 5px solid rgba(128, 128, 128, 0.4); 
+picture p {
+  border-left: 5px solid rgba(128, 128, 128, 0.4);
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 768px) {

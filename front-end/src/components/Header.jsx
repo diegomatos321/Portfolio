@@ -6,14 +6,12 @@ import { logo } from "../asset-pack.json"
 export default function Header() {
   return (
     <header id="header" className="header">
-      <figure className="img logo">
-        <Link to="/">
-          <figure>
-            <source src={logo.webp} type="image/webp"/>
-            <img src={logo.png} alt="Logo do site" title="Logo do Site" />
-          </figure>
-        </Link>
-      </figure>
+      <Link to="/">
+        <picture className="img logo">
+          <source srcset={logo.webp} type="image/webp"/>
+          <img src={logo.png} alt="Logo do site" title="Logo do Site" />
+        </picture>
+      </Link>
       <nav className="main-nav">
         <ul className="nav">
           <li className="nav-item item-home">
@@ -32,6 +30,9 @@ export default function Header() {
               <Link to="/trabalhos">Trabalhos</Link>
             </li>
             <ul className="drop-down">
+              <li className="sub-nav-item">
+                <a href="https://gdpufrj.itch.io/laje-4" target="_blank" rel="noopener noreferrer">Lia na Floresta Mágica</a>
+              </li>
               <li className="sub-nav-item">
                 <Link to="/trabalhos/flappybird">
                   FlappyBird

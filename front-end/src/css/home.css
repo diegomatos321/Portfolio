@@ -25,7 +25,7 @@ section:last-child .container {
   padding: 2em 0.8em;
 }
 
-.container-apresentacao figure {
+.container-apresentacao picture {
   margin: 1em 0;
 }
 
@@ -79,7 +79,7 @@ section:last-child .container {
     justify-content: center;
     align-items: center;
   }
-  .container-apresentacao figure {
+  .container-apresentacao picture {
     grid-area: img;
   }
 
