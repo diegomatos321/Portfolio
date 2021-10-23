@@ -15,7 +15,7 @@ function App() {
     <>
       <Header />
       <Switch>
-        <SlideRoutes location={location} duration={600}>
+        <SlideRoutes location={location} duration={300}>
           <Route exact path="/" component={Home}/>
           <Route path="/trabalhos" component={Trabalhos}/>
           <Route path="/contato" component={Contato}/>
