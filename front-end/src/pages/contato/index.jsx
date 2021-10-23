@@ -42,6 +42,10 @@ export default class Contato extends Component {
 
     this.setState({isLoading: false});
 
+    if(data.mensagem.tipo == "sucesso") {
+      e.target.reset();
+    }
+
     this.setState({ 
       mensagem: data.mensagem 
     });
