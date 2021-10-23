@@ -12,6 +12,7 @@ export default class Contato extends Component {
         tipo: "",
         conteudo: [],
       },
+      isLoading: false
     };
   }
 
@@ -27,6 +28,8 @@ export default class Contato extends Component {
       body[key] = value;
     });
 
+    this.setState({isLoading: true});
+
     const response = await fetch("/contato", {
       method: "POST",
       headers: {
@@ -36,7 +39,8 @@ export default class Contato extends Component {
     });
 
     const data = await response.json();
-    console.dir(data)
+
+    this.setState({isLoading: false});
 
     this.setState({ 
       mensagem: data.mensagem 
@@ -45,12 +49,14 @@ export default class Contato extends Component {
 
   render() {
     const { tipo, conteudo } = this.state.mensagem;
-    const Mensagens = conteudo.map((value, index) => {
-      if(tipo === "error"){
-        return <Mensagem key={index} tipo={tipo} conteudo={value} />;
-      }
+    let Mensagens = conteudo.map((value, index) => {
       return <Mensagem key={index} tipo={tipo} conteudo={value} />;
     });
+
+    if(this.state.isLoading) {
+      Mensagens.push(<Mensagem key={Mensagens.length} tipo={"warning"} conteudo={"Processando requisição..."}/>);
+    }
+
     return (
       <>
         <MetaDados/>
