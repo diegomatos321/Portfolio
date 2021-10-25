@@ -30,25 +30,43 @@ export default class Contato extends Component {
 
     this.setState({isLoading: true});
 
-    const response = await fetch("/contato", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
+    try {
+      const response = await fetch("/contato", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+  
+      const data = await response.json();
+  
+      if(data.mensagem.tipo === "sucesso") {
+        e.target.reset();
+      }
+      
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          mensagem: data.mensagem,
+          isLoading: false
+        }
+      })
+    } catch (error) {
+      this.setState((prevState) => {
+        const mensagemError = {
+          tipo: "error",
+          conteudo: [error.message]
+        }
 
-    const data = await response.json();
-
-    this.setState({isLoading: false});
-
-    if(data.mensagem.tipo == "sucesso") {
-      e.target.reset();
+        return {
+          ...prevState,
+          mensagem: mensagemError,
+          isLoading: false
+        }
+      })
     }
 
-    this.setState({ 
-      mensagem: data.mensagem 
-    });
   };
 
   render() {
