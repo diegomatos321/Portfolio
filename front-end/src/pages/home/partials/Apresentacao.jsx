@@ -6,7 +6,7 @@ export default function Apresentacao() {
       <div className="container-apresentacao">
         <h1>Desenvolvedor Full Stack</h1>
         <picture>
-          <source srcset={fotoDePerfil.webp} type="image/webp" />
+          <source srcSet={fotoDePerfil.webp} type="image/webp" />
           <img src={fotoDePerfil.png} alt="Foto de Perfil" title="Foto de Perfil" />
           <p>Desenvolvedor Diego Matos</p>
         </picture>
@@ -54,15 +54,6 @@ export default function Apresentacao() {
             </ul>
           </div>
           <div className="flex-item">
-            <h2>Análise / Gestão</h2>
-            <ul>
-              <li>
-                <i className="fas fa-check"></i>
-                SEO
-              </li>
-            </ul>
-          </div>
-          <div className="flex-item">
             <h2>SGDB</h2>
             <ul>
               <li>
@@ -97,37 +88,41 @@ export default function Apresentacao() {
             </ul>
           </div>
           <div className="flex-item">
-            <h2>Outras Linguagens</h2>
-            <ul>
-              <li>
-                <i className="fas fa-check"></i>
-                GIT
-              </li>
-              <li>
-                <i className="fas fa-check"></i>
-                SQL
-              </li>
-              <li>
-                <i className="fas fa-check"></i>
-                C
-              </li>
-              <li>
-                <i className="fas fa-check"></i>
-                C++
-              </li>
-              <li>
-                <i className="fas fa-check"></i>
-                C#
-              </li>
-              <li>
-                <i className="fas fa-check"></i>
-                  Python
-              </li>
-              <li>
-                <i className="fas fa-check"></i>
-                GDScript
-              </li>
-            </ul>
+            <h2>Outras Habilidades</h2>
+            <div className="flex-container">
+              <ul className="column">
+                <li>
+                  <i className="fas fa-check"></i>
+                  GIT
+                </li>
+                <li>
+                  <i className="fas fa-check"></i>
+                  SEO
+                </li>
+                <li>
+                  <i className="fas fa-check"></i>
+                  SQL
+                </li>
+                <li>
+                  <i className="fas fa-check"></i>
+                    Python
+                </li>
+              </ul>
+              <ul className="column">
+                <li>
+                  <i className="fas fa-check"></i>
+                  C
+                </li>
+                <li>
+                  <i className="fas fa-check"></i>
+                  C++
+                </li>
+                <li>
+                  <i className="fas fa-check"></i>
+                  C#
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="buttons flex-container">

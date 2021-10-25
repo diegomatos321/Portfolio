@@ -8,7 +8,7 @@ export default function Header() {
     <header id="header" className="header">
       <Link to="/">
         <picture className="img logo">
-          <source srcset={logo.webp} type="image/webp"/>
+          <source srcSet={logo.webp} type="image/webp"/>
           <img src={logo.png} alt="Logo do site" title="Logo do Site" />
         </picture>
       </Link>
