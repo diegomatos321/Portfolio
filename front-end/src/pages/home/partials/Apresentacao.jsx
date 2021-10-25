@@ -6,7 +6,7 @@ export default function Apresentacao() {
       <div className="container-apresentacao">
         <h1>Desenvolvedor Full Stack</h1>
         <picture>
-          <source srcset={fotoDePerfil.webp} type="image/webp" />
+          <source srcSet={fotoDePerfil.webp} type="image/webp" />
           <img src={fotoDePerfil.png} alt="Foto de Perfil" title="Foto de Perfil" />
           <p>Desenvolvedor Diego Matos</p>
         </picture>

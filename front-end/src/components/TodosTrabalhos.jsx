@@ -32,7 +32,7 @@ export default class Trabalhos extends Component {
         <a href="https://gdpufrj.itch.io/laje-4" target="_blank" rel="noopener noreferrer" className="mansory-item">
           <article>
             <picture>
-              <source srcset={liaNaFlorestaMagica.webp} type="image/webp"/>
+              <source srcSet={liaNaFlorestaMagica.webp} type="image/webp"/>
               <img
                 className="img"
                 id="liaNaFlorestaMagica"
@@ -50,7 +50,7 @@ export default class Trabalhos extends Component {
         <Link to= "/trabalhos/flappybird" className="mansory-item">
           <article>
             <picture>
-              <source srcset={flappyBird.webp} type="image/webp"/>
+              <source srcSet={flappyBird.webp} type="image/webp"/>
               <img
                 className="img"
                 id="flappybird"
@@ -68,7 +68,7 @@ export default class Trabalhos extends Component {
         <Link to="/trabalhos/jogo-da-nave" className="mansory-item">
           <article>
             <picture>
-              <source srcset={jogoDaNave.webp} type="image/webp"/>
+              <source srcSet={jogoDaNave.webp} type="image/webp"/>
               <img
                 className="img"
                 id="jogoDaNave"
@@ -86,11 +86,11 @@ export default class Trabalhos extends Component {
         <Link to="/trabalhos/super-mario" className="mansory-item">
           <article>
             <picture>
-              <source srcset={superMario.webp} type="image/webp"/>
+              <source srcSet={superMario.webp} type="image/webp"/>
               <img
                 className="img"
                 id="superMario"
-                srcset={superMario.png}
+                srcSet={superMario.png}
                 alt="Imagem do jogo do Super Mario Bros"
                 title="Imagem do jogo do Super Mario Bros"
                 onLoad={this.imageHandler}
@@ -104,7 +104,7 @@ export default class Trabalhos extends Component {
         <Link to="/trabalhos/jogo-asteroides" className="mansory-item">
           <article>
             <picture>
-              <source srcset={jogoAsteroides.webp} type="image/webp"/>
+              <source srcSet={jogoAsteroides.webp} type="image/webp"/>
               <img
                 className="img"
                 id="jogoAsteroides"
