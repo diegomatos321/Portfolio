@@ -35,6 +35,7 @@ section:last-child .container {
 
 .container-apresentacao .fa-check {
   color: lightgreen;
+  margin-right: 6px;
 }
 
 .areas-trabalho ul {
@@ -46,7 +47,8 @@ section:last-child .container {
 }
 
 .buttons,
-.areas-trabalho {
+.areas-trabalho,
+.areas-trabalho .flex-container {
   justify-content: center;
   align-content: flex-start;
 }
