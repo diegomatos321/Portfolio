@@ -4,7 +4,7 @@ import LoadJS from "../../../utils/loadJS";
 import Aside from "./Aside";
 
 export default function SuperMario() {
-  useEffect(function init() {
+/*   useEffect(function init() {
     window.scrollTo(0, 0);
     LoadJS({
       src: "/assets/js/phaser.min.js",
@@ -27,7 +27,7 @@ export default function SuperMario() {
       jogo.remove();
       window.location.reload()
     }
-  }, [])
+  }, []) */
 
   return (
     <>
@@ -40,7 +40,7 @@ export default function SuperMario() {
         <Aside />
         <main className="pagina-apresentacao">
           <div id="jogo" className="jogo">
-            <div id="jogo-container" className="jogo-container"></div>
+            <iframe width="100%" height="100%" src="https://diegomatos321.github.io/Projetos/Phaser/Super-Mario-Bros/" allowFullScreen frameborder="0"></iframe>
           </div>
           <div className="flex-container btn-container">
             <h3>Veja o código desse jogo</h3>

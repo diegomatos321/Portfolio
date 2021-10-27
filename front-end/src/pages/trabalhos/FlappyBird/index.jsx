@@ -4,7 +4,7 @@ import MetaDados from "../../../seo/flappybird";
 import LoadJS from "../../../utils/loadJS";
 
 export default function FlappyBird() {
-  useEffect(function init() {
+/*   useEffect(function init() {
     window.scrollTo(0, 0);
     LoadJS({
       id: "flappybirdJS",
@@ -18,7 +18,7 @@ export default function FlappyBird() {
       flappybirdJS.remove();
       window.location.reload();
     }
-  }, [])
+  }, []) */
 
   return (
     <>
@@ -30,38 +30,8 @@ export default function FlappyBird() {
         </div>
         <Aside />
         <main className="pagina-apresentacao">
-          <div id="jogo" className="jogo jogo-flappybird">
-            <div id="jogo-container" className="jogo-container flappybird">
-              <div id="formulario-container" className="formulario-container hidden">
-                <form id="game-formulario" className="formulario">
-                  <h3>Digite um nickname</h3>
-                  <input
-                    type="text"
-                    name="nome"
-                    placeholder="Digite um nickname"
-                    id="nome"
-                    minLength="3"
-                    maxLength="10"
-                    required
-                  />
-                  {/* <input
-                  type="hidden"
-                  name="_csrf"
-                  value="<%= data.csfrToken %>"
-                /> */}
-                  <input type="submit" className="btn" />
-                </form>
-              </div>
-
-              <div id="game-screen" className="game-screen hidden">
-                <canvas id="hud-layer"></canvas>
-                <canvas id="game-layer"></canvas>
-                <canvas id="ground-layer"></canvas>
-                <canvas id="pipeSouth-layer"></canvas>
-                <canvas id="background-layer"></canvas>
-              </div>
-              <div id="loading-txt" className="loading-txt"></div>
-            </div>
+          <div id="jogo" className="jogo">
+            <iframe width="100%" height="100%" src="https://diegomatos321.github.io/Projetos/Node/Jogo-Flappy-Bird-COM-Banco-de-Dados/" allowFullScreen frameborder="0"></iframe>
           </div>
           <div className="flex-container btn-container">
             <h3>Veja o código desse jogo</h3>
