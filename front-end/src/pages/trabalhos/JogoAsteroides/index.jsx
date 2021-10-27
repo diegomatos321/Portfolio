@@ -1,25 +1,7 @@
-import { useEffect } from "react";
 import Aside from "./Aside";
 import MetaDados from "../../../seo/asteroides";
-import LoadJS from "../../../utils/loadJS";
 
 export default function FlappyBird() {
-/*   useEffect(function init() {
-    window.scrollTo(0, 0);
-    LoadJS({
-      id: "asteroidesJS",
-      src: "/assets/js/jogo-asteroides/index.js",
-      defer: true,
-      type: "module"
-    });
-
-    return function removeGameJSAndReloadPage() {
-      let asteroidesJS = document.getElementById("asteroidesJS");
-      asteroidesJS.remove();
-      window.location.reload();
-    }
-  }, []) */
-
   return (
     <>
       <MetaDados />

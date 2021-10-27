@@ -1,25 +1,7 @@
-import { useEffect } from "react";
 import Aside from "./Aside";
 import MetaDados from "../../../seo/flappybird";
-import LoadJS from "../../../utils/loadJS";
 
 export default function FlappyBird() {
-/*   useEffect(function init() {
-    window.scrollTo(0, 0);
-    LoadJS({
-      id: "flappybirdJS",
-      src: "/assets/js/flappybird/index.js",
-      defer: true,
-      type: "module"
-    });
-
-    return function removeGameJSAndReloadPage() {
-      let flappybirdJS = document.getElementById("flappybirdJS");
-      flappybirdJS.remove();
-      window.location.reload();
-    }
-  }, []) */
-
   return (
     <>
       <MetaDados />

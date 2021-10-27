@@ -1,34 +1,7 @@
-import { useEffect } from "react";
 import MetaDados from "../../../seo/super-mario";
-import LoadJS from "../../../utils/loadJS";
 import Aside from "./Aside";
 
 export default function SuperMario() {
-/*   useEffect(function init() {
-    window.scrollTo(0, 0);
-    LoadJS({
-      src: "/assets/js/phaser.min.js",
-      id: "phaser-framework",
-      callback: function () {
-        LoadJS({
-          src: "/assets/js/super-mario/index.js",
-          id: "jogo",
-          defer: true,
-          type: "module"
-        })
-      }
-    });
-    
-    return function removeGameJSAndReloadPage() {
-      let phaser = document.getElementById("phaser-framework");
-      let jogo = document.getElementById("jogo");
-
-      phaser.remove();
-      jogo.remove();
-      window.location.reload()
-    }
-  }, []) */
-
   return (
     <>
       <MetaDados />
