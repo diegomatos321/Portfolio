@@ -1,4 +1,5 @@
-import { curriculo, fotoDePerfil } from "../../../asset-pack.json"
+import { fotoDePerfil } from "../../../asset-pack.json"
+import CurriculoPDF from "../../../assets/documentos/curriculo.pdf"
 
 export default function Apresentacao() {
   return (
@@ -128,7 +129,7 @@ export default function Apresentacao() {
         <div className="buttons flex-container">
           <a
             className="flex-item btn"
-            href={curriculo}
+            href={CurriculoPDF}
             target="_blank"
             rel="noreferrer"
           >

@@ -1,25 +1,7 @@
-import { useEffect } from "react";
 import Aside from "./Aside";
 import MetaDados from "../../../seo/asteroides";
-import LoadJS from "../../../utils/loadJS";
 
 export default function FlappyBird() {
-  useEffect(function init() {
-    window.scrollTo(0, 0);
-    LoadJS({
-      id: "asteroidesJS",
-      src: "/assets/js/jogo-asteroides/index.js",
-      defer: true,
-      type: "module"
-    });
-
-    return function removeGameJSAndReloadPage() {
-      let asteroidesJS = document.getElementById("asteroidesJS");
-      asteroidesJS.remove();
-      window.location.reload();
-    }
-  }, [])
-
   return (
     <>
       <MetaDados />
@@ -30,9 +12,8 @@ export default function FlappyBird() {
         </div>
         <Aside />
         <main className="pagina-apresentacao">
-          <div className="jogo jogo-asteroides game-screen">
-            <div className="loading-txt" id="loading-txt"></div>
-            <div id="game-screen" className="jogo-container game-screen"></div>
+          <div className="jogo">
+            <iframe width="100%" height="100%" title="Intro. Des. Jogos" src="https://diegomatos321.github.io/Projetos/Javascript/Introducao-ao-Desenvolvimento-de-Jogos/" allowFullScreen frameborder="0"></iframe>
           </div>
           <div className="flex-container btn-container">
             <h3>Veja o código desse jogo</h3>

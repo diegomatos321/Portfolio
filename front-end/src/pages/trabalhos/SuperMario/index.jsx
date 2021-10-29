@@ -1,34 +1,7 @@
-import { useEffect } from "react";
 import MetaDados from "../../../seo/super-mario";
-import LoadJS from "../../../utils/loadJS";
 import Aside from "./Aside";
 
 export default function SuperMario() {
-  useEffect(function init() {
-    window.scrollTo(0, 0);
-    LoadJS({
-      src: "/assets/js/phaser.min.js",
-      id: "phaser-framework",
-      callback: function () {
-        LoadJS({
-          src: "/assets/js/super-mario/index.js",
-          id: "jogo",
-          defer: true,
-          type: "module"
-        })
-      }
-    });
-    
-    return function removeGameJSAndReloadPage() {
-      let phaser = document.getElementById("phaser-framework");
-      let jogo = document.getElementById("jogo");
-
-      phaser.remove();
-      jogo.remove();
-      window.location.reload()
-    }
-  }, [])
-
   return (
     <>
       <MetaDados />
@@ -40,7 +13,7 @@ export default function SuperMario() {
         <Aside />
         <main className="pagina-apresentacao">
           <div id="jogo" className="jogo">
-            <div id="jogo-container" className="jogo-container"></div>
+            <iframe width="100%" height="100%" title="Super Mario Bros" src="https://diegomatos321.github.io/Projetos/Phaser/Super-Mario-Bros/" allowFullScreen frameborder="0"></iframe>
           </div>
           <div className="flex-container btn-container">
             <h3>Veja o código desse jogo</h3>

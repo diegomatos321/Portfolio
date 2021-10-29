@@ -1,25 +1,7 @@
-import { useEffect } from "react";
 import Aside from "./Aside";
 import MetaDados from "../../../seo/flappybird";
-import LoadJS from "../../../utils/loadJS";
 
 export default function FlappyBird() {
-  useEffect(function init() {
-    window.scrollTo(0, 0);
-    LoadJS({
-      id: "flappybirdJS",
-      src: "/assets/js/flappybird/index.js",
-      defer: true,
-      type: "module"
-    });
-
-    return function removeGameJSAndReloadPage() {
-      let flappybirdJS = document.getElementById("flappybirdJS");
-      flappybirdJS.remove();
-      window.location.reload();
-    }
-  }, [])
-
   return (
     <>
       <MetaDados />
@@ -30,38 +12,8 @@ export default function FlappyBird() {
         </div>
         <Aside />
         <main className="pagina-apresentacao">
-          <div id="jogo" className="jogo jogo-flappybird">
-            <div id="jogo-container" className="jogo-container flappybird">
-              <div id="formulario-container" className="formulario-container hidden">
-                <form id="game-formulario" className="formulario">
-                  <h3>Digite um nickname</h3>
-                  <input
-                    type="text"
-                    name="nome"
-                    placeholder="Digite um nickname"
-                    id="nome"
-                    minLength="3"
-                    maxLength="10"
-                    required
-                  />
-                  {/* <input
-                  type="hidden"
-                  name="_csrf"
-                  value="<%= data.csfrToken %>"
-                /> */}
-                  <input type="submit" className="btn" />
-                </form>
-              </div>
-
-              <div id="game-screen" className="game-screen hidden">
-                <canvas id="hud-layer"></canvas>
-                <canvas id="game-layer"></canvas>
-                <canvas id="ground-layer"></canvas>
-                <canvas id="pipeSouth-layer"></canvas>
-                <canvas id="background-layer"></canvas>
-              </div>
-              <div id="loading-txt" className="loading-txt"></div>
-            </div>
+          <div id="jogo" className="jogo">
+            <iframe width="100%" height="100%" title="Clone FlappyBird" src="https://clone-flappy-bird.herokuapp.com/" allowFullScreen frameborder="0"></iframe>
           </div>
           <div className="flex-container btn-container">
             <h3>Veja o código desse jogo</h3>
