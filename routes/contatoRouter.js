@@ -31,11 +31,11 @@ contatoRouter.post("/", [
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
       pool: true,
-      host: 'smtp.gmail.com',
+      host: "smtp.gmail.com",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        type: 'OAuth2',
+        type: "OAuth2",
         user: process.env.EMAIL_ADDRESS,
         clientId: process.env.OAUTH_CLIENT_ID,
         clientSecret: process.env.OAUTH_CLIENT_SECRET,
