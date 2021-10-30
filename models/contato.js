@@ -25,6 +25,10 @@ const ContatoScheme = mongoose.Schema({
         type: String,
         trim: true,
         required: true
+    },
+    date: {
+      type: Date,
+      default: Date.now
     }
 },
 {
