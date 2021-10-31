@@ -1,4 +1,5 @@
 import { Route, useRouteMatch  } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import GeralTrabalhos from "./trabalhos"
 import FlappyBird from "./FlappyBird"
@@ -8,6 +9,10 @@ import JogoAsteroides from "./JogoAsteroides"
 
 export default function Trabalhos() {
   const { path } = useRouteMatch()
+  useEffect(function scrollToTop() {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <Route exact path={`${path}`} component={GeralTrabalhos} />
