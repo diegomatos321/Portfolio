@@ -1,7 +1,9 @@
 const contatoRouter = require("express").Router();
 const nodemailer = require("nodemailer");
+const { google } = require("googleapis");
 const Contato = require("../models/contato.js");
 const { body, validationResult } = require('express-validator');
+const { oauth2 } = require("googleapis/build/src/apis/oauth2");
 
 contatoRouter.post("/", [
   body('nome').isLength({ min: 5, max: 50 }).withMessage("Campo nome deve ter entre 5 à 50 caracteres").not().isEmpty().trim().escape(),
@@ -20,6 +22,7 @@ contatoRouter.post("/", [
   }
 
   const { nome, email, assunto, mensagem } = req.body;
+  const OAuth2 = google.auth.OAuth2;
   try {
     // Envia o e-mail
     const output = `
@@ -27,6 +30,18 @@ contatoRouter.post("/", [
       <p><strong>${nome}</strong> deseja falar com você sobre <strong>${assunto}</strong>, seu e-mail para contato é: ${email}</p>
       <p>${mensagem}</p>
     `
+
+    const oauth2Client = new OAuth2(process.env.OAUTH_CLIENT_ID, process.env.OAUTH_CLIENT_SECRET, "https://developers.google.com/oauthplayground");
+    oauth2Client.setCredentials({ refresh_token: process.env.OAUTH_REFRESH_TOKEN });
+    
+    const accessToken = await new Promise((resolve, reject) => {
+      oauth2Client.getAccessToken((err, token) => {
+        if (err) {
+          reject("Failed to create access token :(");
+        }
+        resolve(token);
+      });
+    });
 
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
@@ -40,7 +55,7 @@ contatoRouter.post("/", [
         clientId: process.env.OAUTH_CLIENT_ID,
         clientSecret: process.env.OAUTH_CLIENT_SECRET,
         refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-        accessToken: process.env.OAUTH_ACESS_TOKEN
+        accessToken
       }
     });
 
