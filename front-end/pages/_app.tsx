@@ -10,6 +10,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <GlobalSEO />
         <Header />
         <Component {...pageProps} />
-        <Footer />
+        {/* <Footer /> */}
     </>
 }
