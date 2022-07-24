@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className="footer flex-container">
       <div className="widget-area flex-item">
@@ -30,7 +28,7 @@ export default function Footer() {
         <h3 className="widget-title">Entre em Contato</h3>
         <div className="widget-content">
           <div className="widget-item">
-            <a href="mailto:diegomatos@devdiegomatos.com.br ">
+            <a href="mailto:diegomatos@devdiegomatos.com.br">
               <i className="fas fa-envelope-square"></i>
               <p className="font-size-small">diegomatos@devdiegomatos.com.br</p>
             </a>
