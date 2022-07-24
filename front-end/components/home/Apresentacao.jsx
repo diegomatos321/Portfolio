@@ -1,4 +1,4 @@
-import { fotoDePerfil } from "../../../asset-pack.json"
+import { fotoDePerfil } from "../../asset-pack.json"
 import CurriculoPDF from "../../../assets/documentos/curriculo.pdf"
 
 export default function Apresentacao() {
