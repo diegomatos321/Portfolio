@@ -47,7 +47,6 @@ export default function TodosTrabalhos(): JSX.Element {
                             src="/assets/imagens/jogo-da-nave.png"
                             alt="Imagem do jogo da Nave"
                             title="Imagem do jogo da Nave"
-                            onLoad={this.imageHandler}
                         />
                         <p>
                             <strong>Jogo da Nave</strong> usando o framework <strong>Phaser</strong>.
@@ -65,7 +64,6 @@ export default function TodosTrabalhos(): JSX.Element {
                             srcSet="/assets/imagens/super-mario.png"
                             alt="Imagem do jogo do Super Mario Bros"
                             title="Imagem do jogo do Super Mario Bros"
-                            onLoad={this.imageHandler}
                         />
                         <p>
                             <strong>Clone</strong> do <strong>Super Mario Bros</strong> desenvolvido usando o framework <strong>Phaser</strong>.
