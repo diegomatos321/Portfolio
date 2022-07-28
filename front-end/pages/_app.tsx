@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import Header from "../components/templates/Header"
-import Footer from "../components/templates/Footer"
+// import Footer from "../components/templates/Footer"
 import GlobalSEO from "../seo/global";
 
 import "../css/index.css"
