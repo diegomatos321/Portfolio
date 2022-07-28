@@ -1,4 +1,4 @@
-export default function aside() {
+export default function aside(): JSX.Element {
   return (
     <aside className="aside">
       <div className="tutorial">
