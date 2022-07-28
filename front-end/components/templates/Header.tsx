@@ -4,24 +4,26 @@ export default function Header(): JSX.Element {
   return (
     <header id="header" className="header">
       <Link href="/">
-        <picture className="img logo">
-          <source srcSet="/assets/imagens/logo.webp" type="image/webp"/>
-          <img src="/assets/imagens/logo.png" alt="Logo do site" title="Logo do Site" />
-        </picture>
+        <a>
+            <picture className="img logo">
+            <source srcSet="/assets/imagens/logo.webp" type="image/webp"/>
+            <img src="/assets/imagens/logo.png" alt="Logo do site" title="Logo do Site" />
+            </picture>
+        </a>
       </Link>
       <nav className="main-nav">
         <ul className="nav">
           <li className="nav-item item-home">
-            <Link href="/">Home</Link>
+            <Link href="/"><a>Home</a></Link>
           </li>
 
           <li className="nav-item item-about">
-            <Link href="/#about">Sobre Mim</Link>
+            <Link href="/#about"><a>Sobre Mim</a></Link>
           </li>
 
           <ul className="nav-item sub-nav item-trabalhos">
             <li>
-              <Link href="/trabalhos">Trabalhos</Link>
+              <Link href="/trabalhos"><a>Trabalhos</a></Link>
             </li>
             <ul className="drop-down">
               <li className="sub-nav-item">
@@ -29,29 +31,29 @@ export default function Header(): JSX.Element {
               </li>
               <li className="sub-nav-item">
                 <Link href="/trabalhos/flappybird">
-                  FlappyBird
+                  <a>FlappyBird</a>
                 </Link>
               </li>
               <li className="sub-nav-item">
                 <Link href="/trabalhos/jogo-da-nave">
-                  Jogo da Nave
+                  <a>Jogo da Nave</a>
                 </Link>
               </li>
               <li className="sub-nav-item">
                 <Link href="/trabalhos/super-mario">
-                  Super Mario
+                  <a>Super Mario</a>
                 </Link>
               </li>
               <li className="sub-nav-item">
                 <Link href="/trabalhos/jogo-asteroides">
-                  Asteroides
+                  <a>Asteroides</a>
                 </Link>
               </li>
             </ul>
           </ul>
 
           <li className="nav-item item-contato">
-            <Link href="/contato">Contato</Link>
+            <Link href="/contato"><a>Contato</a></Link>
           </li>
         </ul>
       </nav>
