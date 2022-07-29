@@ -4,13 +4,13 @@ export default function FlappyBirdSEO() {
   return (
         <Head>
           {/* SEO Geral */}
-          <title>FlappyBird | Desenvolvedor Diego Matos</title>
-          <meta name="description" content="Avalie um dos trabalhos feito por Diego Matos com os alunos, o desenvolvimento de um clone do FlappyBird com integração ao banco de dados MongoDB."/>
+          <title key="title">FlappyBird | Desenvolvedor Diego Matos</title>
+          <meta key="description" name="description" content="Avalie um dos trabalhos feito por Diego Matos com os alunos, o desenvolvimento de um clone do FlappyBird com integração ao banco de dados MongoDB."/>
           <link key="canonical" rel="canonical" href="https://devdiegomatos.com.br/trabalhos/flappybird"/>
 
           {/* Google+ / Schema.org */}
-          <meta itemProp="name" content="FlappyBird | Desenvolvedor Diego Matos"/>
-          <meta itemProp="description" content="Avalie um dos trabalhos feito por Diego Matos com os alunos, o desenvolvimento de um clone do FlappyBird com integração ao banco de dados MongoDB."/>
+          <meta key="schemaTitle" itemProp="name" content="FlappyBird | Desenvolvedor Diego Matos"/>
+          <meta key="schemaDescription" itemProp="description" content="Avalie um dos trabalhos feito por Diego Matos com os alunos, o desenvolvimento de um clone do FlappyBird com integração ao banco de dados MongoDB."/>
 
           {/* Open Graph Facebook */}
           <meta key="ogTitle" property="og:title" content="FlappyBird | Desenvolvedor Diego Matos"/>
