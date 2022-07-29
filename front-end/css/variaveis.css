@@ -19,9 +19,3 @@
   --corDaPaginaAtual: grey;
   --corDaBorda: gold;
 }
-
-@media only screen and (max-width: 768px) {
-  :root {
-    --tamanhoDaFonteMenu: 16px;
-  }
-}
