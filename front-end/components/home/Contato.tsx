@@ -16,8 +16,8 @@ export default function Contato() {
                     <h2>Entre em Contato</h2>
                 </div>
                 <div className="info-item flex-container buttons">
-                    <Link href="/contato" className="btn">
-                        <a>Contate-me</a>
+                    <Link href="/contato">
+                        <a className="btn">Contate-me</a>
                     </Link>
                 </div>
             </div>
