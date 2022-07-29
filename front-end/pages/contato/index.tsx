@@ -12,6 +12,8 @@ export default function Contato(): JSX.Element {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+        event.preventDefault();
+
         try {
             setIsLoading(() => true);
 
