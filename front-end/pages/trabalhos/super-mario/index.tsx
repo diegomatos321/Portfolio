@@ -13,7 +13,7 @@ export default function SuperMario() {
         <Aside />
         <main className="pagina-apresentacao">
           <div id="jogo" className="jogo">
-            <iframe width="100%" height="100%" title="Super Mario Bros" src="https://diegomatos321.github.io/Projetos/Phaser/Super-Mario-Bros/" allowFullScreen frameborder="0"></iframe>
+            <iframe width="100%" height="100%" title="Super Mario Bros" src="https://diegomatos321.github.io/Projetos/Phaser/Super-Mario-Bros/" allowFullScreen frameBorder="0"></iframe>
           </div>
           <div className="flex-container btn-container">
             <h3>Veja o código desse jogo</h3>
