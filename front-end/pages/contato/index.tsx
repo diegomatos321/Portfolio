@@ -11,10 +11,14 @@ export default function Contato(): JSX.Element {
     const [messageBody, setMessageBody] = useState<string>("");
 
     const [serverMessage, setServerMessage] = useState<Array<any>>([]);
+    const [messageType, setMessageType] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
+
+        setServerMessage(() => []);
+        setMessageType(() => "");
 
         try {
             setIsLoading(() => true);
@@ -37,15 +41,24 @@ export default function Contato(): JSX.Element {
 
             setIsLoading(() => false);
 
+            setServerMessage(() => responseBody);
             if (response.ok == false) {
+                setMessageType(() => "error");
+
                 console.error(responseBody);
                 return;
             }
 
             console.log(responseBody);
+
+            setMessageType(() => "success");
             resetForm();
         } catch (error: any) {
             console.error(error.message);
+            
+            setServerMessage(() => error.message);
+            setMessageType(() => "error");
+
             setIsLoading(() => false);
         }
     }
@@ -57,6 +70,7 @@ export default function Contato(): JSX.Element {
         setMessageBody(() => "");
 
         setServerMessage(() => []);
+        setMessageType(() => "");
         setIsLoading(() => false);
     }
 
@@ -64,7 +78,7 @@ export default function Contato(): JSX.Element {
         <>
             <MetaDados />
             <main>
-                <Alert className="warning" body={serverMessage} />
+                <Alert className={messageType} body={serverMessage} />
                 <section>
                     <div className="container">
                         <h1 className="title">Entre em contato</h1>
