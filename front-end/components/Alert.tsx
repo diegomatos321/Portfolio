@@ -54,8 +54,8 @@ export default function Alert({ className, body }: IMensagem) {
     return (
         <div className={`mensagem ${className}`}>
             <ul>
-                {messages.map((message: string) => {
-                    return <li>{message}</li>
+                {messages.map((message: string, index: number) => {
+                    return <li key={index}>{message}</li>
                 })}
             </ul>
         </div>
