@@ -56,7 +56,11 @@ export default function Contato(): JSX.Element {
         } catch (error: any) {
             console.error(error.message);
             
-            setServerMessage(() => error.message);
+            setServerMessage(() => [
+                "Ocorreu um problema ao realizar o pedido de mensagem",
+                "Tente novamente mais tarde, se o problema persiste entre em contato diretamente por",
+                process.env.NEXT_PUBLIC_EMAIL
+            ]);
             setMessageType(() => "error");
 
             setIsLoading(() => false);
