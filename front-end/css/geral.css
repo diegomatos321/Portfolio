@@ -91,6 +91,7 @@ hr {
 
 .sucesso,
 .error {
+  color: white;
   justify-self: center;
   max-width: 500px;
   margin: 1em auto;
@@ -114,7 +115,6 @@ hr {
 }
 
 .error ul {
-  float: left;
   margin: 1em;
   list-style: none;
 }
