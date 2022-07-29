@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import Alert from "../../components/Alert";
 import MetaDados from "../../seo/contato"
 
 const DEFAULT_SUBJECT_TEXT: string = "Olá Diego, venho pelo seu Portfolio e desejo falar com você!";
@@ -9,6 +10,7 @@ export default function Contato(): JSX.Element {
     const [subject, setSubject] = useState<string>(DEFAULT_SUBJECT_TEXT);
     const [messageBody, setMessageBody] = useState<string>("");
 
+    const [serverMessage, setServerMessage] = useState<Array<any>>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
@@ -53,12 +55,16 @@ export default function Contato(): JSX.Element {
         setContactEmail(() => "");
         setSubject(() => DEFAULT_SUBJECT_TEXT);
         setMessageBody(() => "");
+
+        setServerMessage(() => []);
+        setIsLoading(() => false);
     }
 
     return (
         <>
             <MetaDados />
             <main>
+                <Alert className="warning" body={serverMessage} />
                 <section>
                     <div className="container">
                         <h1 className="title">Entre em contato</h1>
