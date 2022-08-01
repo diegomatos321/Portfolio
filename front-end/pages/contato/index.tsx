@@ -30,7 +30,7 @@ export default function Contato(): JSX.Element {
                 messageBody
             }
 
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contato`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contato.php`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
