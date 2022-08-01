@@ -1,0 +1,37 @@
+name: Deploy front end em Desenvolvimento
+
+on:
+  push:
+    branches: ["area-desenvolvimento"]
+  
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v3
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: Build Project
+        run: |
+          cd front-end
+          npm i
+          npm run build
+      
+      - name: Deploy para hospedagem
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-rltgoDzvO"
+          SOURCE: "front-end/out/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: public_html/
+          EXCLUDE: "/dist/, /node_modules/"
