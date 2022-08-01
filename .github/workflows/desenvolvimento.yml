@@ -2,7 +2,7 @@ name: Deploy front end em Desenvolvimento
 
 on:
   push:
-    branches: ["area-desenvolvimento"]
+    branches: ["area-de-desenvolvimento"]
   
   workflow_dispatch:
 
