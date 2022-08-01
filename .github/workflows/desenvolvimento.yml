@@ -32,6 +32,7 @@ jobs:
           ARGS: "-rltgoDzvO"
           SOURCE: "front-end/out/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: public_html/
           EXCLUDE: "/dist/, /node_modules/"
