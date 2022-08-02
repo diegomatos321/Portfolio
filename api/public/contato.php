@@ -18,22 +18,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 // Certificar de que é o método post
 if ($_SERVER['REQUEST_METHOD'] != "POST") {
-    header('Content-Type: application/json; chatset=UTF-8');
-    http_response_code(404);
-    echo json_encode([
-        'Método incorreto'
-    ]);
+    echo JsonResponse([
+        'Erro, página não encontrada'
+    ], 404);
 }
 
 // Resgatar inputs
 $inputs = json_decode(file_get_contents('php://input', true));
 
-$to = $_ENV['MAIL_ADDRESS'];
-$mail = new PHPMailer(true);
-$mail->setLanguage('pt_br');
 try {
+    // Escapar campos
+    // Validar email
+
+    $mail = new PHPMailer(true);
+    $mail->setLanguage('pt_br');
+
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = $_ENV['MAIL_HOST'];                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -41,32 +41,55 @@ try {
     $mail->Password   = $_ENV['MAIL_PASSWORD'];                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = $_ENV['MAIL_PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
     //Recipients
-    $mail->setFrom($inputs->contactEmail, $inputs->contactName);
-    $mail->addAddress($to, $_ENV['MAIL_NAME']);     //Add a recipient
+    $mail->setFrom($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);
+    $mail->addAddress($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);     //Add a recipient
     $mail->addReplyTo($inputs->contactEmail, $inputs->contactName);
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $inputs->subject;
-    $mail->Body    = '<h1>Olá Diego,</h1><p>Me chamo <strong>'. $inputs->contactName . '</strong> e desejo conversar com você sobre:</p><p>' . $inputs->messageBody . '</p>';
-    $mail->AltBody = 'Olá Diego,\r\nMe chamo '. $inputs->contactName . ' e desejo conversar com você sobre:\r\n' . $inputs->messageBody;
+    $emailBody = GetEmailBody(array(
+        'contactName' => $inputs->contactName,
+        'messageBody' => $inputs->messageBody
+    ));
+    $mail->msgHTML($emailBody);
 
-    $mail->send();
+    $result = $mail->send();
+
+    if ($result == false) {
+        echo JsonResponse([
+            'Tivemos um problema ao enviar o email:',
+            $mail->ErrorInfo,
+            'Por favor, tente novamente mais tarde ou entre em contato diretamente com diego@devdiegomatos.com.br'
+        ], 500);
+    }
     
-    header('Access-Control-Allow-Origin', '*');
-    header('Content-Type: application/json; chatset=UTF-8');
-    http_response_code(200);
-    echo json_encode([
+    echo JsonResponse([
         'Email enviado com sucesso!'
-    ]);
+    ], 200);
 } catch (\Throwable $th) {
-    header('Access-Control-Allow-Origin', '*');
-    header('Content-Type: application/json; chatset=UTF-8');
-    http_response_code(500);
-    echo json_encode([
-        'Ocorreu um erro',
+    echo JsonResponse([
+        'Ocorreu um Erro',
         $th->getMessage()
-    ]);
+    ], 500);
+}
+
+function JsonResponse(array $message, int $status): string {
+    header('Access-Control-Allow-Origin: *');
+    header('Content-Type: application/json; chatset=UTF-8');
+    header('Access-Control-Allow-Methods: POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    http_response_code($status);
+    return json_encode($message);
+}
+
+function GetEmailBody(array $inputs): string {
+    extract($inputs);
+
+    ob_start();
+    include 'message.php';
+    return ob_get_clean();
 }
