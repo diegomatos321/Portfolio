@@ -1,2 +1,9 @@
-User-agent: * 
-Disallow: 
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://devdiegomatos.com.br
+
+# Sitemaps
+Sitemap: https://devdiegomatos.com.br/sitemap.xml
