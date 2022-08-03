@@ -26,6 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] != "POST") {
 // Resgatar inputs
 $inputs = json_decode(file_get_contents('php://input', true));
 
+const CONTACT_NAME_MAX_LENGTH = 60;
+const SUBJECT_MAX_LENGTH = 60;
+const MESSAGE_BODY_MAX_LENGTH = 255;
+
 try {
     [$validated, $errors] = ValidateInputs($inputs);
 
@@ -34,9 +38,9 @@ try {
         exit(0);
     }
         
-    //Server settings
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = $_ENV['MAIL_HOST'];                     //Set the SMTP server to send through
+    $inputs->subject = substr(strip_tags($inputs->subject), 0, SUBJECT_MAX_LENGTH);
+    $inputs->contactName = substr(strip_tags($inputs->contactName), 0, CONTACT_NAME_MAX_LENGTH);
+    $inputs->messageBody = substr(strip_tags($inputs->messageBody), 0, MESSAGE_BODY_MAX_LENGTH);
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = $_ENV['MAIL_USERNAME'];                     //SMTP username
     $mail->Password   = $_ENV['MAIL_PASSWORD'];                               //SMTP password
