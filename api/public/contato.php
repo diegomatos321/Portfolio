@@ -41,21 +41,14 @@ try {
     $inputs->subject = substr(strip_tags($inputs->subject), 0, SUBJECT_MAX_LENGTH);
     $inputs->contactName = substr(strip_tags($inputs->contactName), 0, CONTACT_NAME_MAX_LENGTH);
     $inputs->messageBody = substr(strip_tags($inputs->messageBody), 0, MESSAGE_BODY_MAX_LENGTH);
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = $_ENV['MAIL_USERNAME'];                     //SMTP username
-    $mail->Password   = $_ENV['MAIL_PASSWORD'];                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = $_ENV['MAIL_PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-    $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
-    //Recipients
+    $mail = SetUpPHPMailer();
+
+    $mail->Subject = $inputs->subject;
     $mail->setFrom($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);
     $mail->addAddress($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);     //Add a recipient
     $mail->addReplyTo($inputs->contactEmail, $inputs->contactName);
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = $inputs->subject;
     $emailBody = GetEmailBody(array(
         'contactName' => $inputs->contactName,
         'messageBody' => $inputs->messageBody
@@ -132,4 +125,22 @@ function ValidateInputs(stdClass $inputs): array {
         empty($errors),
         $errors
     ];
+}
+
+function SetUpPHPMailer(): PHPMailer {
+    $mail = new PHPMailer(true);
+    $mail->setLanguage('pt_br');
+
+    //Server settings
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = $_ENV['MAIL_HOST'];                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = $_ENV['MAIL_USERNAME'];                     //SMTP username
+    $mail->Password   = $_ENV['MAIL_PASSWORD'];                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = $_ENV['MAIL_PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->CharSet = PHPMailer::CHARSET_UTF8;
+    $mail->isHTML(true);                                  //Set email format to HTML
+
+    return $mail;
 }
