@@ -27,12 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] != "POST") {
 $inputs = json_decode(file_get_contents('php://input', true));
 
 try {
-    // Escapar campos
-    // Validar email
+    [$validated, $errors] = ValidateInputs($inputs);
 
-    $mail = new PHPMailer(true);
-    $mail->setLanguage('pt_br');
-
+    if ($validated == false) {
+        echo JsonResponse($errors, 404);
+        exit(0);
+    }
+        
     //Server settings
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = $_ENV['MAIL_HOST'];                     //Set the SMTP server to send through
@@ -92,4 +93,39 @@ function GetEmailBody(array $inputs): string {
     ob_start();
     include 'message.php';
     return ob_get_clean();
+}
+
+function ValidateInputs(stdClass $inputs): array {
+    $errors = [];
+
+    if (property_exists($inputs, 'contactEmail') == false || empty($inputs->contactEmail)) {
+        $errors[] = 'O campo Email para Contato é obrigatório.';
+    } else if (is_string($inputs->contactEmail) == false) {
+        $errors[] = 'O campo Email para Contato precisa ser uma string.';
+    } else if (filter_var($inputs->contactEmail, FILTER_VALIDATE_EMAIL) == false) {
+        $errors[] = 'O campo Email para Contato não está num formato válido.';
+    }
+
+    if (property_exists($inputs, 'contactName') == false || empty($inputs->contactName)) {
+        $errors[] = 'O campo Nome é obrigatório';
+    } else if (is_string($inputs->contactName) == false) {
+        $errors[] = 'O campo Nome deve ser uma string.';
+    }
+
+    if (property_exists($inputs, 'subject') == false || empty($inputs->subject)) {
+        $errors[] = 'O campo assunto é obrigatório.';
+    } else if (is_string($inputs->subject) == false) {
+        $errors[] = 'O campo Nome deve ser uma string.';
+    }
+
+    if (property_exists($inputs, 'messageBody') == false || empty($inputs->messageBody)) {
+        $errors[] = 'O campo assunto é obrigatório.';
+    } else if (is_string($inputs->messageBody) == false) {
+        $errors[] = 'O campo Nome deve ser uma string.';
+    }
+
+    return [
+        empty($errors),
+        $errors
+    ];
 }
