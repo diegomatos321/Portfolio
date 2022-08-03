@@ -2,7 +2,7 @@ name: Deploy front end em Desenvolvimento
 
 on:
   push:
-    branches: ["desenvolvimento"]
+    branches: ["main"]
   
   workflow_dispatch:
 
@@ -53,5 +53,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}public_html/desenvolvimento/
+          TARGET: ${{ secrets.REMOTE_TARGET }}public_html/
           EXCLUDE: "/dist/, /node_modules/"
