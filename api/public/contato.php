@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] != "POST") {
     echo JsonResponse([
         'Erro, página não encontrada'
     ], 404);
+    exit(0);
 }
 
 // Resgatar inputs
@@ -61,18 +62,21 @@ try {
         echo JsonResponse([
             'Tivemos um problema ao enviar o email:',
             $mail->ErrorInfo,
-            'Por favor, tente novamente mais tarde ou entre em contato diretamente com diego@devdiegomatos.com.br'
+            'Por favor, tente novamente mais tarde ou entre em contato diretamente com ' . $_ENV['MAIL_ADDRESS']
         ], 500);
+        exit(0);
     }
     
     echo JsonResponse([
         'Email enviado com sucesso!'
     ], 200);
+    exit(0);
 } catch (\Throwable $th) {
     echo JsonResponse([
         'Ocorreu um Erro',
         $th->getMessage()
-    ], 500);
+    ], $th->getCode());
+    exit(0);
 }
 
 function JsonResponse(array $message, int $status): string {
