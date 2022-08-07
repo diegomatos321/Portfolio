@@ -127,7 +127,7 @@ export default function Contato(): JSX.Element {
                                     value={messageBody}
                                     onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setMessageBody(() => event.target.value)}
                                 ></textarea>
-                                <input type="submit" value="Enviar" className="btn" disabled={isLoading} />
+                                <button type="submit" className="btn" disabled={isLoading}>{ isLoading ? 'Carregando' : 'Enviar' }</button>
                             </form>
                         </div>
                     </div>
