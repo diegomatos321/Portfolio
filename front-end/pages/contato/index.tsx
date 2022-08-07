@@ -51,13 +51,14 @@ export default function Contato(): JSX.Element {
 
             console.log(responseBody);
 
-            setMessageType(() => "success");
+            setMessageType(() => "sucesso");
             resetForm();
+            window.scrollTo(0, 0);
         } catch (error: any) {
             console.error(error.message);
             
             setServerMessage(() => [
-                "Ocorreu um problema ao realizar o pedido de mensagem",
+                "Ocorreu um problema ao realizar o pedido de contato",
                 "Tente novamente mais tarde, se o problema persiste entre em contato diretamente por",
                 process.env.NEXT_PUBLIC_EMAIL
             ]);
@@ -73,8 +74,6 @@ export default function Contato(): JSX.Element {
         setSubject(() => DEFAULT_SUBJECT_TEXT);
         setMessageBody(() => "");
 
-        setServerMessage(() => []);
-        setMessageType(() => "");
         setIsLoading(() => false);
     }
 
@@ -128,7 +127,7 @@ export default function Contato(): JSX.Element {
                                     value={messageBody}
                                     onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setMessageBody(() => event.target.value)}
                                 ></textarea>
-                                <input type="submit" value="Enviar" className="btn" disabled={isLoading} />
+                                <button type="submit" className="btn" disabled={isLoading}>{ isLoading ? 'Carregando' : 'Enviar' }</button>
                             </form>
                         </div>
                     </div>

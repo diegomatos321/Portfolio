@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1><strong>Olá Diego,</strong></h1>
-    <p>Me chamo <?php echo $contactName ?> e desejo falar com você sobre:</p>
+    <p>Me chamo <strong><?php echo $contactName ?></strong> e desejo falar com você sobre:</p>
     <p><?php echo $messageBody ?></p>
 </body>
 </html>

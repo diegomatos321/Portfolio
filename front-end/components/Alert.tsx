@@ -9,12 +9,12 @@ export default function Alert({ className, body }: IMensagem) {
     const [messages, setMessages] = useState<Array<string>>([]);
 
     useEffect(() => {
+        if (body === undefined || body === null || body.length === 0) return;
+
         checkElementType(body);
     }, [body]);
 
     const checkElementType = (element) => {
-        if (element === undefined || element === null) return;
-
         if (typeof element === "string") {
             try {
                 const parsedString = JSON.parse(element);
@@ -53,7 +53,7 @@ export default function Alert({ className, body }: IMensagem) {
 
     return (
         <div className={`mensagem ${className}`}>
-            <ul>
+            <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
                 {messages.map((message: string, index: number) => {
                     return <li key={index}>{message}</li>
                 })}
