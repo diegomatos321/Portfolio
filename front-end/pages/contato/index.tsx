@@ -53,6 +53,7 @@ export default function Contato(): JSX.Element {
 
             setMessageType(() => "sucesso");
             resetForm();
+            window.scrollTo(0, 0);
         } catch (error: any) {
             console.error(error.message);
             
