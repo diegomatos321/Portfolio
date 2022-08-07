@@ -51,13 +51,13 @@ export default function Contato(): JSX.Element {
 
             console.log(responseBody);
 
-            setMessageType(() => "success");
+            setMessageType(() => "sucesso");
             resetForm();
         } catch (error: any) {
             console.error(error.message);
             
             setServerMessage(() => [
-                "Ocorreu um problema ao realizar o pedido de mensagem",
+                "Ocorreu um problema ao realizar o pedido de contato",
                 "Tente novamente mais tarde, se o problema persiste entre em contato diretamente por",
                 process.env.NEXT_PUBLIC_EMAIL
             ]);
