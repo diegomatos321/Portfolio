@@ -53,7 +53,7 @@ export default function Alert({ className, body }: IMensagem) {
 
     return (
         <div className={`mensagem ${className}`}>
-            <ul>
+            <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
                 {messages.map((message: string, index: number) => {
                     return <li key={index}>{message}</li>
                 })}
