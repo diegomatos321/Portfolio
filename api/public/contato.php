@@ -43,6 +43,14 @@ try {
     $inputs->contactName = substr(strip_tags($inputs->contactName), 0, CONTACT_NAME_MAX_LENGTH);
     $inputs->messageBody = substr(strip_tags($inputs->messageBody), 0, MESSAGE_BODY_MAX_LENGTH);
 
+    if ($_ENV['APP_ENV'] == 'local') {
+        echo JsonResponse([
+            'Ambiente de desenvolvimento',
+            'Email enviado com sucesso!'
+        ], 200);
+        exit(0);
+    }
+
     $mail = SetUpPHPMailer();
 
     $mail->Subject = $inputs->subject;
