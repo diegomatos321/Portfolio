@@ -74,8 +74,6 @@ export default function Contato(): JSX.Element {
         setSubject(() => DEFAULT_SUBJECT_TEXT);
         setMessageBody(() => "");
 
-        setServerMessage(() => []);
-        setMessageType(() => "");
         setIsLoading(() => false);
     }
 
