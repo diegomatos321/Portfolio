@@ -10,7 +10,7 @@ export default function ContatoSEO(): JSX.Element {
                 name="description"
                 content="Página para entrar em contato com o desenvolvedor Diego Matos."
             />
-            <link key="canonical" rel="canonical" href="https://devdiegomatos.com.br/contato" />
+            <link key="canonical" rel="canonical" href="https://www.devdiegomatos.com.br/contato" />
 
             {/* Google+ / Schema.org */}
             <meta key="schemaTitle" itemProp="name" content="Contato | Desenvolvedor Diego Matos" />
@@ -27,7 +27,7 @@ export default function ContatoSEO(): JSX.Element {
                 property="og:description"
                 content="Página para entrar em contato com o desenvolvedor Diego Matos."
             />
-            <meta key="ogUrl" property="og:url" content="https://devdiegomatos.com.br/contato" />
+            <meta key="ogUrl" property="og:url" content="https://www.devdiegomatos.com.br/contato" />
 
             {/* Twitter */}
             <meta key="twitterTitle" name="twitter:title" content="Contato | Desenvolvedor Diego Matos" />
@@ -36,7 +36,7 @@ export default function ContatoSEO(): JSX.Element {
                 name="twitter:description"
                 content="Página para entrar em contato com o desenvolvedor Diego Matos."
             />
-            <meta key="twitterUrl" name="twitter:url" content="https://devdiegomatos.com.br/contato" />
+            <meta key="twitterUrl" name="twitter:url" content="https://www.devdiegomatos.com.br/contato" />
 
             <link rel="me" href="https://devdiegomatos.com.br" type="text/html" />
             <link rel="me" href="mailto:diegomatos@devdiegomatos.com.br" />

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://devdiegomatos.com.br
+Host: https://www.devdiegomatos.com.br
 
 # Sitemaps
-Sitemap: https://devdiegomatos.com.br/sitemap.xml
+Sitemap: https://www.devdiegomatos.com.br/sitemap.xml
