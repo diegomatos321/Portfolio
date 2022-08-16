@@ -27,3 +27,9 @@ Options -Indexes
     BrowserMatch ^Mozilla/4\.0[678] no-gzip
     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^devdiegomatos.com.br [NC]
+    RewriteRule ^(.*)$ https://www.devdiegomatos.com.br/$1 [L,R=301]
+</IfModule>
