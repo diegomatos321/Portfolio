@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     }, [router.events]);
 
     return <StrictMode>
-        <GoogleAnalytics />
+        { process.env.NODE_ENV === 'production' ? <GoogleAnalytics /> : null }
         <GlobalSEO />
         <Header />
         <Component {...pageProps} />
