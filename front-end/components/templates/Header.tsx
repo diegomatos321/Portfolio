@@ -4,10 +4,10 @@ export default function Header(): JSX.Element {
   return (
     <header id="header" className="header">
       <Link href="/">
-        <a>
-            <picture className="img logo">
-            <source srcSet="/assets/imagens/logo.webp" type="image/webp"/>
-            <img src="/assets/imagens/logo.png" alt="Logo do site" title="Logo do Site" />
+        <a className="logo" style={{ height: '10vh' }}>
+            <picture>
+                <source srcSet="/assets/imagens/logo-horizontal-300x300.webp" type="image/webp"/>
+                <img src="/assets/imagens/logo-horizontal-300x300.png" height='100%' alt="Logo do site" title="Logo do Site" />
             </picture>
         </a>
       </Link>
