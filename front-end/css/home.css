@@ -38,6 +38,10 @@ section:last-child .container {
   margin-right: 6px;
 }
 
+.container-apresentacao h1 {
+    text-align: start;
+}
+
 .areas-trabalho ul {
   list-style: none;
 }
@@ -55,6 +59,16 @@ section:last-child .container {
 
 .buttons a {
   text-align: inherit;
+}
+
+.conteudo-trabalho {
+    min-height: 300px;
+    padding: 1rem 3rem;
+    text-align: start;
+}
+
+.conteudo-trabalho p {
+    margin-bottom: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -85,8 +99,8 @@ section:last-child .container {
     grid-area: img;
   }
 
-  .areas-trabalho .flex-item {
-    margin: 0.5em;
+  .areas-trabalho {
+    grid-area: content;
   }
 
   .container-apresentacao img {
