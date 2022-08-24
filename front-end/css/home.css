@@ -12,17 +12,22 @@ section:last-child .container {
 
 /* Apresentação Section */
 
+.apresentacao-background {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("/assets/imagens/web-development-banner.png");
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;  
+}
+
 .container-apresentacao {
-  background-color: rgba(0, 0, 0, 0.8);
-  background-image: url("/assets/imagens/web-development-banner.png");
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
   color: var(--corSecundarioTexto);
   text-align: center;
   padding: 2em 0.8em;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .container-apresentacao picture {
