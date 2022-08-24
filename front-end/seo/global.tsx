@@ -1,8 +1,14 @@
 import Head from "next/head";
+import Script from 'next/script';
 
 export default function global(): JSX.Element {
     return (
         <Head>
+            <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+            <link rel="manifest" href="favicon/site.webmanifest"></link>
+
             {/* SEO Geral */}
             <title key="title">Diego Matos | Desenvolvedor Web</title>
             <meta key="description" name="description" content="Página principal do desenvolvedor Diego Matos, conheça um pouco sobre ele, entre em contato, baixe seu curriculum ou olhe o código desse site em sua página do GitHub." />
