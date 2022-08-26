@@ -8,11 +8,48 @@ export default function Sobre() {
                     Olá, meu nome é <strong>Diego Vasconcelos Schardosim de Matos</strong>, sou estudante de <strong>Ciência da Computação</strong> na <strong>UFRJ</strong> e um entusiasta por jogos.
                 </p>
                 <p>
-                    Comecei <strong>lecionando</strong> aulas de <strong>desenvolvimento Web</strong> utilizando os jogos como meio de aprendizagem em alguns cursos de tecnologia, abrangendo áreas de <strong>Front-End</strong> e <strong>Back-End</strong>.
+                    Sou <strong>autodidata</strong> e realizo serviços como autônomo no tempo livre. Atuo com desenvolvimento de jogos eletrônicos, de páginas para web (desde páginas simples até sistemas mais complexos) e de aplicativos.
                 </p>
                 <p>
-                    Atualmente estou realizando uma <strong>Iniciação Científica</strong> na <a href="http://www.coppetec.coppe.ufrj.br/site/" target="_blank" rel="noopener noreferrer">COPPETEC</a> e sou membro da <a href="https://gdpufrj.itch.io/" target="_blank" rel="noopener noreferrer">GDP UFRJ</a>. Ainda sou um novato mas estarei sempre me empenhando em aprender e melhorar.
+                    Tenho experiência com liderança, gestão de processo, modelagem de sistema, entre outras práticas relacionadas a Engenharia de Software como Integração Contínua (CI) e Entrega Contínua (CD).
                 </p>
+                <h3 style={{ marginTop: '16px' }}>Habilidades</h3>
+                <div className="flex-container areas-trabalho">
+                    <ul className="flex-item">
+                        <li><h4><strong>Front End</strong></h4></li>
+                        <li>CSS</li>
+                        <li>Bootstrap 5</li>
+                        <li>Tailwind</li>
+                        <li>React/NextJS</li>
+                        <li>WordPress</li>
+                    </ul>
+                    <ul className="flex-item">
+                        <li><h4><strong>Back End</strong></h4></li>
+                        <li>PhP</li>
+                        <li>NodeJS</li>
+                        <li>Java</li>
+                    </ul>
+                    <ul className="flex-item">
+                        <li><h4><strong>Banco de Dados</strong></h4></li>
+                        <li>Modelagem UML</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                    <ul className="flex-item">
+                        <li><h4><strong>Des de Jogos</strong></h4></li>
+                        <li>Unity</li>
+                        <li>Godot</li>
+                        <li>HTML5</li>
+                        <li>Phaser</li>
+                        <li>Construct 2 e 3</li>
+                    </ul>
+                    <ul className="flex-item">
+                        <li><h4><strong>Outras Habilidades</strong></h4></li>
+                        <li>Git</li>
+                        <li>Github Actions</li>
+                        <li>SEO</li>
+                    </ul>
+                </div>
             </div>
         </section>
     );
