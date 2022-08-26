@@ -6,8 +6,8 @@ export default function Header(): JSX.Element {
       <Link href="/">
         <a className="logo" style={{ height: '10vh' }}>
             <picture>
-                <source srcSet="/assets/imagens/logo-horizontal-300x300.webp" type="image/webp"/>
-                <img src="/assets/imagens/logo-horizontal-300x300.png" height='100%' alt="Logo do site" title="Logo do Site" />
+                <source srcSet="/assets/imagens/logo-horizontal-fundo-preto-300x300.webp" type="image/webp"/>
+                <img src="/assets/imagens/logo-horizontal-fundo-preto-300x300.png" height='100%' alt="Logo do site" title="Logo do Site" />
             </picture>
         </a>
       </Link>
