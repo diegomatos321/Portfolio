@@ -60,24 +60,6 @@ export default function Apresentacao(): JSX.Element {
                             </SwiperSlide>
                         </Swiper>
                     </div>
-                    <div className="buttons flex-container">
-                        <a
-                            className="flex-item btn"
-                            href="assets/documentos/curriculo.pdf"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Baixe o meu curriculum
-                        </a>
-                        <a
-                            className="flex-item btn"
-                            href="https://github.com/diegomatos321/Portfolio"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            Veja esse site no GitHub
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>

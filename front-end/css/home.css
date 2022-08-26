@@ -89,7 +89,6 @@ section:last-child .container {
     grid-template-areas:
       "h1 h1"
       "content img"
-      "btn img";
   }
   .container-apresentacao h1 {
     grid-area: h1;
