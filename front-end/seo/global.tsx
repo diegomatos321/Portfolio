@@ -23,7 +23,6 @@ export default function global(): JSX.Element {
             <meta name="theme-color" content="#ffffff" />
 
             <meta name="rating" content="General" />
-            <script src="https://kit.fontawesome.com/adf5bf69ed.js" crossOrigin="anonymous"></script>
 
             {/* SEO Geral */}
             <title key="title">Diego Matos | Desenvolvedor de Software</title>
