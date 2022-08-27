@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] != "POST") {
 }
 
 // Resgatar inputs
-$inputs = json_decode(file_get_contents('php://input', true));
+$rawInputs = json_decode(file_get_contents('php://input', true));
 
 const CONTACT_NAME_MAX_LENGTH = 60;
 const SUBJECT_MAX_LENGTH = 60;
@@ -38,11 +38,9 @@ try {
         echo JsonResponse($errors, 404);
         exit(0);
     }
-        
-    $inputs->subject = substr(strip_tags($inputs->subject), 0, SUBJECT_MAX_LENGTH);
-    $inputs->contactName = substr(strip_tags($inputs->contactName), 0, CONTACT_NAME_MAX_LENGTH);
-    $inputs->messageBody = substr(strip_tags($inputs->messageBody), 0, MESSAGE_BODY_MAX_LENGTH);
 
+    $inputs = EscapeInputs($rawInputs);
+        
     if ($_ENV['APP_ENV'] == 'local') {
         echo JsonResponse([
             'Ambiente de desenvolvimento',
@@ -155,4 +153,14 @@ function SetUpPHPMailer(): PHPMailer {
     $mail->isHTML(true);                                  //Set email format to HTML
 
     return $mail;
+}
+
+function EscapeInputs(stdClass $rawInputs): stdClass {
+    $result = new stdClass();
+
+    $result->subject = substr(strip_tags($rawInputs->subject), 0, SUBJECT_MAX_LENGTH);
+    $result->contactName = substr(strip_tags($rawInputs->contactName), 0, CONTACT_NAME_MAX_LENGTH);
+    $result->messageBody = substr(strip_tags($rawInputs->messageBody), 0, MESSAGE_BODY_MAX_LENGTH);
+
+    return $result;
 }
