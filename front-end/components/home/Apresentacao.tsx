@@ -25,8 +25,6 @@ export default function Apresentacao(): JSX.Element {
                             autoplay={{
                                 delay: 10_000
                             }}
-                            onSlideChange={() => console.log('slide change')}
-                            onSwiper={(swiper) => console.log(swiper)}
                         >
                             <SwiperSlide>
                                 <div className='conteudo-trabalho'>

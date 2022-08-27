@@ -7,6 +7,7 @@ export default function GoogleAnalytics(): JSX.Element {
     const router = useRouter();
 
     useEffect(() => {
+        console.log('SetUp Google Analytics');
         const handleRouteChange = url => {
             gtag.pageview(url);
         }
