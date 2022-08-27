@@ -3,6 +3,16 @@ import Link from "next/link";
 export default function TodosTrabalhos(): JSX.Element {
     return (
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+            <a href="https://www.cuidadoeafeto.com.br" className="trabalho-item" target="_blank" rel="noopener noreferrer">
+                <article>
+                    <div className="img-portrait">
+                        <img src="/assets/imagens/cuidado-e-afeto.svg" width='100%' alt="Logo da plataforma de Cuidadores Pessoais do Rio de Janeiro - Cuidado e Afeto" title="Logo da plataforma de Cuidadores Pessoais do Rio de Janeiro - Cuidado e Afeto" />
+                    </div>
+                    <p>
+                        Plataforma de cuidadores pessoais no rio de janeiro encomendada em 2022
+                    </p>
+                </article>
+            </a>
             <a href="https://gdpufrj.itch.io/laje-4" className="trabalho-item" target="_blank" rel="noopener noreferrer">
                 <article>
                     <div className="img-portrait">
@@ -11,8 +21,7 @@ export default function TodosTrabalhos(): JSX.Element {
                             <img
                                 className="img"
                                 width="250px"
-                                id="liaNaFlorestaMagica"
-                                src="lia-na-floresta-magica.png"
+                                src="/assets/imagens/lia-na-floresta-magica.png"
                                 alt="Imagem do jogo Lia na Floresta Mágica"
                                 title="Imagem do jogo Lia na floresta Mágica"
                             />
@@ -23,94 +32,6 @@ export default function TodosTrabalhos(): JSX.Element {
                     </p>
                 </article>
             </a>
-            <Link href="/trabalhos/flappybird">
-                <a className="trabalho-item">
-                    <article>
-                        <div className="img-portrait">
-                            <picture>
-                                <source srcSet="/assets/imagens/flappybird.webp" type="image/webp" />
-                                <img
-                                    className="img"
-                                    id="flappybird"
-                                    width="100%"
-                                    src="/assets/imagens/flappybird.webp"
-                                    alt="Imagem do jogo FlappyBird"
-                                    title="Imagem do jogo FlappyBird"
-                                />
-                            </picture>
-                        </div>
-                        <p>
-                            <strong>Clone</strong> do <strong>FlappyBird</strong> com <strong>banco de dados</strong>, usando <strong>Node JS</strong> e <strong>MongoDB</strong> no BackEnd.
-                        </p>
-                    </article>
-                </a>
-            </Link>
-            <Link href="/trabalhos/jogo-da-nave">
-                <a className="trabalho-item">
-                    <article>
-                        <div className="img-portrait">
-                            <picture>
-                                <source srcSet="/assets/imagens/jogo-da-nave.webp" type="image/webp" />
-                                <img
-                                    className="img"
-                                    id="jogoDaNave"
-                                    width="100%"
-                                    src="/assets/imagens/jogo-da-nave.png"
-                                    alt="Imagem do jogo da Nave"
-                                    title="Imagem do jogo da Nave"
-                                />
-                            </picture>
-                        </div>
-                        <p>
-                            <strong>Jogo da Nave</strong> usando o framework <strong>Phaser</strong>.
-                        </p>
-                    </article>
-                </a>
-            </Link>
-            <Link href="/trabalhos/super-mario">
-                <a className="trabalho-item">
-                    <article>
-                        <div className="img-portrait">
-                            <picture>
-                                <source srcSet="/assets/imagens/super-mario.webp" type="image/webp" />
-                                <img
-                                    className="img"
-                                    id="superMario"
-                                    width="100%"
-                                    srcSet="/assets/imagens/super-mario.png"
-                                    alt="Imagem do jogo do Super Mario Bros"
-                                    title="Imagem do jogo do Super Mario Bros"
-                                />
-                            </picture>
-                        </div>
-                        <p>
-                            <strong>Clone</strong> do <strong>Super Mario Bros</strong> desenvolvido usando o framework <strong>Phaser</strong>.
-                        </p>
-                    </article>
-                </a>
-            </Link>
-            <Link href="/trabalhos/jogo-asteroides" className="mansory-item">
-                <a className="trabalho-item">
-                    <article>
-                        <div className="img-portrait">
-                            <picture>
-                                <source srcSet="/assets/imagens/asteroides.webp" type="image/webp" />
-                                <img
-                                    className="img"
-                                    id="jogoAsteroides"
-                                    width="100%"
-                                    src="/assets/imagens/asteroides.png"
-                                    alt="Imagem do jogo asteroides"
-                                    title="Imagem do jogo asteroides"
-                                />
-                            </picture>
-                        </div>
-                        <p>
-                            <strong>Jogo Asteroides</strong> desenvolvido em JavaScript Puro.
-                        </p>
-                    </article>
-                </a>
-            </Link>
         </div>
     );
 }

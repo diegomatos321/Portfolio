@@ -4,8 +4,8 @@
     background-color: var(--corFundoCabecalho);
     border-top: 1.3px solid var(--corDaBorda);
     width: 100%;
-    padding: 0.4em 0.7em;
-    height: 8vh;
+    padding: 0 16px 0 16px;
+    height: 10vh;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -21,6 +21,15 @@
 .header .logo{
     grid-area: logo;
 }
+
+.header .logo .logo-horizontal {
+    display: none;
+}
+
+.header .logo .logo-simbolo {
+    display: initial;
+}
+
 .header .main-nav{
     grid-area: nav;
     justify-self: center;
@@ -84,9 +93,13 @@
         justify-self: end;
     }
 
-    /* .drop-down{
-        display: block;
-    } */
+    .header .logo .logo-simbolo {
+        display: none;
+    }
+
+    .header .logo .logo-horizontal {
+        display: initial;
+    }
 
     .item-about{
         display: inline-block;

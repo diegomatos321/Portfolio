@@ -6,35 +6,11 @@
     border-top: 1.3px solid var(--corDaBorda);
     justify-content: center;
     align-content: center;
+    padding-bottom: 12vh;
 }
 
-.widget-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    text-align: center;
-}
-
-@media only screen and (max-width: 768px){
-    .footer{
-        margin-bottom: 12vh;
+@media only screen and (min-width: 768px) {
+    .footer {
+        padding-bottom: 1rem;
     }
-}
-
-.widget-item {
-    margin: 0.5em;
-}
-
-.widget-item a{
-    color: white;
-}
-
-.widget-item a:hover{
-    color: var(--corDoLinkHover);
-}
-
-.widget-item p{
-    display: inline-block;
-    margin-left: 0.3em;
 }

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-    siteUrl: 'https://devdiegomatos.com.br',
+    siteUrl: 'https://www.devdiegomatos.com.br',
     generateRobotsTxt: true,
     changefreq: 'monthly',
     exclude: [
