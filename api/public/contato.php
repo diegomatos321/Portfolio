@@ -32,7 +32,7 @@ const SUBJECT_MAX_LENGTH = 60;
 const MESSAGE_BODY_MAX_LENGTH = 255;
 
 try {
-    [$validated, $errors] = ValidateInputs($inputs);
+    [$validated, $errors] = ValidateInputs($rawInputs);
 
     if ($validated == false) {
         echo JsonResponse($errors, 404);
@@ -81,7 +81,7 @@ try {
     echo JsonResponse([
         'Ocorreu um Erro',
         $th->getMessage()
-    ], $th->getCode());
+    ], 500);
     exit(0);
 }
 
