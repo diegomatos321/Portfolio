@@ -6,10 +6,8 @@ export default function TrabalhosHome(): JSX.Element {
             <div className="container">
                 <h2 className="title">Trabalhos</h2>
                 <hr />
-                <p>
-                    Veja alguns de meus <strong>trabalhos</strong>:
-                </p>
                 <Trabalhos />
+                <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/" target="_blank" rel="noopener noreferrer">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
             </div>
         </section>
     );
