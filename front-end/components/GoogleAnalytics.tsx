@@ -20,7 +20,7 @@ export default function GoogleAnalytics(): JSX.Element {
     }, [router.events]);
     
     return <>
-        <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} />
+        <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
 
         <Script
             strategy="afterInteractive"
@@ -36,4 +36,17 @@ export default function GoogleAnalytics(): JSX.Element {
             }}
         />
     </>
+
+    /* 
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-55RNK7Z86G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-55RNK7Z86G');
+</script>
+    */
 }
