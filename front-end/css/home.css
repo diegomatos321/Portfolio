@@ -130,6 +130,7 @@ section:last-child .container {
 .img-portrait + p {
     border-left: 5px solid rgba(128, 128, 128, 0.4);
     font-size: 1rem;
+    padding-left: 8px;
 }
 
 /* Entre em Contato Section */
