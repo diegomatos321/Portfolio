@@ -6,16 +6,7 @@ export default function TodosTrabalhos(): JSX.Element {
             <a href="https://www.cuidadoeafeto.com.br" className="trabalho-item" target="_blank" rel="noopener noreferrer">
                 <article>
                     <div className="img-portrait">
-                        <picture>
-                            <source srcSet="/assets/imagens/logo-cuidado-e-afeto.webp" type="image/webp" />
-                            <img
-                                className="img"
-                                width="250px"
-                                src="/assets/imagens/logo-cuidado-e-afeto.png"
-                                alt="Imagem da plataforma de cuidadores pessoais - Cuidado e Afeto"
-                                title="Imagem da plataforma de cuidadores pessoais - Cuidado e Afeto"
-                            />
-                        </picture>
+                        <img src="/assets/imagens/cuidado-e-afeto.svg" width='100%' alt="Logo da plataforma de Cuidadores Pessoais do Rio de Janeiro - Cuidado e Afeto" title="Logo da plataforma de Cuidadores Pessoais do Rio de Janeiro - Cuidado e Afeto" />
                     </div>
                     <p>
                         Plataforma de cuidadores pessoais no rio de janeiro encomendada em 2022
