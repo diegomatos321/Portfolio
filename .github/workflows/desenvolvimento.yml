@@ -7,7 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  NEXT_PUBLIC_APP_URL: https://devdiegomatos.com.br
+  NODE_ENV: development
+  NEXT_PUBLIC_APP_URL: https://desenvolvimento.devdiegomatos.com.br
   NEXT_PUBLIC_API_URL: https://api.devdiegomatos.com.br
   NEXT_PUBLIC_EMAIL: diego@devdiegomatos.com.br
 
