@@ -21,6 +21,15 @@
 .header .logo{
     grid-area: logo;
 }
+
+.header .logo .logo-horizontal {
+    display: none;
+}
+
+.header .logo .logo-simbolo {
+    display: initial;
+}
+
 .header .main-nav{
     grid-area: nav;
     justify-self: center;
@@ -84,9 +93,13 @@
         justify-self: end;
     }
 
-    /* .drop-down{
-        display: block;
-    } */
+    .header .logo .logo-simbolo {
+        display: none;
+    }
+
+    .header .logo .logo-horizontal {
+        display: initial;
+    }
 
     .item-about{
         display: inline-block;
