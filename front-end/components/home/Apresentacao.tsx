@@ -40,12 +40,12 @@ export default function Apresentacao(): JSX.Element {
                                     <p>Entre em contato comigo!</p>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide>
+                            {/* <SwiperSlide>
                                 <div className="conteudo-trabalho">
                                     <p>Precisando tirar aquela ideia de um aplicativo do papel? Não se preocupe, trabalho com as tecnologias mais modernas do mercado e publico tanto para Android (Play Store) e App Store (iOS)</p>
                                     <p>Entre em contato comigo!</p>
                                 </div>
-                            </SwiperSlide>
+                            </SwiperSlide> */}
                             <SwiperSlide>
                                 <div className="conteudo-trabalho">
                                     <p>Você já possui algum sistema/plataforma mas está lento ou apresentando problemas? Talvez queira trocar o sistema atual para uma solução mais moderna?</p>
