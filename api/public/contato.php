@@ -161,6 +161,7 @@ function EscapeInputs(stdClass $rawInputs): stdClass {
     $result->subject = substr(strip_tags($rawInputs->subject), 0, SUBJECT_MAX_LENGTH);
     $result->contactName = substr(strip_tags($rawInputs->contactName), 0, CONTACT_NAME_MAX_LENGTH);
     $result->messageBody = substr(strip_tags($rawInputs->messageBody), 0, MESSAGE_BODY_MAX_LENGTH);
+    $result->contactEmail = $rawInputs->contactEmail;
 
     return $result;
 }
