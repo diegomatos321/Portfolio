@@ -10,7 +10,7 @@ env:
   NEXT_PUBLIC_APP_URL: https://www.devdiegomatos.com.br
   NEXT_PUBLIC_API_URL: https://api.devdiegomatos.com.br
   NEXT_PUBLIC_EMAIL: diego@devdiegomatos.com.br
-  NEXT_PUBLIC_GA_ID:
+  NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
 
 jobs:
   build:
