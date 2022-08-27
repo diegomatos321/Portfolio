@@ -9,7 +9,9 @@ export default function Alert({ className, body }: IMensagem) {
     const [messages, setMessages] = useState<Array<string>>([]);
 
     useEffect(() => {
-        if (body === undefined || body === null || body.length === 0) return;
+        if (body === undefined || body === null || body.length === 0) {
+            setMessages(() => []);
+        };
 
         checkElementType(body);
     }, [body]);
