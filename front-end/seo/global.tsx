@@ -34,7 +34,7 @@ export default function global(): JSX.Element {
             {/* Google+ / Schema.org */}
             <meta key="schemaTitle" itemProp="name" content="Diego Matos | Desenvolvedor de Software" />
             <meta key="schemaDescription" itemProp="description" content="Página principal do desenvolvedor Diego Matos, conheça um pouco sobre ele, entre em contato, baixe seu curriculum ou olhe o código desse site em sua página do GitHub." />
-            <meta itemProp="image" content="https://www.devdiegomatos.com.br/assets/imagens/logo-vertical-fundo-branco.png" />
+            <meta itemProp="image" content="https://www.devdiegomatos.com.br/assets/imagens/logo-vertical-fundo-preto.png" />
             {/* <link href="https://plus.google.com/+SuaPagina" rel="publisher"/> */}
 
             {/* Open Graph Facebook */}
@@ -43,7 +43,7 @@ export default function global(): JSX.Element {
             <meta key="ogUrl" property="og:url" content="https://www.devdiegomatos.com.br" />
             <meta property="og:site_name" content="Portfolio do desenvolvedor Diego Matos" />
             <meta property="og:type" content="website" />
-            <meta property="og:image" content="https://www.devdiegomatos.com.br/assets/imagens/logo-vertical-fundo-branco.png" />
+            <meta property="og:image" content="https://www.devdiegomatos.com.br/assets/imagens/logo-vertical-fundo-preto.png" />
             <meta property="og:image:alt" content="Logo do desenvolvedor Diego Matos" />
             <meta property="og:locale" content="pt-BR" />
 
@@ -52,7 +52,7 @@ export default function global(): JSX.Element {
             <meta key="twitterDescription" name="twitter:description" content="Página principal do desenvolvedor Diego Matos, conheça um pouco sobre ele, entre em contato, baixe seu curriculum ou olhe o código desse site em sua página do GitHub." />
             <meta key="twitterUrl" name="twitter:url" content="https://www.devdiegomatos.com.br" />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:image" content="https://www.devdiegomatos.com.br/assets/imagens/logo-vertical-fundo-branco.png" />
+            <meta name="twitter:image" content="https://www.devdiegomatos.com.br/assets/imagens/logo-vertical-fundo-preto.png" />
             {/* <meta name="twitter:creator" content="@estevanmaito"/> */}
             {/* <meta name="twitter:site" content="@empresa"/> */}
         </Head>
