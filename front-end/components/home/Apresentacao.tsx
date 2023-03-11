@@ -1,64 +1,16 @@
-import { Navigation, Autoplay, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
 export default function Apresentacao(): JSX.Element {
     return (
-        <section id="home">
-            <div className="apresentacao-background">
-                <div className="container-apresentacao">
-                    <h1>Desenvolvedor de Software</h1>
-                    <picture>
-                        <source srcSet="/assets/imagens/foto-perfil.webp" type="image/webp" />
-                        <img src="/assets/imagens/foto-perfil.png" alt="Foto de Perfil" title="Foto de Perfil" />
-                    </picture>
-                    <div className="areas-trabalho" style={{ overflowX: 'hidden' }}>
-                        <Swiper
-                            modules={[Navigation, Autoplay, A11y]}
-                            spaceBetween={50}
-                            slidesPerView={1}
-                            navigation
-                            autoplay={{
-                                delay: 10_000
-                            }}
-                        >
-                            <SwiperSlide>
-                                <div className='conteudo-trabalho'>
-                                    <p>Encontre a solução ideal para seu negócio online, trabalho com páginas institucionais, blogs, lojas virtuais ou qualquer outra plataforma típica web.</p>
-                                    <p>Entre em contato comigo!</p>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="conteudo-trabalho">
-                                    <p>O processo interno de sua empresa está lento e apresenta falhas? Talvez seja a hora de informatiza-la! Com uma solução em gestão certa, seja para na parte financeira ou administrativa, a produtividade de sua empresa irá subir!</p>
-                                    <p>Entre em contato comigo!</p>
-                                </div>
-                            </SwiperSlide>
-                            {/* <SwiperSlide>
-                                <div className="conteudo-trabalho">
-                                    <p>Precisando tirar aquela ideia de um aplicativo do papel? Não se preocupe, trabalho com as tecnologias mais modernas do mercado e publico tanto para Android (Play Store) e App Store (iOS)</p>
-                                    <p>Entre em contato comigo!</p>
-                                </div>
-                            </SwiperSlide> */}
-                            <SwiperSlide>
-                                <div className="conteudo-trabalho">
-                                    <p>Você já possui algum sistema/plataforma mas está lento ou apresentando problemas? Talvez queira trocar o sistema atual para uma solução mais moderna?</p>
-                                    <p>Entre em contato comigo!</p>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="conteudo-trabalho">
-                                    <p>Deseja transformar uma ideia de um <strong>jogo</strong> para a realidade? Eu sou a pessoa certa! Trabalho com as tecnologias mais modernas no mercado!</p>
-                                    <p>Entre em contato comigo!</p>
-                                </div>
-                            </SwiperSlide>
-                        </Swiper>
-                    </div>
-                </div>
+        <section style={{ backgroundColor: '#00AFEF' }} >
+            <div className="relative container mx-auto p-4 min-h-[30vw] grid grid-cols-1 sm:grid-cols-2 items-center">
+                <header className="relative justify-self-end text-white text-right">
+                    <h1 className="text-5xl"><strong>Prazer, eu sou Diego</strong></h1>
+                    <p>Granduando em computação na Universidade Federal do Rio de Janeiro e um entusiasta por jogos, trabalho com desenvolvimento de sites, aplicativos e jogos.</p>
+                </header>
+
+                <picture>
+                    <source srcSet="/assets/marca/logo-monocromatica-branca-300x300.webp" />
+                    <img style={{ maxWidth: 300 }} className="w-full" src="/assets/marca/logo-monocromatica-branca-300x300.png" alt="Marca" />
+                </picture>
             </div>
         </section>
     );
