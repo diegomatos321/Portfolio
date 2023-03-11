@@ -1,25 +1,16 @@
 import Link from "next/link";
+import { MdSend } from "react-icons/md";
 
 export default function Contato() {
     return (
-        <section id="contato" className="info-container">
-            <div className="container-contato flex-container">
-                <div className="info-item info-ico flex-item">
-                    <i className="fas fa-info-circle"></i>
-                </div>
-                <hr className="flex-item" />
-                <div className="info-item sub-title flex-item">
-                    <h3>Converse diretamente comigo e tire suas dúvidas</h3>
-                </div>
-                <hr className="flex-item" />
-                <div className="info-item title flex-item">
-                    <h2>Entre em Contato</h2>
-                </div>
-                <div className="info-item flex-container buttons">
-                    <Link href="/contato">
-                        <a className="btn">Contate-me</a>
-                    </Link>
-                </div>
+        <section>
+            <div className="container p-4 mx-auto flex">
+                <Link className="mx-auto" href="/contato">
+                    <div className="px-4 py-2 bg-[#00AFEF] rounded text-white flex items-center gap-2">
+                        <h2 className="text-2xl"><strong>Entre em contato comigo</strong></h2>
+                        <MdSend style={{ fill: 'white' }} className="text-4xl" />
+                    </div>
+                </Link>
             </div>
         </section>
     );

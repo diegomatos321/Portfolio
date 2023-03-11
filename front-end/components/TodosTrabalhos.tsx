@@ -51,6 +51,10 @@ export default function TodosTrabalhos(): JSX.Element {
                         </a>
                     </li>
                 </ul>
+
+                <div className="text-right">
+                    <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
+                </div>
             </div>
         </section>
     );

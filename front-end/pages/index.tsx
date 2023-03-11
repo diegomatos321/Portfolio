@@ -2,6 +2,8 @@ import MetaDados from "../seo/home"
 
 import Apresentacao from "../components/home/Apresentacao";
 import TodosTrabalhos from "../components/TodosTrabalhos";
+import Contato from "../components/home/Contato";
+import Footer from "../components/templates/Footer";
 
 export default function Home(): JSX.Element {
     return (
@@ -10,9 +12,9 @@ export default function Home(): JSX.Element {
             <main>
                 <Apresentacao />
                 <TodosTrabalhos />
-                {/* <Sobre />
-                <Contato /> */}
+                <Contato />
             </main>
+            <Footer />
         </>
     )
 }
