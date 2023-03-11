@@ -6,8 +6,6 @@ import GoogleAnalytics from "../components/GoogleAnalytics";
 import GlobalSEO from "../seo/global";
 import Footer from '../components/templates/Footer';
 
-import "../css/index.css"
-
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
     return <StrictMode>
         { process.env.NODE_ENV === 'production' ? <GoogleAnalytics /> : null }
