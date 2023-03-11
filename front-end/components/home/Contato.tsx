@@ -85,7 +85,7 @@ export default function Contato() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="order-last sm:order-first space-y-4">
-                        <h3 className="text-2xl"><strong>Dados para contato</strong></h3>
+                        <h3 className="text-2xl text-center sm:text-left"><strong>Dados para contato</strong></h3>
 
                         <a href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`} className="flex items-center gap-2">
                             <MdEmail /> 
@@ -99,7 +99,7 @@ export default function Contato() {
                     </div>
 
                     <div className="space-y-4">
-                        <h2 className="text-3xl"><strong>Entre em contato</strong></h2>
+                        <h2 className="text-3xl text-center sm:text-left"><strong>Entre em contato</strong></h2>
 
                         <div>
                             <form 
