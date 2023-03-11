@@ -52,9 +52,8 @@ export default function Contato() {
 
             console.log(responseBody);
 
-            setMessageType(() => "sucesso");
+            setMessageType(() => "success");
             resetForm();
-            window.scrollTo(0, 0);
         } catch (error: any) {
             console.error(error.message);
 

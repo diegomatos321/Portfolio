@@ -7,6 +7,7 @@ interface IMensagem {
 
 export default function Alert({ className, body }: IMensagem) {
     const [messages, setMessages] = useState<Array<string>>([]);
+    const [classString, setClassString] = useState<String>("");
 
     useEffect(() => {
         if (body === undefined || body === null || body.length === 0) {
@@ -15,6 +16,18 @@ export default function Alert({ className, body }: IMensagem) {
 
         checkElementType(body);
     }, [body]);
+
+    useEffect(() => {
+        if (className != null && className != '')
+        {
+            if (className == "success")
+            {
+                setClassString("bg-green-600");
+            } else if (className == "error") {
+                setClassString("bg-red-600");
+            }
+        }
+    }, [className]);
 
     const checkElementType = (element) => {
         if (typeof element === "string") {
@@ -54,8 +67,8 @@ export default function Alert({ className, body }: IMensagem) {
     }
 
     return (
-        <div className={`mensagem ${className}`}>
-            <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
+        <div className={`p-4 text-white ${classString}`}>
+            <ul className="space-y-4">
                 {messages.map((message: string, index: number) => {
                     return <li key={index}>{message}</li>
                 })}
