@@ -6,7 +6,7 @@ export default function TodosTrabalhos(): JSX.Element {
                     <h2 className="text-4xl"><strong>Meus projetos</strong></h2>
                 </header>
 
-                <ul className="grid grid-cols-4 gap-4 items-end">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 items-end">
                     <li>
                         <a href="https://www.preparavestibular.com.br" target="_blank">
                             <div>
@@ -53,7 +53,7 @@ export default function TodosTrabalhos(): JSX.Element {
                 </ul>
 
                 <div className="text-right">
-                    <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
+                    <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/" className="underline">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
                 </div>
             </div>
         </section>
