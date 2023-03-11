@@ -13,7 +13,7 @@ export default function global(): JSX.Element {
             <link rel="apple-touch-icon" sizes="144x144" href="https://www.devdiegomatos.com.br/favicon/apple-icon-144x144.png" />
             <link rel="apple-touch-icon" sizes="152x152" href="https://www.devdiegomatos.com.br/favicon/apple-icon-152x152.png" />
             <link rel="apple-touch-icon" sizes="180x180" href="https://www.devdiegomatos.com.br/favicon/apple-icon-180x180.png" />
-            <link rel="icon" type="image/png" sizes="192x192"  href="https://www.devdiegomatos.com.br/favicon/android-icon-192x192.png" />
+            <link rel="icon" type="image/png" sizes="192x192" href="https://www.devdiegomatos.com.br/favicon/android-icon-192x192.png" />
             <link rel="icon" type="image/png" sizes="32x32" href="https://www.devdiegomatos.com.br/favicon/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="96x96" href="https://www.devdiegomatos.com.br/favicon/favicon-96x96.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="https://www.devdiegomatos.com.br/favicon/favicon-16x16.png" />

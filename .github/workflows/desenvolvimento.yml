@@ -23,7 +23,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: "npm"
           cache-dependency-path: front-end/package-lock.json
       
@@ -54,5 +54,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}public_html/desenvolvimento/
+          TARGET: ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/public_html/desenvolvimento/
           EXCLUDE: "/dist/, /node_modules/"
