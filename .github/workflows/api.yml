@@ -34,6 +34,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           script: |
-            cd ${{ secrets.REMOTE_TARGET }}/public_html/api
+            cd ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/public_html/api
             composer2 install
             

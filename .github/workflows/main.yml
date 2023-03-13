@@ -54,5 +54,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}public_html/
+          TARGET: ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/public_html
           EXCLUDE: "/dist/, /node_modules/"
