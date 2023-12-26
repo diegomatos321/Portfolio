@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {% block head %}
+        {# SEO Geral #}
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}"/>
+        <link rel="canonical" href="{{ env.APP_URL }}"/>
+        <meta name="author" content="Diego Matos"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="rating" content="General"/>
+
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ env.APP_URL }}/favicon/apple-icon-57x57.png"/>
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ env.APP_URL }}/favicon/apple-icon-60x60.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ env.APP_URL }}/favicon/apple-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ env.APP_URL }}/favicon/apple-icon-76x76.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ env.APP_URL }}/favicon/apple-icon-114x114.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ env.APP_URL }}/favicon/apple-icon-120x120.png"/>
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ env.APP_URL }}/favicon/apple-icon-144x144.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ env.APP_URL }}/favicon/apple-icon-152x152.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ env.APP_URL }}/favicon/apple-icon-180x180.png"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ env.APP_URL }}/favicon/android-icon-192x192.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ env.APP_URL }}/favicon/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ env.APP_URL }}/favicon/favicon-96x96.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ env.APP_URL }}/favicon/favicon-16x16.png"/>
+        <link rel="manifest" href="{{ env.APP_URL }}/favicon/manifest.json"/>
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="msapplication-TileImage" content="{{ env.APP_URL }}/favicon/ms-icon-144x144.png"/>
+        <meta name="theme-color" content="#ffffff"/>
+
+
+        {# Google+ / Schema.org #}
+        <meta itemProp="name" content="{{ block('title') }}"/>
+        <meta itemProp="description" content="{{ block('description') }}"/>
+        <meta itemProp="image" content="{{ env.APP_URL }}/assets/imagens/logo-vertical-fundo-preto.png"/>
+        {# <link href="https://plus.google.com/+SuaPagina" rel="publisher"/> #}
+
+        {# Open Graph Facebook #}
+        <meta property="og:title" content="{{ block('title') }}"/>
+        <meta property="og:description" content="{{ block('description') }}"/>
+        <meta property="og:url" content="{{ env.APP_URL }}"/>
+        <meta property="og:site_name" content="Portfolio do desenvolvedor Diego Matos"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="{{ env.APP_URL }}/assets/imagens/logo-vertical-fundo-preto.png"/>
+        <meta property="og:image:alt" content="Logo do desenvolvedor Diego Matos"/>
+        <meta property="og:locale" content="pt-BR"/>
+
+        {# Twitter #}
+        <meta name="twitter:title" content="{{ block('title') }}"/>
+        <meta name="twitter:description" content="{{ block('description') }}"/>
+        <meta name="twitter:url" content="{{ env.APP_URL }}"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:image" content="{{ env.APP_URL }}/assets/imagens/logo-vertical-fundo-preto.png"/>
+        {# <meta name="twitter:creator" content="@estevanmaito"/> #}
+        {# <meta name="twitter:site" content="@empresa"/> #}
+
+
+    {% endblock %}
+</head>
+<body>
+    <main id="main">{% block content %} {% endblock %}</main>
+    <footer id="footer">{% block footer %} {% endblock %}</footer>
+</body>
+</html>
