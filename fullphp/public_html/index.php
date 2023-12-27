@@ -12,4 +12,4 @@ $twig = new \Twig\Environment($loader, [
 ]);
 $twig->addGlobal('env', $_ENV);
 
-echo $twig->render('index.twig');
+echo $twig->render('index.html.twig');
