@@ -3,3 +3,4 @@
 vendor/
 .idea/
 .htaccess
+fullphp/resources/views_cached/
