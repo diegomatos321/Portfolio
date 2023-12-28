@@ -6,13 +6,13 @@
             <div class="order-last sm:order-first space-y-4">
                 <h3 class="text-2xl text-center sm:text-left"><strong>Dados para contato</strong></h3>
 
-                <a href="mailto: {{ env.MAIL_FROM }}" style="color: white;" class="flex items-center gap-2">
-                    {{ include('/templates/icons/md-mail.svg') }}
-                    <span>{{ env.MAIL_FROM }}</span>
+                <a href="mailto: {{ env.MAIL_ADDRESS }}" style="color: white;" class="flex items-center gap-2">
+                    <div style="width: 1rem;">{{ include('/templates/icons/md-mail.svg') }}</div>
+                    <span>{{ env.MAIL_ADDRESS }}</span>
                 </a>
 
                 <a href="https://www.linkedin.com/in/dev-diego-matos/" target="_blank" class="flex items-center gap-2">
-                    {{ include('/templates/icons/fa-linkedin.svg') }}
+                    <div style="width: 1rem;">{{ include('/templates/icons/fa-linkedin.svg') }}</div>
                     <span>Linkedin</span>
                 </a>
             </div>
@@ -22,34 +22,34 @@
 
                 <div>
                     <form
-                            action="/contato.php"
-                            method="POST"
-                            class="space-y-4"
+                        action="/"
+                        method="POST"
+                        class="space-y-4"
                     >
                         <div>
                             <label for="nome">Digite seu nome:</label>
                             <input
-                                    id="nome"
-                                    name="nome"
-                                    type="text"
-                                    placeholder="Digite seu nome completo"
-                                    class="block w-full text-black"
-                                    autoFocus
-                                    min=5
-                                    max=255
-                                    required
+                                id="nome"
+                                name="nome"
+                                type="text"
+                                placeholder="Digite seu nome completo"
+                                class="block w-full text-black"
+                                autoFocus
+                                min=5
+                                max=255
+                                required
                             />
                         </div>
 
                         <div>
                             <label for="email">Digite seu e-mail:</label>
                             <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Digite seu e-mail para contato"
-                                    class="block w-full text-black"
-                                    required
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="Digite seu e-mail para contato"
+                                class="block w-full text-black"
+                                required
                             />
 
                         </div>
@@ -57,28 +57,28 @@
                         <div>
                             <label>Assunto:</label>
                             <input
-                                    id="assunto"
-                                    name="assunto"
-                                    type="text"
-                                    placeholder="Assunto"
-                                    class="block w-full text-black"
-                                    minLength=5
-                                    maxLength=50
-                                    required
+                                id="assunto"
+                                name="assunto"
+                                type="text"
+                                placeholder="Assunto"
+                                class="block w-full text-black"
+                                minLength=5
+                                maxLength=50
+                                required
                             />
                         </div>
 
                         <div>
                             <p>Mensagem:</p>
                             <textarea
-                                    id="mensagem"
-                                    name="mensagem"
-                                    placeholder="Digite sua mensagem aqui"
-                                    class="block w-full text-black"
-                                    cols=30
-                                    rows=8
-                                    minLength=10
-                                    required
+                                id="mensagem"
+                                name="mensagem"
+                                placeholder="Digite sua mensagem aqui"
+                                class="block w-full text-black"
+                                cols=30
+                                rows=8
+                                minLength=10
+                                required
                             ></textarea>
                         </div>
 

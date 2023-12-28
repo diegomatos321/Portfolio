@@ -2,14 +2,19 @@
 
 require_once '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . DIRECTORY_SEPARATOR . '..');
+use App\Controllers\HomeController;
+
+$dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
 
-$loader = new \Twig\Loader\FilesystemLoader('../resources/views');
-$twig = new \Twig\Environment($loader, [
-    'debug' => $_ENV['APP_DEBUG'],
-    'cache' => '../resources/views_cached',
-]);
-$twig->addGlobal('env', $_ENV);
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $controller = new HomeController();
+    $response = $controller->index();
+    echo $response;
+} else if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $controller = new HomeController();
+    $response = $controller->post();
 
-echo $twig->render('index.html.twig');
+    if (empty($response) === false)
+        echo $response;
+}
