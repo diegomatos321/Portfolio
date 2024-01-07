@@ -114,7 +114,7 @@ class HomeController
             $errors[] = 'O campo Nome deve ser uma string.';
         }
 
-        if (property_exists($inputs, 'assunto') == false || empty($inputs->assunto)) {
+        if (property_exists($inputs, 'assunto') === false || empty($inputs->assunto)) {
             $errors[] = 'O campo Assunto é obrigatório.';
         } else if (is_string($inputs->assunto) == false) {
             $errors[] = 'O campo Assunto deve ser uma string.';
@@ -122,7 +122,7 @@ class HomeController
 
         if (property_exists($inputs, 'mensagem') === false || empty($inputs->mensagem)) {
             $errors[] = 'O campo Mensagem é obrigatório.';
-        } else if (is_string($inputs->mensagem) == false) {
+        } else if (is_string($inputs->mensagem) === false) {
             $errors[] = 'O campo Mensagem deve ser uma string.';
         }
 
