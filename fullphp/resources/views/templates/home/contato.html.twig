@@ -3,18 +3,44 @@
         {#        <Alert class={messageType} body={serverMessage} /> #}
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="order-last sm:order-first space-y-4">
-                <h3 class="text-2xl text-center sm:text-left"><strong>Dados para contato</strong></h3>
+            <div class="order-last sm:order-first space-y-4 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl text-center sm:text-left"><strong>Dados para contato</strong></h2>
 
-                <a href="mailto: {{ env.MAIL_ADDRESS }}" style="color: white;" class="flex items-center gap-2">
-                    <div style="width: 1rem;">{{ include('/templates/icons/md-mail.svg') }}</div>
-                    <span>{{ env.MAIL_ADDRESS }}</span>
-                </a>
+                    <a href="mailto: {{ env.MAIL_ADDRESS }}" style="color: white;" class="flex items-center gap-2">
+                        <div style="width: 1rem;">{{ include('/templates/icons/md-mail.svg') }}</div>
+                        <span>{{ env.MAIL_ADDRESS }}</span>
+                    </a>
 
-                <a href="https://www.linkedin.com/in/dev-diego-matos/" target="_blank" class="flex items-center gap-2">
-                    <div style="width: 1rem;">{{ include('/templates/icons/fa-linkedin.svg') }}</div>
-                    <span>Linkedin</span>
-                </a>
+                    <a href="https://www.linkedin.com/in/dev-diego-matos/" target="_blank" class="flex items-center gap-2">
+                        <div style="width: 1rem;">{{ include('/templates/icons/fa-linkedin.svg') }}</div>
+                        <span>Linkedin</span>
+                    </a>
+                </div>
+
+                <div class="hidden sm:block">
+                    <a href="https://www.devdiegomatos.com.br">
+                        <img
+                            style="max-width: 450px;"
+                            src="/assets/marca/logo-horizontal-monocromatica-450x450.png"
+                            title="Marca horizontal Desenvolvedor Diego Matos"
+                            alt="Marca horizontal Desenvolvedor Diego Matos"
+                            class='mx-auto w-full'
+                        />
+                    </a>
+                    <ul class='w-full flex flex-wrap gap-4 justify-center items-center'>
+                        <li>
+                            <a href="https://github.com/diegomatos321" target="_blank">
+                                <div style="width: 2rem;">{{ include('templates/icons/fa-github.svg') }}</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/dev-diego-matos/" target="_blank">
+                                <div style="width: 2rem;">{{ include('templates/icons/fa-linkedin.svg') }}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="space-y-4">
