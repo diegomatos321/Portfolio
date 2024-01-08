@@ -79,23 +79,6 @@ class HomeController
             header('Location: ' . $_ENV['APP_URL']);
             exit();
         }
-
-        /*function JsonResponse(array $message, int $status): string {
-            header('Access-Control-Allow-Origin: *');
-            header('Content-Type: application/json; chatset=UTF-8');
-            header('Access-Control-Allow-Methods: POST, OPTIONS');
-            header('Access-Control-Allow-Headers: Content-Type');
-            http_response_code($status);
-            return json_encode($message);
-        }*/
-    }
-
-    protected function GetEmailBody(array $inputs): string {
-        extract($inputs);
-
-        ob_start();
-        include 'contato-message.html.twig';
-        return ob_get_clean();
     }
 
     protected function ValidateInputs(\stdClass $inputs): array {
