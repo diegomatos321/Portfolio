@@ -47,6 +47,11 @@
                 <h2 class="text-3xl text-center sm:text-left"><strong>Entre em contato</strong></h2>
 
                 <div>
+                    {% if session.errors.geral is defined %}
+                        <div class="p-4 bg-red-600 text-white rounded-lg">
+                            <p>{{ session.errors.geral }}</p>
+                        </div>
+                    {% endif %}
                     <form
                         action="/"
                         method="POST"
@@ -58,13 +63,14 @@
                                 id="nome"
                                 name="nome"
                                 type="text"
-                                placeholder="Digite seu nome completo"
+                                {% if session.oldInputs.nome is defined %} value="{{ session.oldInputs.nome }}" {% endif %}
+                                placeholder="Fulano de tal"
                                 class="block w-full text-black"
                                 autoFocus
-                                min=5
-                                max=255
-                                required
                             />
+                            {% if session.errors.nome is defined %}
+                                <p class="text-red-400">{{ session.errors.nome }}</p>
+                            {% endif %}
                         </div>
 
                         <div>
@@ -73,25 +79,32 @@
                                 id="email"
                                 name="email"
                                 type="email"
-                                placeholder="Digite seu e-mail para contato"
+                                {% if session.oldInputs.email is defined %} value="{{ session.oldInputs.email }}" {% endif %}
+                                placeholder="fulanodetal@example.com"
                                 class="block w-full text-black"
-                                required
                             />
-
+                            {% if session.errors.email is defined %}
+                                <p class="text-red-400">{{ session.errors.email }}</p>
+                            {% endif %}
                         </div>
 
                         <div>
-                            <label>Assunto:</label>
+                            <label for="assunto">Assunto:</label>
                             <input
                                 id="assunto"
                                 name="assunto"
                                 type="text"
-                                placeholder="Assunto"
+                                {% if session.oldInputs.assunto is defined %}
+                                    value="{{ session.oldInputs.assunto }}"
+                                {% else %}
+                                    value="Vi seu portfolio e gostaria de conversar com você"
+                                {% endif %}
+                                placeholder="Digite o assunto da mensagem."
                                 class="block w-full text-black"
-                                minLength=5
-                                maxLength=50
-                                required
                             />
+                            {% if session.errors.assunto is defined %}
+                                <p class="text-red-400">{{ session.errors.assunto }}</p>
+                            {% endif %}
                         </div>
 
                         <div>
@@ -103,12 +116,13 @@
                                 class="block w-full text-black"
                                 cols=30
                                 rows=8
-                                minLength=10
-                                required
-                            ></textarea>
+                            >{% if session.oldInputs.mensagem is defined %}{{ session.oldInputs.mensagem}}{% endif %}</textarea>
+                            {% if session.errors.mensagem is defined %}
+                                <p class="text-red-400">{{ session.errors.mensagem }}</p>
+                            {% endif %}
                         </div>
 
-                        <button type="submit" class="w-full px-4 py-2 bg-white text-black">Enviar</button>
+                        <button type="submit" class="w-full px-4 py-2 bg-white text-black border border-white hover:opacity-75 transition">Enviar</button>
                     </form>
                 </div>
             </div>

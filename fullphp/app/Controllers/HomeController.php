@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+use PHPMailer\PHPMailer\PHPMailer;
+
 class HomeController
 {
-
     static protected int $CONTACT_NAME_MAX_LENGTH = 60;
     static protected int $SUBJECT_MAX_LENGTH = 60;
     static protected int $MESSAGE_BODY_MAX_LENGTH = 255;
@@ -17,26 +18,26 @@ class HomeController
             'cache' => '../resources/views_cached',
         ]);
         $this->twig->addGlobal('env', $_ENV);
+        $this->twig->addGlobal('session', $_SESSION);
     }
 
     public function index(): string {
         return $this->twig->render('index.html.twig');
     }
 
-    public function post(): string | null {
+    public function post(): void {
         $inputs = (object) $_POST;
         [$validated, $errors] = $this->ValidateInputs($inputs);
 
         if ($validated === false) {
-            // Retornar com erros
+            //http_response_code(404);
+            //return $this->twig->render('index.html.twig', $errors);
+            $_SESSION['oldInputs'] = $_POST;
+            $_SESSION['errors'] = $errors;
 
-            http_response_code(404);
-            return $this->twig->render('404.html.twig');
+            header('Location: ' . $_ENV['APP_URL'] . '#contato');
+            exit();
         }
-
-        $inputs->assunto = substr(strip_tags($inputs->assunto), 0, static::$SUBJECT_MAX_LENGTH);
-        $inputs->nome = substr(strip_tags($inputs->nome), 0, static::$CONTACT_NAME_MAX_LENGTH);
-        $inputs->mensagem = substr(strip_tags($inputs->mensagem), 0, static::$MESSAGE_BODY_MAX_LENGTH);
 
         try {
             $mail = $this->SetUpPHPMailer();
@@ -46,37 +47,37 @@ class HomeController
             $mail->addAddress($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);     //Add a recipient
             $mail->addReplyTo($inputs->email, $inputs->nome);
 
-            /*$emailBody = GetEmailBody(array(
-                'contactName' => $inputs->nome,
-                'messageBody' => $inputs->mensagem
-            ));*/
-            $emailBody = $this->twig->render('mails/contato-message.html.twig', [
+            $mailBody = $this->twig->render('mails/contato-message.html.twig', [
                 'nome' => $inputs->nome,
                 'message' => $inputs->mensagem
             ]);
-            $mail->msgHTML($emailBody);
+            $mail->msgHTML($mailBody);
 
             $result = $mail->send();
 
             if ($result === false) {
                 // Retornar com mensagem de erro
-                exit(0);
+
+                $_SESSION['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
+                header('Location: ' . $_ENV['APP_URL'] . '#contato');
+                exit();
             }
 
             // Retornar com mensagem de sucesso
 
-            /*echo JsonResponse([
-                'Email enviado com sucesso!'
-            ], 200);*/
-            exit(0);
+            $_SESSION['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
+            header('Location: ' . $_ENV['APP_URL']);
         } catch (\Throwable $th) {
             // Retornar com mensagem de erro
 
-            /*echo JsonResponse([
-                'Ocorreu um Erro',
-                $th->getMessage()
-            ], $th->getCode());*/
-            exit(0);
+            if ($_ENV['APP_DEBUG'] === true) {
+                $_SESSION['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
+            } else {
+                $_SESSION['errors']['geral'] = $th->getMessage();
+            }
+
+            header('Location: ' . $_ENV['APP_URL']);
+            exit();
         }
 
         /*function JsonResponse(array $message, int $status): string {
@@ -101,29 +102,35 @@ class HomeController
         $errors = [];
 
         if (property_exists($inputs, 'email') === false || empty($inputs->email)) {
-            $errors[] = 'O campo Email para Contato é obrigatório.';
+            $errors['email'] = 'O campo Email para Contato é obrigatório.';
         } else if (is_string($inputs->email) === false) {
-            $errors[] = 'O campo Email para Contato precisa ser uma string.';
+            $errors['email'] = 'O campo Email para Contato precisa ser uma string.';
         } else if (filter_var($inputs->email, FILTER_VALIDATE_EMAIL) === false) {
-            $errors[] = 'O campo Email para Contato não está num formato válido.';
+            $errors['email'] = 'O campo Email para Contato não está num formato válido.';
         }
 
         if (property_exists($inputs, 'nome') === false || empty($inputs->nome)) {
-            $errors[] = 'O campo Nome é obrigatório';
+            $errors['nome'] = 'O campo Nome é obrigatório.';
         } else if (is_string($inputs->nome) === false) {
-            $errors[] = 'O campo Nome deve ser uma string.';
+            $errors['nome'] = 'O campo Nome deve ser uma string.';
+        } else if (strlen($inputs->email) > static::$CONTACT_NAME_MAX_LENGTH) {
+            $errors['nome'] = 'O campo nome precisa ter no máximo ' . static::$CONTACT_NAME_MAX_LENGTH . ' caracteres.';
         }
 
         if (property_exists($inputs, 'assunto') === false || empty($inputs->assunto)) {
-            $errors[] = 'O campo Assunto é obrigatório.';
+            $errors['assunto'] = 'O campo Assunto é obrigatório.';
         } else if (is_string($inputs->assunto) == false) {
-            $errors[] = 'O campo Assunto deve ser uma string.';
+            $errors['assunto'] = 'O campo Assunto deve ser uma string.';
+        } else if (strlen($inputs->assunto) > static::$SUBJECT_MAX_LENGTH) {
+            $errors['assunto'] = 'O campo Assunto precisa ter no máximo '. static::$SUBJECT_MAX_LENGTH . ' caracteres';
         }
 
         if (property_exists($inputs, 'mensagem') === false || empty($inputs->mensagem)) {
-            $errors[] = 'O campo Mensagem é obrigatório.';
+            $errors['mensagem'] = 'O campo Mensagem é obrigatório.';
         } else if (is_string($inputs->mensagem) === false) {
-            $errors[] = 'O campo Mensagem deve ser uma string.';
+            $errors['mensagem'] = 'O campo Mensagem deve ser uma string.';
+        } else if (strlen($inputs->mensagem) > static::$MESSAGE_BODY_MAX_LENGTH) {
+            $errors['mensagem'] = 'O campo Mensagem precisa ter no máximo '. static::$MESSAGE_BODY_MAX_LENGTH . ' caracteres';
         }
 
         return [

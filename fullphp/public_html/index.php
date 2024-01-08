@@ -16,16 +16,30 @@ session_start([
     'use_strict_mode' => true,
 ]);
 
+if (array_key_exists('oldInputs', $_SESSION) === false) {
+    $_SESSION['oldInputs'] = [];
+}
+
+if (array_key_exists('errors', $_SESSION) === false) {
+    $_SESSION['errors'] = [];
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $controller = new HomeController();
     $response = $controller->index();
+
+    if (empty($_SESSION['errors']) === false) {
+        unset($_SESSION['errors']);
+    }
+
+    if (empty($_SESSION['oldInputs']) === false) {
+        unset($_SESSION['oldInputs']);
+    }
+
     echo $response;
 } else if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $controller = new HomeController();
-    $response = $controller->post();
-
-    if (empty($response) === false)
-        echo $response;
+    $controller->post();
 }
 
 session_write_close();
