@@ -46,13 +46,21 @@
             <div class="space-y-4">
                 <h2 class="text-3xl text-center sm:text-left"><strong>Entre em contato</strong></h2>
 
-                <div>
-                    {% if session.errors.geral is defined %}
-                        <div class="p-4 bg-red-600 text-white rounded-lg">
-                            <p>{{ session.errors.geral }}</p>
+                <div class="space-y-4">
+                    {% if session.flash.errors.geral is defined %}
+                        <div class="p-4 bg-red-600 text-white">
+                            <p>{{ session.flash.errors.geral }}</p>
                         </div>
                     {% endif %}
+
+                    {% if session.flash.success is defined %}
+                        <div class="p-4 bg-green-600 text-white">
+                            <p>{{ session.flash.success }}</p>
+                        </div>
+                    {% endif %}
+
                     <form
+                        id="contato"
                         action="/"
                         method="POST"
                         class="space-y-4"
@@ -63,13 +71,13 @@
                                 id="nome"
                                 name="nome"
                                 type="text"
-                                {% if session.oldInputs.nome is defined %} value="{{ session.oldInputs.nome }}" {% endif %}
+                                {% if session.flash.oldInputs.nome is defined %} value="{{ session.flash.oldInputs.nome }}" {% endif %}
                                 placeholder="Fulano de tal"
                                 class="block w-full text-black"
                                 autoFocus
                             />
-                            {% if session.errors.nome is defined %}
-                                <p class="text-red-400">{{ session.errors.nome }}</p>
+                            {% if session.flash.errors.nome is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.nome }}</p>
                             {% endif %}
                         </div>
 
@@ -79,12 +87,12 @@
                                 id="email"
                                 name="email"
                                 type="email"
-                                {% if session.oldInputs.email is defined %} value="{{ session.oldInputs.email }}" {% endif %}
+                                {% if session.flash.oldInputs.email is defined %} value="{{ session.flash.oldInputs.email }}" {% endif %}
                                 placeholder="fulanodetal@example.com"
                                 class="block w-full text-black"
                             />
-                            {% if session.errors.email is defined %}
-                                <p class="text-red-400">{{ session.errors.email }}</p>
+                            {% if session.flash.errors.email is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.email }}</p>
                             {% endif %}
                         </div>
 
@@ -94,16 +102,16 @@
                                 id="assunto"
                                 name="assunto"
                                 type="text"
-                                {% if session.oldInputs.assunto is defined %}
-                                    value="{{ session.oldInputs.assunto }}"
+                                {% if session.flash.oldInputs.assunto is defined %}
+                                    value="{{ session.flash.oldInputs.assunto }}"
                                 {% else %}
                                     value="Vi seu portfolio e gostaria de conversar com você"
                                 {% endif %}
                                 placeholder="Digite o assunto da mensagem."
                                 class="block w-full text-black"
                             />
-                            {% if session.errors.assunto is defined %}
-                                <p class="text-red-400">{{ session.errors.assunto }}</p>
+                            {% if session.flash.errors.assunto is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.assunto }}</p>
                             {% endif %}
                         </div>
 
@@ -116,9 +124,9 @@
                                 class="block w-full text-black"
                                 cols=30
                                 rows=8
-                            >{% if session.oldInputs.mensagem is defined %}{{ session.oldInputs.mensagem}}{% endif %}</textarea>
-                            {% if session.errors.mensagem is defined %}
-                                <p class="text-red-400">{{ session.errors.mensagem }}</p>
+                            >{% if session.flash.oldInputs.mensagem is defined %}{{ session.flash.oldInputs.mensagem}}{% endif %}</textarea>
+                            {% if session.flash.errors.mensagem is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.mensagem }}</p>
                             {% endif %}
                         </div>
 

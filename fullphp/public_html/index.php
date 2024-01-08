@@ -16,24 +16,16 @@ session_start([
     'use_strict_mode' => true,
 ]);
 
-if (array_key_exists('oldInputs', $_SESSION) === false) {
-    $_SESSION['oldInputs'] = [];
-}
-
-if (array_key_exists('errors', $_SESSION) === false) {
-    $_SESSION['errors'] = [];
+if (array_key_exists('flash', $_SESSION) === false) {
+    $_SESSION['flash'] = [];
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $controller = new HomeController();
     $response = $controller->index();
 
-    if (empty($_SESSION['errors']) === false) {
-        unset($_SESSION['errors']);
-    }
-
-    if (empty($_SESSION['oldInputs']) === false) {
-        unset($_SESSION['oldInputs']);
+    if (empty($_SESSION['flash']) === false) {
+        unset($_SESSION['flash']);
     }
 
     echo $response;

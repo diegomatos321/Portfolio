@@ -32,8 +32,8 @@ class HomeController
         if ($validated === false) {
             //http_response_code(404);
             //return $this->twig->render('index.html.twig', $errors);
-            $_SESSION['oldInputs'] = $_POST;
-            $_SESSION['errors'] = $errors;
+            $_SESSION['flash']['oldInputs'] = $_POST;
+            $_SESSION['flash']['errors'] = $errors;
 
             header('Location: ' . $_ENV['APP_URL'] . '#contato');
             exit();
@@ -58,22 +58,22 @@ class HomeController
             if ($result === false) {
                 // Retornar com mensagem de erro
 
-                $_SESSION['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
+                $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
                 header('Location: ' . $_ENV['APP_URL'] . '#contato');
                 exit();
             }
 
             // Retornar com mensagem de sucesso
 
-            $_SESSION['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
+            $_SESSION['flash']['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
             header('Location: ' . $_ENV['APP_URL']);
         } catch (\Throwable $th) {
             // Retornar com mensagem de erro
 
             if ($_ENV['APP_DEBUG'] === true) {
-                $_SESSION['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
+                $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
             } else {
-                $_SESSION['errors']['geral'] = $th->getMessage();
+                $_SESSION['flash']['errors']['geral'] = $th->getMessage();
             }
 
             header('Location: ' . $_ENV['APP_URL']);
