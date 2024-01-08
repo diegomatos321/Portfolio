@@ -1,0 +1,139 @@
+<section class="bg-[#00AFEF] text-white">
+    <div class="container mx-auto px-4 py-8">
+        {#        <Alert class={messageType} body={serverMessage} /> #}
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="order-last sm:order-first space-y-4 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl text-center sm:text-left"><strong>Dados para contato</strong></h2>
+
+                    <a href="mailto: {{ env.MAIL_ADDRESS }}" style="color: white;" class="flex items-center gap-2">
+                        <div style="width: 1rem;">{{ include('/templates/icons/md-mail.svg') }}</div>
+                        <span>{{ env.MAIL_ADDRESS }}</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/dev-diego-matos/" target="_blank" class="flex items-center gap-2">
+                        <div style="width: 1rem;">{{ include('/templates/icons/fa-linkedin.svg') }}</div>
+                        <span>Linkedin</span>
+                    </a>
+                </div>
+
+                <div class="hidden sm:block">
+                    <a href="{{ env.APP_URL }}">
+                        <img
+                            style="max-width: 450px;"
+                            src="/assets/marca/logo-horizontal-monocromatica-450x450.png"
+                            title="Marca horizontal Desenvolvedor Diego Matos"
+                            alt="Marca horizontal Desenvolvedor Diego Matos"
+                            class='mx-auto w-full'
+                        />
+                    </a>
+                    <ul class='w-full flex flex-wrap gap-4 justify-center items-center'>
+                        <li>
+                            <a href="https://github.com/diegomatos321" target="_blank">
+                                <div style="width: 2rem;">{{ include('templates/icons/fa-github.svg') }}</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/dev-diego-matos/" target="_blank">
+                                <div style="width: 2rem;">{{ include('templates/icons/fa-linkedin.svg') }}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-3xl text-center sm:text-left"><strong>Entre em contato</strong></h2>
+
+                <div class="space-y-4">
+                    {% if session.flash.errors.geral is defined %}
+                        <div class="p-4 bg-red-600 text-white">
+                            <p>{{ session.flash.errors.geral }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if session.flash.success is defined %}
+                        <div class="p-4 bg-green-600 text-white">
+                            <p>{{ session.flash.success }}</p>
+                        </div>
+                    {% endif %}
+
+                    <form
+                        id="contato"
+                        action="/"
+                        method="POST"
+                        class="space-y-4"
+                    >
+                        <div>
+                            <label for="nome">Digite seu nome:</label>
+                            <input
+                                id="nome"
+                                name="nome"
+                                type="text"
+                                {% if session.flash.oldInputs.nome is defined %} value="{{ session.flash.oldInputs.nome }}" {% endif %}
+                                placeholder="Fulano de tal"
+                                class="block w-full text-black"
+                                autoFocus
+                            />
+                            {% if session.flash.errors.nome is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.nome }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <label for="email">Digite seu e-mail:</label>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                {% if session.flash.oldInputs.email is defined %} value="{{ session.flash.oldInputs.email }}" {% endif %}
+                                placeholder="fulanodetal@example.com"
+                                class="block w-full text-black"
+                            />
+                            {% if session.flash.errors.email is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.email }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <label for="assunto">Assunto:</label>
+                            <input
+                                id="assunto"
+                                name="assunto"
+                                type="text"
+                                {% if session.flash.oldInputs.assunto is defined %}
+                                    value="{{ session.flash.oldInputs.assunto }}"
+                                {% else %}
+                                    value="Vi seu portfolio e gostaria de conversar com você"
+                                {% endif %}
+                                placeholder="Digite o assunto da mensagem."
+                                class="block w-full text-black"
+                            />
+                            {% if session.flash.errors.assunto is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.assunto }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <p>Mensagem:</p>
+                            <textarea
+                                id="mensagem"
+                                name="mensagem"
+                                placeholder="Digite sua mensagem aqui"
+                                class="block w-full text-black"
+                                cols=30
+                                rows=8
+                            >{% if session.flash.oldInputs.mensagem is defined %}{{ session.flash.oldInputs.mensagem}}{% endif %}</textarea>
+                            {% if session.flash.errors.mensagem is defined %}
+                                <p class="text-red-400">{{ session.flash.errors.mensagem }}</p>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" class="w-full px-4 py-2 bg-white text-black border border-white hover:opacity-75 transition">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

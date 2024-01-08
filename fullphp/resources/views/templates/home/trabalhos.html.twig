@@ -1,0 +1,64 @@
+<section>
+    <div class="container mx-auto px-4 py-8 space-y-4">
+        <header class="hidden">
+            <h2 class="text-4xl"><strong>Meus projetos</strong></h2>
+        </header>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <li>
+                {% embed '/templates/trabalho-card.html.twig' with {
+                    'href': 'https://www.preparavestibular.com.br',
+                    'title': 'Prepara Vestibular',
+                    'imgSrc': '/assets/imagens/Prepara Vestibular - Assinatura Principal - Fundo Transparente_300_130.png',
+                    'imgAlt': 'Marca do Prepara Vestibular'
+                } only %}
+                    {% block content %}
+                        <p>Plataforma gratuita de resolução de questões e simulados para o vestibular.</p>
+                    {% endblock %}
+                {% endembed %}
+            </li>
+
+            <li>
+                {% embed '/templates/trabalho-card.html.twig' with {
+                    'title': 'Cuidado e Afeto',
+                    'imgSrc': '/assets/imagens/logo-cuidado-e-afeto.png',
+                    'imgAlt': 'Marca do Cuidado e Afeto'
+                } only %}
+                    {% block content %}
+                        <p>Plataforma de Cuidadores Pessoais no Rio de Janeiro</p>
+                    {% endblock %}
+                {% endembed %}
+            </li>
+
+            <li>
+                {% embed '/templates/trabalho-card.html.twig' with {
+                    'href': 'https://diegomatos321.github.io/escola-mozilla-verso/',
+                    'title': 'Minijogos Educativos',
+                    'imgSrc': '/assets/imagens/minijogos-imagem-principal_300_169.png',
+                    'imgAlt': 'Minijogos Imagem principal'
+                } only %}
+                    {% block content %}
+                        <p>Plataforma gratuita de resolução de questões e simulados para o vestibular.</p>
+                    {% endblock %}
+                {% endembed %}
+            </li>
+
+            <li>
+                {% embed '/templates/trabalho-card.html.twig' with {
+                    'href': 'https://www.estudioz.art.br/',
+                    'title': 'EstudioZ',
+                    'imgSrc': '/assets/imagens/landing-page-estudio-z.png',
+                    'imgAlt': 'Marca EstudioZ'
+                } only %}
+                    {% block content %}
+                        <p>Landing page para estudio Artístico do Rio de Janeiro.</p>
+                    {% endblock %}
+                {% endembed %}
+            </li>
+        </ul>
+
+        <div class="text-right">
+            <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/" target="_blank" class="underline">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
+        </div>
+    </div>
+</section>

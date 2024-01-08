@@ -1,0 +1,11 @@
+<a href="{{ href }}" target="_blank">
+    <div class="shadow-lg p-4 space-y-2 h-full transition-transform hover:-translate-y-4">
+        <img class="object-contain w-full sm:h-[200px]" src="{{ imgSrc }}" title="{{ imgAlt }}" alt="{{ imgAlt }}" />
+
+        <h3 class="text-2xl"><strong>{{ title }}</strong></h3>
+
+        <div class="overflow-auto text-justify">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</a>
