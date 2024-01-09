@@ -56,7 +56,9 @@
     {% endblock %}
 </head>
 <body>
-    <main id="main">{% block content %} {% endblock %}</main>
-    <footer id="footer">{% block footer %} {% endblock %}</footer>
+    <main id="main">{% block content %}{% endblock %}</main>
+    <footer id="footer">{% block footer %}{% endblock %}</footer>
+
+    {% block scripts %}{% endblock %}
 </body>
 </html>

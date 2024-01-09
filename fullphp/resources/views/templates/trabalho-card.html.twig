@@ -1,14 +1,35 @@
-<a href="{{ href }}" target="_blank">
-    <div class="shadow-lg p-4 space-y-2 h-full transition-transform hover:-translate-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 shadow-lg">
+    <video-js
+        class="video-js"
+        controls
+        width="1024"
+        height="576"
+        data-setup='{"aspectRatio": "16:9"}'
+    >
+        <source src="{{ videoSrc }}" type="video/mp4" />
+
+        <p class="vjs-no-js">Para assistir este vídeo ative o Javascript e considere usar um navegador mais moderno.</p>
+    </video-js>
+
+    <div class="relative">
         <picture>
-            <source srcset="{{ imgSrc }}.webp" type="image/webp">
-            <img class="object-contain w-full sm:h-[200px]" src="{{ imgSrc }}.png" title="{{ imgAlt }}" alt="{{ imgAlt }}" />
+            <source srcset="{{ backgroundImg }}.webp" type="image/webp">
+            <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain opacity-20 pointer-events-none" src="{{ backgroundImg }}.png" title="{{ backgroundImgAlt }}" alt="{{ backgroundImgAlt }}" />
         </picture>
 
-        <h3 class="text-2xl"><strong>{{ title }}</strong></h3>
+        <div class="p-4 h-full flex flex-col justify-between">
+            <div style="max-height: 100%;">
+                <h3 class="text-2xl"><strong>{{ title }}</strong></h3>
 
-        <div class="overflow-auto text-justify">
-            {% block content %}{% endblock %}
+                <div class="overflow-auto text-justify">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <p>Status: {% block status %}{% endblock %}</p>
+                <p>Tempo: {% block tempo %}{% endblock %}</p>
+            </div>
         </div>
     </div>
-</a>
+</div>

@@ -22,15 +22,19 @@
     </style>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://vjs.zencdn.net/8.9.0/video-js.css" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
     {{ include('/templates/home/apresentacao.html.twig') }}
     {{ include('/templates/home/trabalhos.html.twig') }}
     {{ include('/templates/home/contato.html.twig') }}
-    {{ include('/templates/home/footer.html.twig') }}
 {% endblock %}
 
 {% block footer %}
+    {{ include('/templates/home/footer.html.twig') }}
+{% endblock %}
 
+{% block scripts %}
+    <script src="https://vjs.zencdn.net/8.9.0/video.min.js"></script>
 {% endblock %}
