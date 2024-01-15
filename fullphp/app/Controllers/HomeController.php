@@ -112,10 +112,8 @@ class HomeController
             $errors['mensagem'] = 'O campo Mensagem é obrigatório.';
         } else if (is_string($inputs->mensagem) === false) {
             $errors['mensagem'] = 'O campo Mensagem deve ser uma string.';
-        } else if (strlen($inputs->mensagem) > static::$MESSAGE_BODY_MAX_LENGTH) {
-            $errors['mensagem'] = 'O campo Mensagem precisa ter no máximo '. static::$MESSAGE_BODY_MAX_LENGTH . ' caracteres';
         }
-
+        
         return [
             empty($errors),
             $errors
