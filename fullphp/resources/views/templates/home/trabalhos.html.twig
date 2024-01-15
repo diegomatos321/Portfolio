@@ -4,7 +4,7 @@
             <h2 class="text-4xl"><strong>Meus projetos</strong></h2>
         </header>
 
-        <ul class="space-y-8">
+        <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
             <li>
                 {% embed '/templates/trabalho-card.html.twig' with {
                     'videoSrc': '/assets/videos/demonstracao-implementacao-telas-finais.mp4',
@@ -16,7 +16,7 @@
                         <p>Plataforma gratuita de resolução de questões e simulados para o vestibular. <a class="underline text-blue-600" href="https://www.preparavestibular.com.br">Acesse já!</a></p>
                     {% endblock %}
 
-                    {% block status %}<span class="text-green-600">Em produção</span>{% endblock %}
+                    {% block status %}<span class="text-green-600">Em produção.</span>{% endblock %}
                     {% block tempo %}Jan/2023 - Atual{% endblock %}
                 {% endembed %}
             </li>
@@ -32,7 +32,7 @@
                         <p>Plataforma de Cuidadores Pessoais no Rio de Janeiro.</p>
                     {% endblock %}
 
-                    {% block status %}<span class="text-red-600">Suspenso pelo cliente</span>{% endblock %}
+                    {% block status %} <span class="text-green-600">Entregue</span> (descontinuado pelo cliente).{% endblock %}
                     {% block tempo %}Jan/2022 - Jun/2022{% endblock %}
                 {% endembed %}
             </li>
@@ -48,7 +48,7 @@
                         <p>Coletânea de minijogos encomendados por uma escola. <a class="underline text-blue-600" href="">Acessa já!</a></p>
                     {% endblock %}
 
-                    {% block status %}<span class="text-green-600">Entregue</span>{% endblock %}
+                    {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
                     {% block tempo %}Mar/2022 - Mai/2022{% endblock %}
                 {% endembed %}
             </li>
@@ -64,7 +64,7 @@
                         <p>Landing page para estudio Artístico do Rio de Janeiro. <a class="underline text-blue-600" href="https://www.estudioz.art.br/">Acessa já!</a></p>
                     {% endblock %}
 
-                    {% block status %}<span class="text-green-600">Entregue</span>{% endblock %}
+                    {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
                     {% block tempo %}Set/2022{% endblock %}
                 {% endembed %}
             </li>
