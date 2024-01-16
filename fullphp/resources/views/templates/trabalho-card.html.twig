@@ -7,9 +7,10 @@
                 controls
                 width="1024"
                 height="576"
+                {% if thumbnail %}poster="/assets/thumbnails/{{ thumbnail }}"{% endif %}
                 data-setup='{"aspectRatio": "16:9"}'
         >
-            <source src="{{ videoSrc }}" type="video/mp4" />
+            <source src="/assets/videos/{{ videoSrc }}" type="video/mp4" />
 
             <p class="vjs-no-js">Para assistir este vídeo ative o Javascript e considere usar um navegador mais moderno.</p>
         </video-js>
