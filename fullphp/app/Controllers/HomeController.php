@@ -113,7 +113,7 @@ class HomeController
         } else if (is_string($inputs->mensagem) === false) {
             $errors['mensagem'] = 'O campo Mensagem deve ser uma string.';
         }
-        
+
         return [
             empty($errors),
             $errors
