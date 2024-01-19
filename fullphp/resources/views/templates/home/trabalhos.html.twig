@@ -17,13 +17,42 @@
                     {% block content %}
                         <div>
                             <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                            <p>O Projeto Prepara Vestibular é um projeto web full-stack de minha propriedade que ainda está em desenvolvimento.</p>
-                            <p>Com o objetivo de prover soluções digitais para alunos estudarem por meio de questões, simulados, pesquisarem e tirar dúvidas com professores. Além de também trazer praticidade para professorem na hora de montar suas provas, lista de exercícios e gerar uma fonte de renda extra tirando dúvidas.</p>
+                            <p>O Projeto <a class="underline text-blue-600" href="https://www.preparavestibular.com.br" target="_blank">Prepara Vestibular</a> é um projeto web full-stack de minha propriedade que ainda está em desenvolvimento.</p>
+                            <p>Com o objetivo de prover soluções digitais para alunos estudarem por meio de questões, simulados, pesquisarem matérias e tirar dúvidas com professores. Além de também trazer praticidade para professorem na hora de montar suas provas, lista de exercícios e gerar uma fonte de renda extra tirando dúvidas.</p>
                         </div>
 
                         <div>
                             <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
                             <p>Como o projeto é uma iniciativa minha, fui responsável em desenvolvedor o site, modelar o sistema, projetar o banco de dados, configurar o servidor, coordenar os profissionais (contratados) de  designer e de marketing digital de acordo com os ideias do projeto.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                            <p>O Prepara Vestibular é construído em cima da stack TALL, sigla que significa Tailwindcss, Alpinejs, Laravel e Livewire.</p>
+                            <p>Os diagrams UML foram feitos usando draw.io, o banco de dados usado é o MariaDB e o Stripe como gateway de pagamentos.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl"><strong>Características</strong></h3>
+
+                            <ul class="list-inside list-disc">
+                                <li><strong>Banco de questões</strong>: base de dados que permite realizar consultas complexas, filtrando questões por assuntos gerais, especifícos, prova, ano e dificuldade.</li>
+                                <li><strong>Simulados</strong>: Simulados fluídos e bem responsíveis.</li>
+                                <li><strong>Ajuda de professores</strong>: Aluno pode pedir ajuda a um professor dentro da plataforma. Sujeito a disponibilidade.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+
+                            <ul class="list-inside list-decimal">
+                                <li>Dificuldade em popular a base de dados em razão da falta de uma api para consultar questões de vestibulares, sendo necessário cadastramento manual apoiado com técnicas de web scraping.</li>
+                                <li>A integração de um editor de texto para o cadastramento das questões foi bem desafiador, dado que as questões precisam possuir enunciado, metadados, e alternativas (essas que podem variar de quantidade e formato dependendo da prova).</li>
+                                <li>Montar a tela para realizar simulados foi particularmente bem trabalhosa.</li>
+                                <li>Uma novidade para mim foi desenvolver um sistema para limitar ações do usuário dependendo do plano que ele pertence (aluno, professor/gratuito, pago).</li>
+                                <li>A parte de consentimento de usuário para os cookies não foi bem intuitiva.</li>
+                                <li>Gerenciamento das telas de portais dependendo do cargo do usuário: aluno, professor, administrador...</li>
+                            </ul>
                         </div>
                     {% endblock %}
 
