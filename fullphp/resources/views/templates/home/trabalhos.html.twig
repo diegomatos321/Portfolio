@@ -10,6 +10,10 @@
                     'videoSrc': 'demonstracao-preparavestibular.mp4',
                     'title': 'Prepara Vestibular',
                 } only %}
+                    {% block summary %}
+                        <p>Plataforma gratuita de resolução de questões para o vestibular, treine com simulados ou através do banco de questões com gabarito. Uma nova alternativa para ajudar os estudantes do País inteiro a se prepararem para as provas.</p>
+                    {% endblock %}
+
                     {% block content %}
                         <p>Plataforma gratuita de resolução de questões e simulados para o vestibular. <a class="underline text-blue-600" href="https://www.preparavestibular.com.br">Acesse já!</a></p>
                     {% endblock %}
@@ -24,11 +28,11 @@
                     'videoSrc': 'demonstracao-cuidado-e-afeto.mp4',
                     'title': 'Cuidado e Afeto',
                 } only %}
-                    {% block content %}
+                    {% block summary %}
                         <p>Plataforma de Cuidadores Pessoais no Rio de Janeiro.</p>
                     {% endblock %}
 
-                    {% block status %} <span class="text-green-600">Entregue</span> (descontinuado pelo cliente).{% endblock %}
+                    {% block status %} <span class="text-green-600">Entregue.</span>{% endblock %}
                     {% block tempo %}Jan/2022 - Jun/2022{% endblock %}
                 {% endembed %}
             </li>
@@ -39,7 +43,7 @@
                     'title': 'Minijogos Educativos',
                     'thumbnail': 'minijogos-educativos.jpg'
                 } only %}
-                    {% block content %}
+                    {% block summary %}
                         <p>Coletânea de minijogos encomendados por uma escola. <a class="underline text-blue-600" href="">Acessa já!</a></p>
                     {% endblock %}
 
@@ -53,7 +57,7 @@
                     'videoSrc': 'demonstracao-estudioz.mp4',
                     'title': 'LandingPage para o EstudioZ',
                 } only %}
-                    {% block content %}
+                    {% block summary %}
                         <p>Landing page para estudio Artístico do Rio de Janeiro. <a class="underline text-blue-600" href="https://www.estudioz.art.br/">Acessa já!</a></p>
                     {% endblock %}
 
