@@ -127,7 +127,25 @@
                     'thumbnail': 'minijogos-educativos.jpg'
                 } only %}
                     {% block summary %}
-                        <p>Coletânea de minijogos encomendados por uma escola. <a class="underline text-blue-600" href="">Acessa já!</a></p>
+                        <p>Coletânea de minijogos educativos encomendados por uma escola.</p>
+                    {% endblock %}
+
+                    {% block content %}
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                            <p>Este projeto é composto por 16 jogos para o navegador com público alvo para crianças e foi encomendado por uma escola em São Paulo. A temática dos jogos foi construída através da ajuda dos professores, <a class="underline text-blue-600" target="_blank" href="https://diegomatos321.github.io/escola-mozilla-verso/">jogue agora!</a></p>
+                            <p>O trabalho chegou a mim por indicação em um dos canais internos da <a class="underline text-blue-600" href="https://gdpufrj.itch.io/" target="_blank">GDP</a>.</p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                            <p>Para este projeto eu trabalhei como colaborador programador de jogos da <a class="underline text-blue-600" target="_blank" href="https://garoastudios.com">Garoa Studios</a>, participei das reuniões com o cliente e nas tomadas de decisão em relação a tecnologias usada no projeto.</p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                            <p>Como um diferencial dos minijogos sejam que funcionem bem no navegador, foi decidido usar um solução própria para o navegador, dessa forma usamos <a class="underline text-blue-600" href="https://phaser.io/">Phaser 3</a>, um framework de desenvolvimento jogos HTML5.</p>
+                        </div>
                     {% endblock %}
 
                     {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
@@ -141,7 +159,45 @@
                     'title': 'LandingPage para o EstudioZ',
                 } only %}
                     {% block summary %}
-                        <p>Landing page para estudio Artístico do Rio de Janeiro. <a class="underline text-blue-600" href="https://www.estudioz.art.br/">Acessa já!</a></p>
+                        <p>Landing page para estudio Artístico do Rio de Janeiro. <a class="underline text-blue-600" target="_blank" href="https://www.estudioz.art.br/">Acessa já!</a></p>
+                    {% endblock %}
+
+                    {% block content %}
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                            <p>Uma landing page para divulgar os trabalhos do estúdio. Trabalho chegou a mim por indicação.</p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                            <p>Programar um site responsivo, que deve possuir uma paleta de cores dinâmica (ao recarregar a tela, as cores devem trocar) e também dar um mínimo de autonomia ao cliente: as seções devem ser dinâmicas de acordo com pastas que são criadas com conteúdo no lado do servidor.</p>
+                            <p>Configurar o servidor e deploy do site, projeto não possui base de dados, apenas usa o sistema de arquivos.</p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                            <p>Site foi construído usando apenas php, sem framework, usando um forte paradigma de MVC e Orientação a Objetos. Já para o front end, tecnologias base: HTML5, javascript e framework tailwindcss.</p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Características</strong></h3>
+
+                            <ul class="list-inside list-disc">
+                                <li>Paleta de cores dinamicas.</li>
+                                <li>Seções da página dinâmicas.</li>
+                                <li>Envio de emails.</li>
+                                <li>Ferramentas do Google Analyics, Search Console e Google Ads configurados.</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+
+                            <ul class="list-inside list-decimal">
+                                <li>Alterar a paleta de cores da página foi inusitado para mim. Problema foi solucionado usando um cookie de sessão que guarda qual tema está sendo visto, e uma lista estática de cores repassadas pelo cliente. Essa lista é iterada e altera valores da variável css.</li>
+                                <li>Exibir os livros do estúdio num estilo de revista.</li>
+                            </ul>
+                        </div>
                     {% endblock %}
 
                     {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
