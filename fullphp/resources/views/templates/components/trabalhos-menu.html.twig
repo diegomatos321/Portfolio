@@ -1,0 +1,9 @@
+<div class="flex flex-wrap justify-between md:justify-normal gap-4">
+    <a
+        href="/"
+        class="{% if q is empty %}bg-gray-600 text-white {% endif %}md:w-full text-center px-4 py-2"
+    >
+        Trabalhos
+    </a>
+    <a href="/?q=projetos" class="{% if q == 'projetos' %}bg-gray-600 text-white{% endif %} md:w-full text-center px-4 py-2">Projetos</a>
+</div>

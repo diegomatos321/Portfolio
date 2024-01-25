@@ -1,0 +1,25 @@
+<section>
+    <div class="container mx-auto px-4 py-8 space-y-4">
+{#        <header>#}
+{#            <h2 class="text-4xl"><strong>Meus projetos</strong></h2>#}
+{#        </header>#}
+
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+            <div class="col-span-1">
+                {{ include('/templates/components/trabalhos-menu.html.twig') }}
+            </div>
+
+            <div class="col-span-5">
+                {% if q is empty %}
+                    {{ include('/templates/home/trabalhos.html.twig') }}
+                {% elseif q == 'projetos' %}
+                    {{ include('/templates/home/projetos.html.twig') }}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="text-right">
+            <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/" target="_blank" class="underline">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
+        </div>
+    </div>
+</section>

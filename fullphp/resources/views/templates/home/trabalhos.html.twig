@@ -1,213 +1,202 @@
-<section>
-    <div class="container mx-auto px-4 py-8 space-y-4">
-        <header class="hidden">
-            <h2 class="text-4xl"><strong>Meus projetos</strong></h2>
-        </header>
+<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'demonstracao-preparavestibular.mp4',
+            'title': 'Prepara Vestibular',
+        } only %}
+            {% block summary %}
+                <p>Plataforma gratuita de resolução de questões para o vestibular, treine com simulados ou através do banco de questões com gabarito. Uma nova alternativa para ajudar os estudantes do País inteiro a se prepararem para as provas.</p>
+            {% endblock %}
 
-        <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
-            <li>
-                {% embed '/templates/trabalho-card.html.twig' with {
-                    'videoSrc': 'demonstracao-preparavestibular.mp4',
-                    'title': 'Prepara Vestibular',
-                } only %}
-                    {% block summary %}
-                        <p>Plataforma gratuita de resolução de questões para o vestibular, treine com simulados ou através do banco de questões com gabarito. Uma nova alternativa para ajudar os estudantes do País inteiro a se prepararem para as provas.</p>
-                    {% endblock %}
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>O Projeto <a class="underline text-blue-600" href="https://www.preparavestibular.com.br" target="_blank">Prepara Vestibular</a> é um projeto web full-stack de minha propriedade que ainda está em desenvolvimento.</p>
+                    <p>Com o objetivo de prover soluções digitais para alunos estudarem por meio de questões, simulados, pesquisarem matérias e tirar dúvidas com professores. Além de também trazer praticidade para professores na hora de montar suas provas, lista de exercícios e gerar uma fonte de renda extra tirando dúvidas de alunos.</p>
+                </div>
 
-                    {% block content %}
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                            <p>O Projeto <a class="underline text-blue-600" href="https://www.preparavestibular.com.br" target="_blank">Prepara Vestibular</a> é um projeto web full-stack de minha propriedade que ainda está em desenvolvimento.</p>
-                            <p>Com o objetivo de prover soluções digitais para alunos estudarem por meio de questões, simulados, pesquisarem matérias e tirar dúvidas com professores. Além de também trazer praticidade para professores na hora de montar suas provas, lista de exercícios e gerar uma fonte de renda extra tirando dúvidas.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <p>Como o projeto é uma iniciativa minha, fui responsável pela parte de programação do site, modelar o sistema, projetar o banco de dados, configurar o servidor, coordenar os profissionais (contratados) de  designer e de marketing digital de acordo com os ideias do projeto.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
-                            <p>Como o projeto é uma iniciativa minha, fui responsável pela parte de programação do site, modelar o sistema, projetar o banco de dados, configurar o servidor, coordenar os profissionais (contratados) de  designer e de marketing digital de acordo com os ideias do projeto.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                    <p>O Prepara Vestibular é construído em cima da stack TALL, sigla que significa Tailwindcss, Alpinejs, Laravel e Livewire.</p>
+                    <p>Os diagrams UML foram feitos usando draw.io, o banco de dados usado é o MariaDB, Github Actions para automatização do deploy e o Stripe como gateway de pagamentos.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
-                            <p>O Prepara Vestibular é construído em cima da stack TALL, sigla que significa Tailwindcss, Alpinejs, Laravel e Livewire.</p>
-                            <p>Os diagrams UML foram feitos usando draw.io, o banco de dados usado é o MariaDB, Github Actions para automatização do deploy e o Stripe como gateway de pagamentos.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Características</strong></h3>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Características</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li><strong>Banco de questões</strong>: base de dados que permite realizar consultas complexas, filtrando questões por assuntos gerais, especifícos, prova, ano e dificuldade.</li>
+                        <li><strong>Simulados</strong> fluídos e bem responsíveis.</li>
+                        <li><strong>Ajuda de professores</strong>: Aluno pode pedir ajuda a um professor dentro da plataforma. Sujeito a disponibilidade.</li>
+                        <li><strong>Testes, testes e mais teste</strong>: Apesar de eu não seguir a risca o TDD (Test Driven Development), para este projeto me esforcei para escrever mais de 300 testes.</li>
+                    </ul>
+                </div>
 
-                            <ul class="list-inside list-disc">
-                                <li><strong>Banco de questões</strong>: base de dados que permite realizar consultas complexas, filtrando questões por assuntos gerais, especifícos, prova, ano e dificuldade.</li>
-                                <li><strong>Simulados</strong> fluídos e bem responsíveis.</li>
-                                <li><strong>Ajuda de professores</strong>: Aluno pode pedir ajuda a um professor dentro da plataforma. Sujeito a disponibilidade.</li>
-                                <li><strong>Testes, testes e mais teste</strong>: Apesar de eu não seguir a risca o TDD (Test Driven Development), para este projeto me esforcei para escrever mais de 300 testes.</li>
-                            </ul>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+                    <ul class="list-inside list-decimal">
+                        <li>Dificuldade em popular a base de dados em razão da falta de uma api para consultar questões de vestibulares, sendo necessário cadastramento manual apoiado com técnicas de web scraping.</li>
+                        <li>A integração de um editor de texto para o cadastramento das questões foi bem desafiador, dado que as questões precisam possuir enunciado, metadados, e alternativas (essas que podem variar de quantidade e formato dependendo da prova).</li>
+                        <li>Montar a tela para realizar simulados foi particularmente bem trabalhosa.</li>
+                        <li>Uma novidade para mim foi desenvolver um sistema para limitar ações do usuário dependendo cargo que pertence: visitante, aluno não assinante, professor não assinante, aluno assinante e professor assinante.</li>
+                        <li>A parte de consentimento de usuário para os cookies não foi bem intuitiva.</li>
+                        <li>Gerenciamento das telas de portais dependendo do cargo do usuário: aluno, professor, administrador...</li>
+                        <li>SEO e montar as campanhas pagas.</li>
+                    </ul>
+                </div>
+            {% endblock %}
 
-                            <ul class="list-inside list-decimal">
-                                <li>Dificuldade em popular a base de dados em razão da falta de uma api para consultar questões de vestibulares, sendo necessário cadastramento manual apoiado com técnicas de web scraping.</li>
-                                <li>A integração de um editor de texto para o cadastramento das questões foi bem desafiador, dado que as questões precisam possuir enunciado, metadados, e alternativas (essas que podem variar de quantidade e formato dependendo da prova).</li>
-                                <li>Montar a tela para realizar simulados foi particularmente bem trabalhosa.</li>
-                                <li>Uma novidade para mim foi desenvolver um sistema para limitar ações do usuário dependendo cargo que pertence: visitante, aluno não assinante, professor não assinante, aluno assinante e professor assinante.</li>
-                                <li>A parte de consentimento de usuário para os cookies não foi bem intuitiva.</li>
-                                <li>Gerenciamento das telas de portais dependendo do cargo do usuário: aluno, professor, administrador...</li>
-                                <li>SEO e montar as campanhas pagas.</li>
-                            </ul>
-                        </div>
-                    {% endblock %}
+            {% block status %}<span class="text-green-600">Em produção.</span>{% endblock %}
+            {% block tempo %}Jan/2023 - Atual{% endblock %}
+        {% endembed %}
+    </li>
 
-                    {% block status %}<span class="text-green-600">Em produção.</span>{% endblock %}
-                    {% block tempo %}Jan/2023 - Atual{% endblock %}
-                {% endembed %}
-            </li>
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'demonstracao-cuidado-e-afeto.mp4',
+            'title': 'Cuidado e Afeto',
+        } only %}
+            {% block summary %}
+                <p>Plataforma para marcar consulta com profissionais de Enfermagem e Cuidadores Pessoais no Rio de Janeiro.</p>
+            {% endblock %}
 
-            <li>
-                {% embed '/templates/trabalho-card.html.twig' with {
-                    'videoSrc': 'demonstracao-cuidado-e-afeto.mp4',
-                    'title': 'Cuidado e Afeto',
-                } only %}
-                    {% block summary %}
-                        <p>Plataforma para marcar consulta com profissionais de Enfermagem e Cuidadores Pessoais no Rio de Janeiro.</p>
-                    {% endblock %}
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>Desenvolver um site cujo objetivo será reunir profissionais qualificados de enfermagem e cuidadores pessoais onde os clientes irão acessar o site, acessar o catálogo de profissionais e selecionar um profissional disponível para atender um paciente.</p>
+                    <p>Cada consulta conterá informação de: quem é o cliente solicitante, o paciente, quem é o profissional, a data e hora da consulta, a jornada de trabalho, o número da consulta, valor da consulta, forma de pagamento.</p>
+                </div>
 
-                    {% block content %}
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                            <p>Desenvolver um site cujo objetivo será reunir profissionais qualificados de enfermagem e cuidadores pessoais onde os clientes irão acessar o site, acessar o catálogo de profissionais e selecionar um profissional disponível para atender um paciente.</p>
-                            <p>Cada consulta conterá informação de: quem é o cliente solicitante, o paciente, quem é o profissional, a data e hora da consulta, a jornada de trabalho, o número da consulta, valor da consulta, forma de pagamento.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <p>Para este projeto o cliente chegou a mim por indicação, então eu fiz entrevista, consultoria, análise de requisitos e por fim orçamento.</p>
+                    <p>Após aprovação do projeto foi dado início a modelagem do sistema e da base de dados, programação do site e configuração do servidor.</p>
+                    <p>Ao longo do projeto foram feitas reuniões de acompanhamento quinzenais com o cliente e reuniões semanais com o designer responsável do projeto.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
-                            <p>Para este projeto o cliente chegou a mim por indicação, então eu fiz entrevista, consultoria, análise de requisitos e por fim orçamento.</p>
-                            <p>Após aprovação do projeto foi dado início a modelagem do sistema e da base de dados, programação do site e configuração do servidor.</p>
-                            <p>Ao longo do projeto foram feitas reuniões de acompanhamento quinzenais com o cliente e reuniões semanais com o designer responsável do projeto.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                    <p>O Cuidado e Afeto foi desenvolvido com o NextJS + Typescript para geração das páginas estáticas, o framework bootstrap e os dados do banco de dados são consumidos no lado do cliente através de uma API feita usando Lumen, um micro-framework baseado em Laravel.</p>
+                    <p>Os diagramas UML foram feitos usando draw.io, o banco de dados usado é o MariaDB, Github Actions para automatização do deploy e o pagseguro como gateway de pagamentos.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
-                            <p>O Cuidado e Afeto foi desenvolvido com o NextJS + Typescript para geração das páginas estáticas, o framework bootstrap e os dados do banco de dados são consumidos no lado do cliente através de uma API feita usando Lumen, um micro-framework baseado em Laravel.</p>
-                            <p>Os diagramas UML foram feitos usando draw.io, o banco de dados usado é o MariaDB, Github Actions para automatização do deploy e o pagseguro como gateway de pagamentos.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Características</strong></h3>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Características</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li><strong>Pesquisa por dia:</strong> Página intuítiva para pesquisar profissionais disponíveis por data.</li>
+                        <li><strong>Profissionais verificados:</strong> Apenas profissionais verificados terão o cadastro aceito, aumentando segurança do cliente.</li>
+                        <li>Entre em contato diretamente com o profissional após confirmação do pagamento.</li>
+                        <li>Integração do sistema de pagamento por meio do gateway de pagamentos, principalmente a parte do PIX.</li>
+                    </ul>
+                </div>
 
-                            <ul class="list-inside list-disc">
-                                <li><strong>Pesquisa por dia:</strong> Página intuítiva para pesquisar profissionais disponíveis por data.</li>
-                                <li><strong>Profissionais verificados:</strong> Apenas profissionais verificados terão o cadastro aceito, aumentando segurança do cliente.</li>
-                                <li>Entre em contato diretamente com o profissional após confirmação do pagamento.</li>
-                                <li>Integração do sistema de pagamento por meio do gateway de pagamentos, principalmente a parte do PIX.</li>
-                            </ul>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+                    <ul class="list-inside list-decimal">
+                        <li>Muito aprendizado em relação a gerenciamento de projeto e do cliente.</li>
+                        <li>Como único do desenvolvedor do projeto, foi muito trabalhoso gerenciar repositórios diferentes com tecnologias tão distintas, um sistema que roda no lado do cliente em React e um backend em php.</li>
+                        <li>O dashboard de gerenciamento do administrador tomou muito mais tempo de execução do que o previsto, principalmente para implantação dos token JWT para autenticação.</li>
+                        <li>O componente para selecionar a data nas telas de exibir os profissionais disponíveis e dentro do perfil do profissional (onde mostra os horários disponíveis do profissional), foi surpreendemente mais difícil que imaginado.</li>
+                    </ul>
+                </div>
+            {% endblock %}
 
-                            <ul class="list-inside list-decimal">
-                                <li>Muito aprendizado em relação a gerenciamento de projeto e do cliente.</li>
-                                <li>Como único do desenvolvedor do projeto, foi muito trabalhoso gerenciar repositórios diferentes com tecnologias tão distintas, um sistema que roda no lado do cliente em React e um backend em php.</li>
-                                <li>O dashboard de gerenciamento do administrador tomou muito mais tempo de execução do que o previsto, principalmente para implantação dos token JWT para autenticação.</li>
-                                <li>O componente para selecionar a data nas telas de exibir os profissionais disponíveis e dentro do perfil do profissional (onde mostra os horários disponíveis do profissional), foi surpreendemente mais difícil que imaginado.</li>
-                            </ul>
-                        </div>
-                    {% endblock %}
+            {% block status %} <span class="text-green-600">Entregue.</span>{% endblock %}
+            {% block tempo %}Jan/2022 - Jun/2022{% endblock %}
+        {% endembed %}
+    </li>
 
-                    {% block status %} <span class="text-green-600">Entregue.</span>{% endblock %}
-                    {% block tempo %}Jan/2022 - Jun/2022{% endblock %}
-                {% endembed %}
-            </li>
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'demonstracao-minijogos-educativos.mp4',
+            'title': 'Minijogos Educativos',
+            'thumbnail': 'minijogos-educativos.jpg'
+        } only %}
+            {% block summary %}
+                <p>Coletânea de minijogos educativos encomendados por uma escola.</p>
+            {% endblock %}
 
-            <li>
-                {% embed '/templates/trabalho-card.html.twig' with {
-                    'videoSrc': 'demonstracao-minijogos-educativos.mp4',
-                    'title': 'Minijogos Educativos',
-                    'thumbnail': 'minijogos-educativos.jpg'
-                } only %}
-                    {% block summary %}
-                        <p>Coletânea de minijogos educativos encomendados por uma escola.</p>
-                    {% endblock %}
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>Este projeto é composto por 16 jogos para o navegador com público alvo para crianças e foi encomendado por uma escola em São Paulo. A temática dos jogos foi construída através da ajuda dos professores, <a class="underline text-blue-600" target="_blank" href="https://diegomatos321.github.io/escola-mozilla-verso/">jogue agora!</a></p>
+                    <p>O trabalho chegou a mim por indicação em um dos canais internos da <a class="underline text-blue-600" href="https://gdpufrj.itch.io/" target="_blank">GDP</a>.</p>
+                </div>
 
-                    {% block content %}
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                            <p>Este projeto é composto por 16 jogos para o navegador com público alvo para crianças e foi encomendado por uma escola em São Paulo. A temática dos jogos foi construída através da ajuda dos professores, <a class="underline text-blue-600" target="_blank" href="https://diegomatos321.github.io/escola-mozilla-verso/">jogue agora!</a></p>
-                            <p>O trabalho chegou a mim por indicação em um dos canais internos da <a class="underline text-blue-600" href="https://gdpufrj.itch.io/" target="_blank">GDP</a>.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <p>Para este projeto eu trabalhei como colaborador programador de jogos da <a class="underline text-blue-600" target="_blank" href="https://garoastudios.com">Garoa Studios</a>, participei das reuniões com o cliente e nas tomadas de decisão em relação a tecnologias usada no projeto.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
-                            <p>Para este projeto eu trabalhei como colaborador programador de jogos da <a class="underline text-blue-600" target="_blank" href="https://garoastudios.com">Garoa Studios</a>, participei das reuniões com o cliente e nas tomadas de decisão em relação a tecnologias usada no projeto.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                    <p>Como um diferencial dos minijogos sejam que funcionem bem no navegador, foi decidido usar um solução própria para o navegador, dessa forma usamos <a class="underline text-blue-600" href="https://phaser.io/">Phaser 3</a>, um framework de desenvolvimento jogos HTML5.</p>
+                </div>
+            {% endblock %}
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
-                            <p>Como um diferencial dos minijogos sejam que funcionem bem no navegador, foi decidido usar um solução própria para o navegador, dessa forma usamos <a class="underline text-blue-600" href="https://phaser.io/">Phaser 3</a>, um framework de desenvolvimento jogos HTML5.</p>
-                        </div>
-                    {% endblock %}
+            {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
+            {% block tempo %}Mar/2022 - Mai/2022{% endblock %}
+        {% endembed %}
+    </li>
 
-                    {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
-                    {% block tempo %}Mar/2022 - Mai/2022{% endblock %}
-                {% endembed %}
-            </li>
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'demonstracao-estudioz.mp4',
+            'title': 'LandingPage para o EstudioZ',
+        } only %}
+            {% block summary %}
+                <p>Landing page para estudio Artístico do Rio de Janeiro. <a class="underline text-blue-600" target="_blank" href="https://www.estudioz.art.br/">Acessa já!</a></p>
+            {% endblock %}
 
-            <li>
-                {% embed '/templates/trabalho-card.html.twig' with {
-                    'videoSrc': 'demonstracao-estudioz.mp4',
-                    'title': 'LandingPage para o EstudioZ',
-                } only %}
-                    {% block summary %}
-                        <p>Landing page para estudio Artístico do Rio de Janeiro. <a class="underline text-blue-600" target="_blank" href="https://www.estudioz.art.br/">Acessa já!</a></p>
-                    {% endblock %}
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>Uma landing page para divulgar os trabalhos do estúdio. Trabalho chegou a mim por indicação.</p>
+                </div>
 
-                    {% block content %}
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                            <p>Uma landing page para divulgar os trabalhos do estúdio. Trabalho chegou a mim por indicação.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <p>Programar um site responsivo, que deve possuir uma paleta de cores dinâmica (ao recarregar a tela, as cores devem trocar) e também dar um mínimo de autonomia ao cliente: as seções devem ser dinâmicas de acordo com pastas que são criadas com conteúdo no lado do servidor.</p>
+                    <p>Configurar o servidor e deploy do site, projeto não possui base de dados, apenas usa o sistema de arquivos.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
-                            <p>Programar um site responsivo, que deve possuir uma paleta de cores dinâmica (ao recarregar a tela, as cores devem trocar) e também dar um mínimo de autonomia ao cliente: as seções devem ser dinâmicas de acordo com pastas que são criadas com conteúdo no lado do servidor.</p>
-                            <p>Configurar o servidor e deploy do site, projeto não possui base de dados, apenas usa o sistema de arquivos.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                    <p>Site foi construído usando apenas php, sem framework, usando um forte paradigma de MVC e Orientação a Objetos. Já para o front end, tecnologias base: HTML5, javascript e framework tailwindcss.</p>
+                </div>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
-                            <p>Site foi construído usando apenas php, sem framework, usando um forte paradigma de MVC e Orientação a Objetos. Já para o front end, tecnologias base: HTML5, javascript e framework tailwindcss.</p>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Características</strong></h3>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Características</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li>Paleta de cores dinamicas.</li>
+                        <li>Seções da página dinâmicas.</li>
+                        <li>Envio de emails.</li>
+                        <li>Ferramentas do Google Analyics, Search Console e Google Ads configurados.</li>
+                    </ul>
+                </div>
 
-                            <ul class="list-inside list-disc">
-                                <li>Paleta de cores dinamicas.</li>
-                                <li>Seções da página dinâmicas.</li>
-                                <li>Envio de emails.</li>
-                                <li>Ferramentas do Google Analyics, Search Console e Google Ads configurados.</li>
-                            </ul>
-                        </div>
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
 
-                        <div class="space-y-1">
-                            <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+                    <ul class="list-inside list-decimal">
+                        <li>Alterar a paleta de cores da página foi inusitado para mim. Problema foi solucionado usando um cookie de sessão que guarda qual tema está sendo visto, e uma lista estática de cores repassadas pelo cliente. Essa lista é iterada e altera valores da variável css.</li>
+                        <li>Exibir os livros do estúdio num estilo de revista.</li>
+                    </ul>
+                </div>
+            {% endblock %}
 
-                            <ul class="list-inside list-decimal">
-                                <li>Alterar a paleta de cores da página foi inusitado para mim. Problema foi solucionado usando um cookie de sessão que guarda qual tema está sendo visto, e uma lista estática de cores repassadas pelo cliente. Essa lista é iterada e altera valores da variável css.</li>
-                                <li>Exibir os livros do estúdio num estilo de revista.</li>
-                            </ul>
-                        </div>
-                    {% endblock %}
+            {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
+            {% block tempo %}Set/2022{% endblock %}
+        {% endembed %}
+    </li>
+</ul>
 
-                    {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
-                    {% block tempo %}Set/2022{% endblock %}
-                {% endembed %}
-            </li>
-        </ul>
-
-        <div class="text-right">
-            <p>Acesse minha <a href="https://diegomatos321.github.io/Projetos/" target="_blank" class="underline">página no Github</a> para ver projetos menores que foram usados para estudo e não estão em produção</p>
-        </div>
-    </div>
-</section>
