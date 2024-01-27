@@ -12,31 +12,35 @@
         <p class="vjs-no-js">Para assistir este vídeo ative o Javascript e considere usar um navegador mais moderno.</p>
     </video-js>
 
-    <div style="flex: 1 1 auto;" class="px-4 py-4 text-justify">
+    <div style="flex: 1 1 auto;" class="px-4 py-4 text-justify space-y-1">
         {% block summary %}{% endblock %}
     </div>
 
-    <div class="px-4 pb-4 flex flex-wrap gap-4">
-        <p>Status: {% block status %}{% endblock %}</p>
-        <p>Tempo: {% block tempo %}{% endblock %}</p>
-    </div>
+    {% if block('status') is defined and block('tempo') is defined %}
+        <div class="px-4 pb-4 flex flex-wrap gap-4">
+            <p>Status: {{ block('status') }}</p>
+            <p>Tempo: {{ block('tempo') }}</p>
+        </div>
+    {% endif %}
 
-    <button x-on:click="showModal = true" class="w-full px-4 py-2 bg-green-600 text-white text-center hover:bg-green-400">Saiba mais</button>
+    {% if block('content') is defined %}
+        <button x-on:click="showModal = true" class="w-full px-4 py-2 bg-green-600 text-white text-center hover:bg-green-400">Saiba mais</button>
 
-    <template x-teleport="body">
-        <div x-cloak x-show="showModal" class="w-screen h-screen fixed left-0 top-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
-            <div
+        <template x-teleport="body">
+            <div x-cloak x-show="showModal" class="w-screen h-screen fixed left-0 top-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
+                <div
                     x-on:keyup.escape.window="showModal = false"
                     x-on:mousedown.away="showModal = false"
                     x-show="showModal"
                     x-transition
                     style="max-height: 100vh;"
                     class="w-full sm:max-w-[70vw] overflow-auto"
-            >
-                <div class="bg-white p-4 rounded-t text-justify space-y-4">{% block content %}{% endblock %}</div>
-                <button x-on:click="showModal=false" class="w-full px-4 py-2 bg-[#00AFEF] hover:bg-blue-400 text-white text-center rounded-b">Fechar</button>
+                >
+                    <div class="bg-white p-4 rounded-t text-justify space-y-4">{{ block('content') }}</div>
+                    <button x-on:click="showModal=false" class="w-full px-4 py-2 bg-[#00AFEF] hover:bg-blue-400 text-white text-center rounded-b">Fechar</button>
+                </div>
             </div>
-        </div>
-    </template>
+        </template>
+    {% endif %}
 </div>
 
