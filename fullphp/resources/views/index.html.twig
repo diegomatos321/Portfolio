@@ -2,35 +2,10 @@
 
 {% block title %}Desenvolvedor de Software Diego Matos{% endblock %}
 {% block description %}Página principal do desenvolvedor Diego Matos, conheça um pouco sobre ele, entre em contato, baixe seu curriculum ou olhe o código desse site em sua página do GitHub.{% endblock %}
-{% block head %}
-    {{ parent() }}
-
-    <style>
-        @font-face {
-            font-family: DINPro;
-            src: url("/assets/font/FontsFree-Net-DINPro-1.ttf") format('truetype');
-        }
-
-        @font-face {
-            font-family: Speeday;
-            src: url("/assets/font/Speeday-Regular-FFP.ttf") format('truetype');
-        }
-
-        body {
-            font-family: DINPro;
-        }
-    </style>
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-{% endblock %}
 
 {% block content %}
-    {{ include('/templates/home/apresentacao.html.twig') }}
-    {{ include('/templates/home/trabalhos.html.twig') }}
-    {{ include('/templates/home/contato.html.twig') }}
-    {{ include('/templates/home/footer.html.twig') }}
+    {{ include('/templates/apresentacao.html.twig') }}
+    {{ include('/templates/trabalhos.html.twig') }}
+    {{ include('/templates/contato.html.twig') }}
 {% endblock %}
 
-{% block footer %}
-
-{% endblock %}

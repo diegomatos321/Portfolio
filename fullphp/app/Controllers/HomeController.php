@@ -4,25 +4,20 @@ namespace App\Controllers;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-class HomeController
+class HomeController extends BaseController
 {
     static protected int $CONTACT_NAME_MAX_LENGTH = 60;
     static protected int $SUBJECT_MAX_LENGTH = 60;
     static protected int $MESSAGE_BODY_MAX_LENGTH = 255;
-    protected \Twig\Environment $twig;
 
     public function __construct() {
-        $loader = new \Twig\Loader\FilesystemLoader('../resources/views');
-        $this->twig = new \Twig\Environment($loader, [
-            'debug' => $_ENV['APP_DEBUG'],
-            'cache' => '../resources/views_cached',
-        ]);
-        $this->twig->addGlobal('env', $_ENV);
-        $this->twig->addGlobal('session', $_SESSION);
+        parent::__construct();
     }
 
     public function index(): string {
-        return $this->twig->render('index.html.twig');
+        return $this->twig->render('index.html.twig', [
+            'q' => $_GET['q']
+        ]);
     }
 
     public function post(): void {
@@ -112,8 +107,6 @@ class HomeController
             $errors['mensagem'] = 'O campo Mensagem é obrigatório.';
         } else if (is_string($inputs->mensagem) === false) {
             $errors['mensagem'] = 'O campo Mensagem deve ser uma string.';
-        } else if (strlen($inputs->mensagem) > static::$MESSAGE_BODY_MAX_LENGTH) {
-            $errors['mensagem'] = 'O campo Mensagem precisa ter no máximo '. static::$MESSAGE_BODY_MAX_LENGTH . ' caracteres';
         }
 
         return [
