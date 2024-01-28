@@ -74,7 +74,6 @@
                                 {% if session.flash.oldInputs.nome is defined %} value="{{ session.flash.oldInputs.nome }}" {% endif %}
                                 placeholder="Fulano de tal"
                                 class="block w-full text-black"
-                                autoFocus
                             />
                             {% if session.flash.errors.nome is defined %}
                                 <p class="text-red-400">{{ session.flash.errors.nome }}</p>
