@@ -1,9 +1,6 @@
 name: Deploy front end em produção
 
 on:
-  push:
-    branches: ["main"]
-  
   workflow_dispatch:
 
 env:
