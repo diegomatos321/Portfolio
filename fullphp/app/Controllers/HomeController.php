@@ -61,7 +61,7 @@ class HomeController extends BaseController
             // Retornar com mensagem de sucesso
 
             $_SESSION['flash']['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
-            header('Location: ' . $_ENV['APP_URL']);
+            header('Location: ' . $_ENV['APP_URL'] . '#contato');
         } catch (\Throwable $th) {
             // Retornar com mensagem de erro
 
@@ -71,7 +71,7 @@ class HomeController extends BaseController
                 $_SESSION['flash']['errors']['geral'] = $th->getMessage();
             }
 
-            header('Location: ' . $_ENV['APP_URL']);
+            header('Location: ' . $_ENV['APP_URL'] . '#contato');
             exit();
         }
     }
