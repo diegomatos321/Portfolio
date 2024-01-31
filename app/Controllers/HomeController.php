@@ -8,7 +8,6 @@ class HomeController extends BaseController
 {
     static protected int $CONTACT_NAME_MAX_LENGTH = 60;
     static protected int $SUBJECT_MAX_LENGTH = 60;
-    static protected int $MESSAGE_BODY_MAX_LENGTH = 255;
 
     public function __construct() {
         parent::__construct();

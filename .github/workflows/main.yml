@@ -1,13 +1,14 @@
-name: Deploy front end em produção
+name: Deploy site ambiente de produção.
 
 on:
+<<<<<<< Updated upstream
   workflow_dispatch:
+=======
+  push:
+    branches: ["main"]
+>>>>>>> Stashed changes
 
-env:
-  NEXT_PUBLIC_APP_URL: https://www.devdiegomatos.com.br
-  NEXT_PUBLIC_API_URL: https://api.devdiegomatos.com.br
-  NEXT_PUBLIC_EMAIL: diego@devdiegomatos.com.br
-  NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,40 +17,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "npm"
-          cache-dependency-path: front-end/package-lock.json
-      
-      - name: Cache NextJS
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/front-end/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-      
-      - name: Build Project
-        run: |
-          cd front-end
-          npm i
-          npm run build
       
       - name: Deploy para hospedagem
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO"
-          SOURCE: "front-end/out/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/public_html
-          EXCLUDE: "/dist/, /node_modules/"
+          TARGET: ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/
+          EXCLUDE: "/dist/, /node_modules/, /vendor/"
