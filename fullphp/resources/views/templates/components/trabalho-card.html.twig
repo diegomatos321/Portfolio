@@ -2,10 +2,12 @@
     <h3 class="text-2xl"><strong>{{ title }}</strong></h3>
 
     <video-js
-            class="video-js"
-            controls
-            {% if thumbnail %}poster="/assets/thumbnails/{{ thumbnail }}"{% endif %}
-            data-setup='{"aspectRatio": "16:9"}'
+        class="video-js"
+        controls
+        width="450"
+        height="250"
+        {% if thumbnail %}poster="/assets/thumbnails/{{ thumbnail }}"{% endif %}
+        data-setup='{"aspectRatio": "16:9"}'
     >
         <source src="/assets/videos/{{ videoSrc }}" type="video/mp4" />
 
