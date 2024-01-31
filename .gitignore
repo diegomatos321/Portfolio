@@ -3,4 +3,4 @@
 vendor/
 .idea/
 .htaccess
-fullphp/.env
+.env
