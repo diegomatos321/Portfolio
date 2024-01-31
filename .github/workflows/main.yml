@@ -1,12 +1,8 @@
 name: Deploy site ambiente de produção.
 
 on:
-<<<<<<< Updated upstream
-  workflow_dispatch:
-=======
   push:
     branches: ["main"]
->>>>>>> Stashed changes
 
   workflow_dispatch:
 
