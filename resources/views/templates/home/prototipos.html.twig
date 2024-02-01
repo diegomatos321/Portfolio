@@ -14,6 +14,19 @@
 
     <li>
         {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'app-desktop-windows-forms.mp4',
+            'title': 'Sistema básico de gerenciamento de Escola',
+            'thumbnail': 'app-desktop-winforms.jpg'
+        } only %}
+            {% block summary %}
+                <p>Projeto final do curso Desenvolvimento de Aplicações para Desktop com Winforms/C# da SOS Tecnologia e Educação.</p>
+                <p>A ideia foi trabalhar com um mini caso imaginário de um proprietário de escola onde ele precise gerenciar seus alunos, despesas e usuários com acesso ao sistema.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
             'videoSrc': 'unity3d-spaceship.mp4',
             'title': '3d Spaceship minijogo',
         } only %}
