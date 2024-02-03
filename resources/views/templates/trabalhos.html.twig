@@ -5,11 +5,11 @@
 {#        </header>#}
 
         <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
-            <div class="col-span-1">
+            <div class="md:col-span-1">
                 {{ include('/templates/components/trabalhos-menu.html.twig') }}
             </div>
 
-            <div class="col-span-5">
+            <div class="md:col-span-5">
                 {% if q is empty %}
                     {{ include('/templates/home/trabalhos.html.twig') }}
                 {% elseif q == 'prototipos' %}
