@@ -1,2 +1,4 @@
 # Portfolio do Desenvolvedor Diego Matos
- Aqui se encontra o código fonte do meu [portfolio](https://devdiegomatos.com.br), é um SPA desenvolvida com **[NextJS](https://nextjs.org/)** com as páginas geradas estaticamente, e uma api em PHP para envio de emails e outras endpoints que outros projetos pessoais podem necessitar.
+Aqui se encontra o código fonte do meu [portfolio](https://devdiegomatos.com.br), é uma simples página programada em php com forte paradigma MVC usando Twig como Template Engine e tailwindcss e alpinejs no front-end.
+
+Os campos do formulário de contato são validados e para envio de email com phpmailer. 

@@ -1,0 +1,98 @@
+<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'demonstracao-lia.mp4',
+            'title': 'Lia na Floresta Mágica',
+        } only %}
+            {% block summary %}
+                <p>A mãe de Lia pegou a doença do Slime e agora ela precisa encontrar o remédio para sua mãe. Ajude Lia a se aventurar através de floresta mágica para se encontrar com seu tio e ajudar sua mãe.</p>
+                <p>Este jogo foi desenvolvido como parte do processo seletivo <a target="_blank" href="https://www.youtube.com/playlist?list=PLnNxNQmWoZVxRj74gNexY_GN9OClQ9dd8" class="underline text-blue-600">LAJE 2021</a> para o grupo de extensão <a target="_blank" href="https://gdpufrj.itch.io/" class="underline text-blue-600">GDP UFRJ</a> dentro de um prazo de 2 semanas usando Godot 3.</p>
+                <p>O jogo encontra-se disponível gratuitamento <a target="_blank" href="https://gdpufrj.itch.io/laje-4" class="underline text-blue-600">aqui</a>. Veja também o <a target="_blank" href="https://github.com/Espetinho-de-Legumes/Lia-na-Floresta-Magica" class="underline text-blue-600">código fonte</a>.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'projeto-ala-warp-perspective-2.mp4',
+            'title': 'Retificação de Perspectiva - Warp Perspective',
+        } only %}
+            {% block summary %}
+                <p>Projeto final da disciplina Algebra Linear Algoritma do curso de Ciência da Computação.</p>
+                <p>Projeto consiste em transformar uma imagem que está "torta" e corrigir sua perspectiva através de coordenadas homogênias e funções afim.</p>
+                <p>Trabalho foi desenvolvido com Python3, veja o código fonte <a href="https://github.com/diegomatos321/UFRJ-Laboratorios/tree/main/Projeto%20final%20Algebra%20Linear%20-%202022-02" class="underline text-blue-600">aqui</a>.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'app-desktop-windows-forms.mp4',
+            'title': 'Sistema básico de gerenciamento de Escola',
+            'thumbnail': 'app-desktop-winforms.jpg'
+        } only %}
+            {% block summary %}
+                <p>Projeto final do curso Desenvolvimento de Aplicações para Desktop com Winforms/C# da SOS Tecnologia e Educação.</p>
+                <p>A ideia foi trabalhar com um mini caso imaginário de um proprietário de escola onde ele precise gerenciar seus alunos, despesas e usuários com acesso ao sistema.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'unity3d-spaceship.mp4',
+            'title': '3d Spaceship minijogo',
+        } only %}
+            {% block summary %}
+                <p>Micro protótipo de um jogo de nave 3d desenvolvido com Unity como parte dos estudos do curso <a target="_blank" href="https://www.udemy.com/course/unitycourse2/" class="underline text-blue-600">Complete C# Unity Game Developer 3D</a>.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'unity3d-tower-defense.mp4',
+            'title': '3d TowerDefense minijogo',
+        } only %}
+            {% block summary %}
+                <p>Micro protótipo de um jogo de Tower Defense 3d desenvolvido com Unity como parte dos estudos do curso <a target="_blank" href="https://www.udemy.com/course/unitycourse2/" class="underline text-blue-600">Complete C# Unity Game Developer 3D</a>.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'construct-2-top-down-shooter.mp4',
+            'title': 'Topdown Zombie Wave Survival 2d',
+        } only %}
+            {% block summary %}
+                <p>Micro protótipo de um topdown shooter 2d onde o jogador deve fugir de uma floresta infestada de zumbis usando locais iluminados, como fogueiras, para se proteger.</p>
+                <p>Jogo foi desenvolvido com Construct 2.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'construct2-jogo-multiplayer.mp4',
+            'title': 'Multiplayer Topdown shooter 2d',
+        } only %}
+            {% block summary %}
+                <p>Me baseando no jogo modo Survival, comecei a estudar desenvolvimento de jogos multiplayer com um mini battle royale.</p>
+                <p>Jogo foi desenvolvido com Construct 2.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'construct2-jogo-tower-defense.mp4',
+            'title': '2d Tower Defense',
+        } only %}
+            {% block summary %}
+                <p>Protótipo de um jogo estilo Tower Defense em 2d com upgrade das torres e uma loja.</p>
+                <p>Jogo foi desenvolvido com Construct 2.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+</ul>
