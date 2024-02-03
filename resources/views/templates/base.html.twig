@@ -73,7 +73,7 @@
             }
         </style>
 
-        {% if not env.APP_DEBUG %}
+        {% if env.APP_DEBUG == 'false' %}
             <!-- Google tag (gtag.js) -->
             <script async src="https://www.googletagmanager.com/gtag/js?id={{ env.GA_ID }}"></script>
             <script>

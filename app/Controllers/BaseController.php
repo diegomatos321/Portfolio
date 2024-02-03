@@ -9,7 +9,7 @@ class BaseController
     public function __construct() {
         $loader = new \Twig\Loader\FilesystemLoader('../resources/views');
         $this->twig = new \Twig\Environment($loader, [
-            'debug' => $_ENV['APP_DEBUG'],
+            'debug' => (bool) $_ENV['APP_DEBUG'],
             'cache' => '../resources/views_cached',
         ]);
         $this->twig->addGlobal('env', $_ENV);
