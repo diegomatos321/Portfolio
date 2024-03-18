@@ -2,7 +2,13 @@
 
 namespace App\Controllers;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 class HomeController extends BaseController
 {
@@ -24,54 +30,47 @@ class HomeController extends BaseController
         [$validated, $errors] = $this->ValidateInputs($inputs);
 
         if ($validated === false) {
-            //http_response_code(404);
-            //return $this->twig->render('index.html.twig', $errors);
             $_SESSION['flash']['oldInputs'] = $_POST;
             $_SESSION['flash']['errors'] = $errors;
 
             header('Location: ' . $_ENV['APP_URL'] . '#contato');
-            exit();
+            return;
         }
 
         try {
-            $mail = $this->SetUpPHPMailer();
+            $isSpam = $this->AkismetSpamClassifier($inputs);
+            $this->LogEmail($inputs, $isSpam);
 
-            $mail->Subject = $inputs->assunto;
-            $mail->setFrom($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);
-            $mail->addAddress($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);     //Add a recipient
-            $mail->addReplyTo($inputs->email, $inputs->nome);
+            if ($isSpam === true) {
+                header('Location: ' . $_ENV['APP_URL']);
+                return;
+            }
 
-            $mailBody = $this->twig->render('mails/contato-message.html.twig', [
-                'nome' => $inputs->nome,
-                'message' => $inputs->mensagem
-            ]);
-            $mail->msgHTML($mailBody);
+            if ($_ENV['APP_DEBUG'] === true) {
+                $_SESSION['flash']['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
+                header('Location: ' . $_ENV['APP_URL'] . '#contato');
+                return;
+            }
 
-            $result = $mail->send();
+            $hasSent = $this->SendEmail($inputs);
 
-            if ($result === false) {
-                // Retornar com mensagem de erro
-
+            if ($hasSent === false) {
                 $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
                 header('Location: ' . $_ENV['APP_URL'] . '#contato');
                 exit();
             }
 
-            // Retornar com mensagem de sucesso
-
             $_SESSION['flash']['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
             header('Location: ' . $_ENV['APP_URL'] . '#contato');
-        } catch (\Throwable $th) {
-            // Retornar com mensagem de erro
-
+        } catch (GuzzleException | \Exception $e) {
             if ($_ENV['APP_DEBUG'] === true) {
-                $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
+                echo $e->getMessage();
             } else {
-                $_SESSION['flash']['errors']['geral'] = $th->getMessage();
-            }
+                $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
 
-            header('Location: ' . $_ENV['APP_URL'] . '#contato');
-            exit();
+                header('Location: ' . $_ENV['APP_URL'] . '#contato');
+                exit();
+            }
         }
     }
 
@@ -130,5 +129,99 @@ class HomeController extends BaseController
         $mail->isHTML(true);                                  //Set email format to HTML
 
         return $mail;
+    }
+
+    /**
+     * @throws \Exception
+     */
+    protected function LogEmail(object $inputs, bool $isSpam): void {
+        $csvPath = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'emails.csv';
+
+        if (file_exists($csvPath) === false) {
+            throw new \Exception('Arquivo de log dos emails não encontrado.');
+        }
+
+        $f = fopen($csvPath, 'a');
+        if ($f === false) {
+            throw new \Exception('Erro ao abrir arquivo de log dos emails.');
+        }
+
+        $data = [
+            'user_ip' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+            'referrer' => $_SERVER['HTTP_REFERER'],
+            'permalink' => $_ENV['APP_URL'],
+            'author_name' => $inputs->nome,
+            'author_email' => $inputs->email,
+            'content' => $inputs->mensagem,
+            'isSpam' => (int) $isSpam,
+            'created_at' => date(DATE_ISO8601_EXPANDED),
+            'updated_at' => '',
+            'deleted_at' => '',
+        ];
+
+        $result = fputcsv($f, $data); # Verificar qual exceção é lançada
+        if ($result === false) {
+            throw new \Exception('Erro ao salvar log de email.');
+        }
+
+        fclose($f);
+    }
+
+    /**
+     * @throws GuzzleException
+     */
+    protected function AkismetSpamClassifier(object $inputs): bool {
+        $aksimetRequestBody = [
+            'api_key' => $_ENV['AKISMET_API_KEY'],
+            'blog' => $_ENV['APP_URL'],
+            'user_ip' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+            'referrer' => $_SERVER['HTTP_REFERER'],
+            'permalink' => $_ENV['APP_URL'],
+            'comment_type' => 'contact-form',
+            'comment_author' => $inputs->nome,
+            'comment_author_email' => $inputs->email,
+            'comment_content' => $inputs->mensagem,
+            'comment_date_gmt' => date(DATE_ISO8601_EXPANDED),
+            'blog_lang' => 'pt-BR',
+            'blog_charset' => 'UTF-8',
+            'is_test' => $_ENV['APP_DEBUG']
+        ];
+
+        $client = new Client([
+            'base_uri' => 'https://rest.akismet.com/1.1/',
+            'verify' => $_ENV['APP_DEBUG'] === false
+        ]);
+
+        $response = $client->post('comment-check', [
+            'form_params' => $aksimetRequestBody
+        ]);
+        $body = (string) $response->getBody();
+
+        return $body === 'true';
+    }
+
+    /**
+     * @throws Exception
+     * @throws SyntaxError
+     * @throws RuntimeError
+     * @throws LoaderError
+     */
+    protected function SendEmail(object $inputs): bool {
+        $mail = $this->SetUpPHPMailer();
+
+        $mail->Subject = $inputs->assunto;
+        $mail->setFrom($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);
+        $mail->addAddress($_ENV['MAIL_ADDRESS'], $_ENV['MAIL_NAME']);     //Add a recipient
+        $mail->addReplyTo($inputs->email, $inputs->nome);
+
+        $mailBody = $this->twig->render('mails/contato-message.html.twig', [
+            'nome' => $inputs->nome,
+            'message' => $inputs->mensagem
+        ]);
+        $mail->msgHTML($mailBody);
+
+        return $mail->send();
     }
 }
