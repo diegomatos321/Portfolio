@@ -34,7 +34,7 @@ class HomeController extends BaseController
             $_SESSION['flash']['errors'] = $errors;
 
             header('Location: ' . $_ENV['APP_URL'] . '#contato');
-            exit();
+            return;
         }
 
         try {
@@ -43,30 +43,27 @@ class HomeController extends BaseController
 
             if ($isSpam === true) {
                 header('Location: ' . $_ENV['APP_URL']);
-                exit();
+                return;
             }
 
-            if ((bool) $_ENV['APP_DEBUG'] === true)
+            if ($_ENV['APP_DEBUG'] === true) {
                 $_SESSION['flash']['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
                 header('Location: ' . $_ENV['APP_URL'] . '#contato');
                 return;
+            }
 
             $hasSent = $this->SendEmail($inputs);
 
             if ($hasSent === false) {
-                // Retornar com mensagem de erro
-
                 $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
                 header('Location: ' . $_ENV['APP_URL'] . '#contato');
                 exit();
             }
 
-            // Retornar com mensagem de sucesso
-
             $_SESSION['flash']['success'] = 'Obrigado pela mensagem! Irei responder em breve.';
             header('Location: ' . $_ENV['APP_URL'] . '#contato');
         } catch (GuzzleException | \Exception $e) {
-            if ((bool) $_ENV['APP_DEBUG'] === true) {
+            if ($_ENV['APP_DEBUG'] === true) {
                 echo $e->getMessage();
             } else {
                 $_SESSION['flash']['errors']['geral'] = 'Ocorreu um erro ao enviar o email, por favor tente mais tarde ou envie diretamente a partir do seu cliente de email favorito: ' . $_ENV['MAIL_ADDRESS'];
@@ -189,12 +186,12 @@ class HomeController extends BaseController
             'comment_date_gmt' => date(DATE_ISO8601_EXPANDED),
             'blog_lang' => 'pt-BR',
             'blog_charset' => 'UTF-8',
-            'is_test' => (bool) $_ENV['APP_DEBUG']
+            'is_test' => $_ENV['APP_DEBUG']
         ];
 
         $client = new Client([
             'base_uri' => 'https://rest.akismet.com/1.1/',
-            'verify' => (bool) $_ENV['APP_DEBUG'] === true ? false : true
+            'verify' => $_ENV['APP_DEBUG'] === false
         ]);
 
         $response = $client->post('comment-check', [
