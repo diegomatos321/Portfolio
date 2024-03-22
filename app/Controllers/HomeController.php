@@ -21,7 +21,7 @@ class HomeController extends BaseController
 
     public function index(): string {
         return $this->twig->render('index.html.twig', [
-            'q' => $_GET['q']
+            'q' => array_key_exists('q', $_GET) ? $_GET['q'] : ''
         ]);
     }
 
