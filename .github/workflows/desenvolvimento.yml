@@ -15,10 +15,10 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO"
+          ARGS: "-avzc -i --delete"
           SOURCE: "/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/public_html/teste/
-          EXCLUDE: "/dist/, /node_modules/, /vendor/"
+          EXCLUDE: "/dist/,/node_modules/,/vendor/,/storage/,/public_html/assets/videos/,/public_html/teste/,.env,"

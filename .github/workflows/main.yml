@@ -23,4 +23,4 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}domains/devdiegomatos.com.br/
-          EXCLUDE: "/dist/,/node_modules/,/vendor/,/resources/views_cached/,/storage/,.env,"
+          EXCLUDE: "/dist/,/node_modules/,/vendor/,/storage/,/public_html/assets/videos/,/public_html/teste/,.env,"
