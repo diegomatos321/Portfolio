@@ -1,6 +1,18 @@
 <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
     <li>
         {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'projeto-progconc-qt.mp4',
+            'title': 'Segmentação de Imagem por Thresholding',
+        } only %}
+            {% block summary %}
+                <p>Projeto final de Programação Concorrente 2024.02: Segmentação de Imagens usando método limite (Thresholding).</p>
+                <p>Principal objetivo do trabalho é aplicar concorrência na leitura das imagens para aplicar o método, também foi desenvolvido uma interface gráfica usando Qt6 e C++ para o usuário: selecionar a imagem, escolher modo sequencial ou concorrente do programa, rodar o solver, salvar o resultado.</p>
+            {% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
             'videoSrc': 'demonstracao-lia.mp4',
             'title': 'Lia na Floresta Mágica',
         } only %}
