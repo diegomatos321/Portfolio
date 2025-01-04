@@ -18,10 +18,10 @@
         {% block summary %}{% endblock %}
     </div>
 
-    {% if block('status') is defined and block('tempo') is defined %}
-        <div class="px-4 pb-4 flex flex-wrap gap-4">
-            <p>Status: {{ block('status') }}</p>
-            <p>Tempo: {{ block('tempo') }}</p>
+    {% if block('status') is defined or block('tempo') is defined %}
+        <div class="px-4 pb-4 grid grid-cols-2 gap-4">
+            <p>{% if block('status') is defined %} Status: {{ block('status') }} {% endif %}</p>
+            <p>{% if block('tempo') is defined %} Tempo: {{ block('tempo') }} {% endif %}</p>
         </div>
     {% endif %}
 
