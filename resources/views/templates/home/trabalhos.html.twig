@@ -59,6 +59,61 @@
 
         <li>
         {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'elliots-great-symphony-v1.mp4',
+            'title': 'Elliots Great Symphony',
+        } only %}
+            {% block summary %}
+                <p>Fui responsável por programar um jogo musical na Unity estilo Guitar Hero com elementos de roguelike.</p>
+                <p>Seu objetivo é completar a fase principal acertando as notas douradas, evitando as notas bombas e coletando dinheiro e pontos de habilidade durante a fase. Se errar a nota dourada você perde vida até gameover.</p>
+                <p>Durante a fase você terá a chance de coletar notas de upgrades que derão poderes para te ajudar a completar a fase.</p>
+            {% endblock %}
+
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>Elliots Great Symphony é um jogo musical estilo Guitar Hero com elementos de roguelike sobre um músico que foi convocado por uma agência de detetives para desvendar o segredo de um texto escrito por instrumentos musicais de outro mundo.</p>
+                    <p>Projeto foi desenvolvido na Unity com uma loja de upgrades, loja de skins, 2 fases de aproximadamente 20 minutos, algumas cutscenes e diálogos simples,</p>
+                    <p>Projeto chegou a mim pelo 99freelas.</p>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li>Programação de jogos Unity</li>
+                        <li>Suporte ao cliente.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Características</strong></h3>
+
+                    <ul class="list-inside list-disc">
+                        <li>Diferentes tipo de notas: notas douradas, bombas, dinheiro e pontos de habilidade.</li>
+                        <li>Sistema de upgrade dentro da fase estilo roguelike (como Vampire Suvivors e outros jogos do gênero)</li>
+                        <li>Loja de upgrades e de skins.</li>
+                        <li>Persistencia do progresso do jogador.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+
+                    <ul class="list-inside list-decimal">
+                        <li>Sincronização das notas com a música</li>
+                        <li>Construções das telas e do HUD do jogo</li>
+                        <li>Sistema de leitura e escrita do progresso do jogador</li>
+                        <li>Sistema de upgrades e de skins.</li>
+                        <li>Garantir que o jogo esteja dentro da visão do cliente.</li>
+                    </ul>
+                </div>
+            {% endblock %}
+            {% block status %}<span class="text-green-600">Concluído</span>{% endblock %}
+            {% block tempo %}Jan/2025 - Mar/2025{% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
             'videoSrc': 'demonstracao-promec.mp4',
             'title': 'PROMEC',
         } only %}
@@ -150,7 +205,7 @@
                 </div>
             {% endblock %}
 
-            {% block status %} <span class="text-green-600">Entregue.</span>{% endblock %}
+            {% block status %} <span class="text-green-600">Concluído</span>{% endblock %}
             {% block tempo %}Jan/2022 - Jun/2022{% endblock %}
         {% endembed %}
     </li>
@@ -182,7 +237,7 @@
                 </div>
             {% endblock %}
 
-            {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
+            {% block status %}<span class="text-green-600">Concluído</span>{% endblock %}
             {% block tempo %}Mar/2022 - Mai/2022{% endblock %}
         {% endembed %}
     </li>
@@ -234,7 +289,7 @@
                 </div>
             {% endblock %}
 
-            {% block status %}<span class="text-green-600">Entregue.</span>{% endblock %}
+            {% block status %}<span class="text-green-600">Concluído</span>{% endblock %}
             {% block tempo %}Set/2022{% endblock %}
         {% endembed %}
     </li>
