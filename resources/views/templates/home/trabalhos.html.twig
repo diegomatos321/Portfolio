@@ -1,6 +1,82 @@
 <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
     <li>
         {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'canotops-apresentacao.mp4',
+            'title': 'Canotops',
+        } only %}
+            {% block summary %}
+                <p>Desenvolvi um plugin WordPress + WooCommerce integrado a um configurador 3D em Three.js, permitindo que clientes personalizassem tendas em tempo real e finalizassem a compra com todos os dados técnicos e visuais gerados automaticamente.</p>
+            {% endblock %}
+
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>Atuei como desenvolvedor full stack criando um plugin WordPress personalizado capaz de substituir a página de produto do WooCommerce por um configurador 3D avançado construído em Three.js. O sistema permite ao usuário alterar cores, materiais, textos, estampas e outros atributos visuais, tudo renderizado em tempo real diretamente no navegador. Além da parte visual, implementei uma camada de automação que gera automaticamente mockups e arquivos vetoriais para o setor de produção, reduzindo o tempo entre o pedido e a fabricação. Toda a customização feita pelo cliente é salva e integrada ao fluxo padrão do WooCommerce, incluindo carrinho, checkout e histórico de pedidos.</p>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li>Desenvolver plugin WordPress customizado integrado ao WooCommerce.</li>
+                        <li>Criar e otimizar o configurador 3D usando Three.js com renderização interativa.</li>
+                        <li>Implementar lógica de personalização (cores, materiais, textos, decals).</li>
+                        <li>Gerar mockups e arquivos vetoriais automaticamente para produção.</li>
+                        <li>Armazenar as customizações do cliente no fluxo padrão do WooCommerce.</li>
+                        <li>Assegurar compatibilidade entre front-end 3D, backend WooCommerce e banco de dados.</li>
+                        <li>Garantir performance e boa experiência do usuário em dispositivos variados.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                    
+                    <ul class="list-inside list-disc">
+                        <li>WordPress / WooCommerce</li>
+                        <li>PHP (hooks, endpoints, lógica de persistência)</li>
+                        <li>JavaScript / ES Modules</li>
+                        <li>Three.js (renderização 3D, materiais, texturas, canvas)</li>
+                        <li>WebGL</li>
+                        <li>HTML / CSS</li>
+                        <li>REST API (comunicação WP ↔ configurador)</li>
+                        <li>Ferramentas de geração de imagem/vetor Fabric.js</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Características</strong></h3>
+
+                    <ul class="list-inside list-disc">
+                        <li>Configurador 3D totalmente integrado ao WooCommerce.</li>
+                        <li>Renderização em tempo real com materiais configuráveis.</li>
+                        <li>UI responsiva para desktop e mobile.</li>
+                        <li>Sistema de exportação automática para mockups/vetores.</li>
+                        <li>Armazenamento limpo e seguro das customizações.</li>
+                        <li>Arquitetura extensível para futuras variações de produtos.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+
+                    <ul class="list-inside list-decimal">
+                        <li>Garantir performance do Three.js em dispositivos mais fracos.</li>
+                        <li>Otimizar UV mapping para permitir personalização correta nas superfícies da tenda.</li>
+                        <li>Manter compatibilidade com o fluxo padrão do WooCommerce sem alterar o core.</li>
+                        <li>Sincronizar as personalizações 3D com dados persistidos no backend.</li>
+                        <li>Gerar arquivos vetoriais precisos e tecnicamente utilizáveis pela produção.</li>
+                        <li>Controle de cache e carregamento rápido dos assets 3D e texturas.</li>
+                        <li>Evitar perdas de customização durante navegação entre páginas.</li>
+                    </ul>
+                </div>
+            {% endblock %}
+
+            {% block status %}<span class="text-green-600">Concluído.</span>{% endblock %}
+            {% block tempo %}Abr/2025 - Jul/2025{% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
             'videoSrc': 'demonstracao-preparavestibular.mp4',
             'title': 'Prepara Vestibular',
         } only %}
