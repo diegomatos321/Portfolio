@@ -5,13 +5,13 @@
             'title': 'Canotops',
         } only %}
             {% block summary %}
-                <p>Desenvolvi um plugin WordPress + WooCommerce integrado a um configurador 3D em Three.js, permitindo que clientes personalizassem tendas em tempo real e finalizassem a compra com todos os dados técnicos e visuais gerados automaticamente.</p>
+                <p>Desenvolvi um plugin WordPress + WooCommerce integrado a um configurador 3D em Three.js, permitindo que clientes personalizassem tendas em tempo real e finalizassem a compra com todos os dados técnicos e visuais gerados automaticamente. <a href="https://www.canotops.com/product/full-custom/" class="underline text-blue-600" target="_blank">Teste agora!</a></p>
             {% endblock %}
 
             {% block content %}
                 <div class="space-y-1">
                     <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                    <p>Atuei como desenvolvedor full stack criando um plugin WordPress personalizado capaz de substituir a página de produto do WooCommerce por um configurador 3D avançado construído em Three.js. O sistema permite ao usuário alterar cores, materiais, textos, estampas e outros atributos visuais, tudo renderizado em tempo real diretamente no navegador. Além da parte visual, implementei uma camada de automação que gera automaticamente mockups e arquivos vetoriais para o setor de produção, reduzindo o tempo entre o pedido e a fabricação. Toda a customização feita pelo cliente é salva e integrada ao fluxo padrão do WooCommerce, incluindo carrinho, checkout e histórico de pedidos.</p>
+                    <p>Atuei como desenvolvedor full stack criando um plugin WordPress personalizado capaz de substituir a página de produto do WooCommerce por um configurador 3D avançado construído em Three.js. O sistema permite ao usuário alterar cores, materiais, textos, estampas e outros atributos visuais, tudo renderizado em tempo real diretamente no navegador. Além da parte visual, implementei uma camada de automação que gera automaticamente mockups e arquivos vetoriais para o setor de produção, reduzindo o tempo entre o pedido e a fabricação. Toda a customização feita pelo cliente é salva e integrada ao fluxo padrão do WooCommerce, incluindo carrinho, checkout e histórico de pedidos. </p>
                 </div>
 
                 <div class="space-y-1">
@@ -81,7 +81,7 @@
             'title': 'Prepara Vestibular',
         } only %}
             {% block summary %}
-                <p>Plataforma gratuita de resolução de questões para o vestibular, treine com simulados ou através do banco de questões com gabarito. Uma nova alternativa para ajudar os estudantes do País inteiro a se prepararem para as provas.</p>
+                <p>Plataforma gratuita de resolução de questões para o vestibular, treine com simulados ou através do banco de questões com gabarito. Uma nova alternativa para ajudar os estudantes do País inteiro a se prepararem para as provas. <a href="https://www.preparavestibular.com.br" class="underline text-blue-600" target="_blank">Acesse já!</a></p>
             {% endblock %}
 
             {% block content %}
@@ -133,7 +133,111 @@
         {% endembed %}
     </li>
 
-        <li>
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'demonstracao-promec.mp4',
+            'title': 'PROMEC',
+        } only %}
+            {% block summary %}
+                <p>Realizei período de estágio onde fui responsável pela programação de alguns projeto sobre a supervisão de <a href="https://www.linkedin.com/in/gazoni/" target="_blank" class="underline text-blue-600">Leandro Gazoni</a>:</p>
+            {% endblock %}
+
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>A PROMEC - Applied Modeling and Data Science, é uma empresa localizada no Parque Tecnologico da UFRJ, dentro do laboratório LAMCE onde também atua como Grupo de Mecanica Computacional. Durante meus 10 meses como estagiário trabalhei com projetos web com propósitos científicos.</p>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li>Desenvolvimento de aplicações em linguagens como: C++, Python, HTML/CSS e JavaScript;</li>
+                        <li>Utilização de frameworks de backend e frontend;</li>
+                        <li>Criação de Interfaces GUI avançadas, integrando tecnologias como Angular, Vue.js, e React para uma experiência visual aprimorada; construção de app desktop com Qt.</li>
+                        <li>Análise de Desempenho e Perfilagem de códigos front-end e back-end, otimizando a eficiência das aplicações desenvolvidas</li>
+                        <li>Desenvolvimento de aplicações para engenharia e ciência de dados, incorporando elementos de computação gráfica e visualização científica para uma experiência mais interativa e informativa.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Projetos realizados</strong></h3>
+                        <ul class="list-inside list-disc">
+                        <li>Ferramenta para visualização de dados geoespaciais usando Geotoolkit, Angular e Nodejs.</li>
+                        <li>Um dashboard para configuração de parâmetros de um modelo de Aprendizado de Máquina para pedição de uma planta de óleo e gás com um visualizador simplificado da planta usando Vuejs e Python3.</li>
+                        <li>Plot de gráfico de predição em tempo real usando sockets com plotly.js e python.</li>
+                        <li>Breve contato com computação gráfica 3D na web usando Paraview e Python.</li>
+                    </ul>
+                    <p><strong>Obs:</strong> Nem todos os projetos possuem vídeo.</p>
+            {% endblock %}
+
+            {% block tempo %}Nov/2023 - Ago/2024{% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
+        {% embed '/templates/components/trabalho-card.html.twig' with {
+            'videoSrc': 'conquisterra-roguelie-demo-v1.mp4',
+            'title': 'Conquisterra Roguelie',
+        } only %}
+            {% block summary %}
+                <p>Desenvolvi um jogo indie 2D de plataforma feito na Godot Engine que mistura ação rápida com progressão roguelite no estilo Dead Cells. A ideia principal do projeto foi entregar um gameplay bem responsivo, com um loop de progressão viciante e desafios gerados de forma randômica, garantindo variedade e muita rejogabilidade a cada run. <a href="https://ruisu-design.itch.io/conquisterra-roguelie" class="underline text-blue-600" target="_blank">Jogue agora</a></p>  
+            {% endblock %}
+
+            {% block content %}
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
+                    <p>Fui responsável pelo desenvolvimento completo de Conquisterra Roguelie, um jogo indie 2D de plataforma criado na Godot Engine, combinando ação rápida com progressão roguelite inspirada em Dead Cells. Implementei sistemas centrais como progressão de habilidades diálogo interativo, loja de upgrades, IA de chefões com padrões dinâmicos de ataque e shaders personalizados para efeitos visuais básicos (VFX). O foco do projeto foi criar gameplay responsivo, loop de progressão envolvente e desafios gerados de forma randômica, garantindo variedade e rejogabilidade.</p>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
+                    <ul class="list-inside list-disc">
+                        <li>Desenvolvimento completo do jogo do zero utilizando a **Godot Engine**</li>
+                        <li>Criação e implementação do gameplay de plataforma 2D com foco em ação rápida e responsiva</li>
+                        <li>Desenvolvimento do sistema de progressão roguelite (habilidades, upgrades e evolução por run)</li>
+                        <li>Implementação de diálogos interativos e narrativa básica</li>
+                        <li>Criação da loja de upgrades e gerenciamento de economia do jogo</li>
+                        <li>Desenvolvimento da IA dos chefões, com padrões de ataque dinâmicos e variados</li>
+                        <li>Implementação de sistemas de geração randômica para fases e desafios</li>
+                        <li>Criação de shaders personalizados para efeitos visuais básicos (VFX)</li>
+                        <li>Balanceamento de dificuldade e ajustes do loop de progressão</li>
+                        <li>Garantia de rejogabilidade, variedade e consistência da experiência do jogador</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Características</strong></h3>
+
+                    <ul class="list-inside list-disc">
+                        <li>Diferentes tipo de notas: notas douradas, bombas, dinheiro e pontos de habilidade.</li>
+                        <li>Sistema de upgrade dentro da fase estilo roguelike (como Vampire Suvivors e outros jogos do gênero)</li>
+                        <li>Loja de upgrades e de skins.</li>
+                        <li>Persistencia do progresso do jogador.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-2xl"><strong>Desafios encontrados</strong></h3>
+
+                    <ul class="list-inside list-decimal">
+                        <li>Garantir um gameplay responsivo e preciso, essencial para um jogo de ação rápida</li>
+                        <li>Criar um loop de progressão envolvente que recompensasse o jogador mesmo após derrotas</li>
+                        <li>Desenvolver IA de chefões com padrões de ataque dinâmicos e variados sem comprometer a performance</li>
+                        <li>Manter a variedade e rejogabilidade usando geração randômica sem perder coerência no design das fases</li>
+                        <li>Implementar múltiplos sistemas interdependentes (habilidades, upgrades, loja, diálogos) de forma organizada e escalável</li>
+                        <li>Trabalhar com shaders e VFX personalizados sem impactar negativamente o desempenho</li>
+                        <li>Ajustar o balanceamento entre risco e recompensa ao longo das runs</li>
+                        <li>Gerenciar o escopo do projeto sendo um desenvolvimento solo, evitando feature creep</li>
+                        <li>Polir a experiência final garantindo consistência visual, mecânicas claras e feedback ao jogador</li>
+                    </ul>
+                </div>
+            {% endblock %}
+            {% block status %}<span class="text-green-600">Concluído</span>{% endblock %}
+            {% block tempo %}Ago/2025 - Set/2025{% endblock %}
+        {% endembed %}
+    </li>
+
+    <li>
         {% embed '/templates/components/trabalho-card.html.twig' with {
             'videoSrc': 'elliots-great-symphony-v1.mp4',
             'title': 'Elliots Great Symphony',
@@ -190,42 +294,33 @@
 
     <li>
         {% embed '/templates/components/trabalho-card.html.twig' with {
-            'videoSrc': 'demonstracao-promec.mp4',
-            'title': 'PROMEC',
+            'videoSrc': 'demonstracao-minijogos-educativos.mp4',
+            'title': 'Minijogos Educativos',
+            'thumbnail': 'minijogos-educativos.jpg'
         } only %}
             {% block summary %}
-                <p>Realizei período de estágio onde fui responsável pela programação de alguns projeto sobre a supervisão de <a href="https://www.linkedin.com/in/gazoni/" target="_blank" class="underline text-blue-600">Leandro Gazoni</a>:</p>
+                <p>Coletânea de minijogos educativos encomendados por uma escola. A temática dos jogos foi construída através da ajuda dos professores, <a class="underline text-blue-600" target="_blank" href="https://diegomatos321.github.io/escola-mozilla-verso/">jogue agora!</a></p>
             {% endblock %}
 
             {% block content %}
                 <div class="space-y-1">
                     <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                    <p>A PROMEC - Applied Modeling and Data Science, é uma empresa localizada no Parque Tecnologico da UFRJ, dentro do laboratório LAMCE onde também atua como Grupo de Mecanica Computacional. Durante meus 10 meses como estagiário trabalhei com projetos web com propósitos científicos.</p>
+                    <p>Este projeto é composto por 16 jogos para o navegador com público alvo para crianças e foi encomendado por uma escola em São Paulo. O trabalho chegou a mim por indicação em um dos canais internos da <a class="underline text-blue-600" href="https://gdpufrj.itch.io/" target="_blank">GDP</a>.</p>
                 </div>
 
                 <div class="space-y-1">
                     <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
-                    <ul class="list-inside list-disc">
-                        <li>Desenvolvimento de aplicações em linguagens como: C++, Python, HTML/CSS e JavaScript;</li>
-                        <li>Utilização de frameworks de backend e frontend;</li>
-                        <li>Criação de Interfaces GUI avançadas, integrando tecnologias como Angular, Vue.js, e React para uma experiência visual aprimorada; construção de app desktop com Qt.</li>
-                        <li>Análise de Desempenho e Perfilagem de códigos front-end e back-end, otimizando a eficiência das aplicações desenvolvidas</li>
-                        <li>Desenvolvimento de aplicações para engenharia e ciência de dados, incorporando elementos de computação gráfica e visualização científica para uma experiência mais interativa e informativa.</li>
-                    </ul>
+                    <p>Para este projeto eu trabalhei como colaborador programador de jogos da <a class="underline text-blue-600" target="_blank" href="https://garoastudios.com">Garoa Studios</a>, participei das reuniões com o cliente e nas tomadas de decisão em relação a tecnologias usada no projeto.</p>
                 </div>
 
                 <div class="space-y-1">
-                    <h3 class="text-2xl"><strong>Projetos realizados</strong></h3>
-                        <ul class="list-inside list-disc">
-                        <li>Ferramenta para visualização de dados geoespaciais usando Geotoolkit, Angular e Nodejs.</li>
-                        <li>Um dashboard para configuração de parâmetros de um modelo de Aprendizado de Máquina para pedição de uma planta de óleo e gás com um visualizador simplificado da planta usando Vuejs e Python3.</li>
-                        <li>Plot de gráfico de predição em tempo real usando sockets com plotly.js e python.</li>
-                        <li>Breve contato com computação gráfica 3D na web usando Paraview e Python.</li>
-                    </ul>
-                    <p><strong>Obs:</strong> Nem todos os projetos possuem vídeo.</p>
+                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
+                    <p>Como um diferencial dos minijogos sejam que funcionem bem no navegador, foi decidido usar um solução própria para o navegador, dessa forma usamos <a class="underline text-blue-600" href="https://phaser.io/">Phaser 3</a>, um framework de desenvolvimento jogos HTML5.</p>
+                </div>
             {% endblock %}
 
-            {% block tempo %}Nov/2023 - Ago/2024{% endblock %}
+            {% block status %}<span class="text-green-600">Concluído</span>{% endblock %}
+            {% block tempo %}Mar/2022 - Mai/2022{% endblock %}
         {% endembed %}
     </li>
 
@@ -283,38 +378,6 @@
 
             {% block status %} <span class="text-green-600">Concluído</span>{% endblock %}
             {% block tempo %}Jan/2022 - Jun/2022{% endblock %}
-        {% endembed %}
-    </li>
-
-    <li>
-        {% embed '/templates/components/trabalho-card.html.twig' with {
-            'videoSrc': 'demonstracao-minijogos-educativos.mp4',
-            'title': 'Minijogos Educativos',
-            'thumbnail': 'minijogos-educativos.jpg'
-        } only %}
-            {% block summary %}
-                <p>Coletânea de minijogos educativos encomendados por uma escola. A temática dos jogos foi construída através da ajuda dos professores, <a class="underline text-blue-600" target="_blank" href="https://diegomatos321.github.io/escola-mozilla-verso/">jogue agora!</a></p>
-            {% endblock %}
-
-            {% block content %}
-                <div class="space-y-1">
-                    <h3 class="text-2xl"><strong>Resumo</strong></h3>
-                    <p>Este projeto é composto por 16 jogos para o navegador com público alvo para crianças e foi encomendado por uma escola em São Paulo. O trabalho chegou a mim por indicação em um dos canais internos da <a class="underline text-blue-600" href="https://gdpufrj.itch.io/" target="_blank">GDP</a>.</p>
-                </div>
-
-                <div class="space-y-1">
-                    <h3 class="text-2xl"><strong>Responsabilidades</strong></h3>
-                    <p>Para este projeto eu trabalhei como colaborador programador de jogos da <a class="underline text-blue-600" target="_blank" href="https://garoastudios.com">Garoa Studios</a>, participei das reuniões com o cliente e nas tomadas de decisão em relação a tecnologias usada no projeto.</p>
-                </div>
-
-                <div class="space-y-1">
-                    <h3 class="text-2xl"><strong>Tecnologias</strong></h3>
-                    <p>Como um diferencial dos minijogos sejam que funcionem bem no navegador, foi decidido usar um solução própria para o navegador, dessa forma usamos <a class="underline text-blue-600" href="https://phaser.io/">Phaser 3</a>, um framework de desenvolvimento jogos HTML5.</p>
-                </div>
-            {% endblock %}
-
-            {% block status %}<span class="text-green-600">Concluído</span>{% endblock %}
-            {% block tempo %}Mar/2022 - Mai/2022{% endblock %}
         {% endembed %}
     </li>
 
